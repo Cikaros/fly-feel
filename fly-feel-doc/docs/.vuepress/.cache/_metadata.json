@@ -1,0 +1,36 @@
+{
+  "hash": "cd08b101",
+  "browserHash": "c4e0b348",
+  "optimized": {
+    "vue": {
+      "file": "E:/Project/fly-feel/fly-feel-doc/docs/.vuepress/.cache/vue.js",
+      "src": "E:/Project/fly-feel/fly-feel-doc/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js",
+      "needsInterop": false
+    },
+    "vue-router": {
+      "file": "E:/Project/fly-feel/fly-feel-doc/docs/.vuepress/.cache/vue-router.js",
+      "src": "E:/Project/fly-feel/fly-feel-doc/node_modules/vue-router/dist/vue-router.esm-bundler.js",
+      "needsInterop": false
+    },
+    "@vue/devtools-api": {
+      "file": "E:/Project/fly-feel/fly-feel-doc/docs/.vuepress/.cache/@vue_devtools-api.js",
+      "src": "E:/Project/fly-feel/fly-feel-doc/node_modules/@vue/devtools-api/lib/esm/index.js",
+      "needsInterop": false
+    },
+    "@vueuse/core": {
+      "file": "E:/Project/fly-feel/fly-feel-doc/docs/.vuepress/.cache/@vueuse_core.js",
+      "src": "E:/Project/fly-feel/fly-feel-doc/node_modules/@vueuse/core/index.mjs",
+      "needsInterop": false
+    },
+    "nprogress": {
+      "file": "E:/Project/fly-feel/fly-feel-doc/docs/.vuepress/.cache/nprogress.js",
+      "src": "E:/Project/fly-feel/fly-feel-doc/node_modules/nprogress/nprogress.js",
+      "needsInterop": true
+    },
+    "@vuepress/shared": {
+      "file": "E:/Project/fly-feel/fly-feel-doc/docs/.vuepress/.cache/@vuepress_shared.js",
+      "src": "E:/Project/fly-feel/fly-feel-doc/node_modules/@vuepress/shared/lib/esm/index.js",
+      "needsInterop": false
+    }
+  }
+}

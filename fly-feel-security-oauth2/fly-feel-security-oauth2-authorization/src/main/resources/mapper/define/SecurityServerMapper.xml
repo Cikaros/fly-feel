@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.gitee.define.mapper.SecurityServerMapper">
+    <select id="selectByClientId" resultMap="io.gitee.define.mapper.ServerMapper.BaseResultMap">
+        select
+        <include refid="io.gitee.define.mapper.ServerMapper.Base_Column_List"/>
+        from ff_server server
+                     left join ff_relate_client_server relate on relate.server_id = server.id
+        where relate.client_id = #{clientId}
+          and relate.del = false
+          and server.del = false
+          and relate.enable = true
+    </select>
+</mapper>

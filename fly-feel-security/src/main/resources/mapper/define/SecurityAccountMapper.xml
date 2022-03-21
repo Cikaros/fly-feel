@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.gitee.define.mapper.SecurityAccountMapper">
+    <resultMap id="BaseResultMap" type="io.gitee.define.entity.SecurityAccount"
+               extends="io.gitee.define.mapper.AccountMapper.BaseResultMap">
+        <!--@Table ff_account-->
+        <collection property="roles" ofType="io.gitee.define.entity.SecurityRole"
+                    select="io.gitee.define.mapper.SecurityRoleMapper.selectByAccountId"
+                    column="id">
+        </collection>
+    </resultMap>
+
+    <select id="selectByUsername" resultMap="BaseResultMap">
+        select
+        <include refid="io.gitee.define.mapper.AccountMapper.Base_Column_List"/>
+        from ff_account account
+        where username = #{username}
+          and account.del = false
+    </select>
+</mapper>

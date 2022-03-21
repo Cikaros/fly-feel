@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.gitee.define.mapper.SecurityGrantTypeMapper">
+    <select id="selectByClientId" resultMap="io.gitee.define.mapper.ClientGrantTypeMapper.BaseResultMap">
+        select
+        <include refid="io.gitee.define.mapper.ClientGrantTypeMapper.Base_Column_List"/>
+        from ff_client_grant_type client_grant_type
+        where client_grant_type.client_id = #{clientId}
+          and client_grant_type.del = false
+    </select>
+</mapper>

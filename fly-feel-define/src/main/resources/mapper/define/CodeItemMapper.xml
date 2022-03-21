@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.gitee.define.mapper.CodeItemMapper">
+    <resultMap id="BaseResultMap" type="io.gitee.define.entity.CodeItem"
+               extends="BaseModelMapper.BaseResultMap">
+        <!--@Table ff_code_item-->
+        <result column="title" property="title"/>
+        <result column="description" property="description"/>
+        <result column="type" property="type"/>
+        <result column="value" property="value"/>
+        <result column="order" property="order"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@sql select-->
+        code_item.id,
+        code_item.title,
+        code_item.description,
+        code_item.`type`,
+        code_item.`value`,
+        code_item.`order`,
+        code_item.`system`,
+        code_item.`enable`,
+        code_item.del,
+        code_item.create_by,
+        code_item.create_time,
+        code_item.update_by,
+        code_item.update_time,
+        code_item.remark,
+        code_item._version
+        <!--@sql from ff_code_item code_item-->
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from ff_code_item code_item
+        where id = #{id}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        delete
+        from ff_code_item
+        where id = #{id}
+    </delete>
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="io.gitee.define.entity.CodeItem"
+            useGeneratedKeys="true">
+        insert into ff_code_item (title, description, `type`, `value`, `order`, `system`, `enable`,
+                                  del, create_by, create_time, update_by, update_time, remark, _version)
+        values (#{title}, #{description}, #{type}, #{value}, #{order}, #{system}, #{enable},
+                #{del}, #{createBy}, #{createTime}, #{updateBy}, #{updateTime}, #{remark}, #{_version})
+    </insert>
+    <insert id="insertSelective" keyColumn="id" keyProperty="id"
+            parameterType="io.gitee.define.entity.CodeItem" useGeneratedKeys="true">
+        insert into ff_code_item
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="title != null">
+                title,
+            </if>
+            <if test="description != null">
+                description,
+            </if>
+            <if test="type != null">
+                `type`,
+            </if>
+            <if test="value != null">
+                `value`,
+            </if>
+            <if test="order != null">
+                `order`,
+            </if>
+            <if test="system != null">
+                `system`,
+            </if>
+            <if test="enable != null">
+                `enable`,
+            </if>
+            <if test="del != null">
+                del,
+            </if>
+            <if test="createBy != null">
+                create_by,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateBy != null">
+                update_by,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+            <if test="remark != null">
+                remark,
+            </if>
+            <if test="_version != null">
+                _version,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="title != null">
+                #{title},
+            </if>
+            <if test="description != null">
+                #{description},
+            </if>
+            <if test="type != null">
+                #{type},
+            </if>
+            <if test="value != null">
+                #{value},
+            </if>
+            <if test="order != null">
+                #{order},
+            </if>
+            <if test="system != null">
+                #{system},
+            </if>
+            <if test="enable != null">
+                #{enable},
+            </if>
+            <if test="del != null">
+                #{del},
+            </if>
+            <if test="createBy != null">
+                #{createBy},
+            </if>
+            <if test="createTime != null">
+                #{createTime},
+            </if>
+            <if test="updateBy != null">
+                #{updateBy},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime},
+            </if>
+            <if test="remark != null">
+                #{remark},
+            </if>
+            <if test="_version != null">
+                #{_version},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="io.gitee.define.entity.CodeItem">
+        update ff_code_item
+        <set>
+            <if test="title != null">
+                title = #{title},
+            </if>
+            <if test="description != null">
+                description = #{description},
+            </if>
+            <if test="type != null">
+                `type` = #{type},
+            </if>
+            <if test="value != null">
+                `value` = #{value},
+            </if>
+            <if test="order != null">
+                `order` = #{order},
+            </if>
+            <if test="system != null">
+                `system` = #{system},
+            </if>
+            <if test="enable != null">
+                `enable` = #{enable},
+            </if>
+            <if test="del != null">
+                del = #{del},
+            </if>
+            <if test="createBy != null">
+                create_by = #{createBy},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="updateBy != null">
+                update_by = #{updateBy},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+            <if test="remark != null">
+                remark = #{remark},
+            </if>
+            <if test="_version != null">
+                _version = #{_version},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="io.gitee.define.entity.CodeItem">
+        update ff_code_item
+        set title       = #{title},
+            description = #{description},
+            `type`      = #{type},
+            `value`     = #{value},
+            `order`     = #{order},
+            `system`    = #{system},
+            `enable`    = #{enable},
+            del         = #{del},
+            create_by   = #{createBy},
+            create_time = #{createTime},
+            update_by   = #{updateBy},
+            update_time = #{updateTime},
+            remark      = #{remark},
+            _version    = #{_version}
+        where id = #{id}
+    </update>
+    <update id="updateBatch" parameterType="java.util.List">
+        update ff_code_item
+        <trim prefix="set" suffixOverrides=",">
+            <trim prefix="title = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.title}
+                </foreach>
+            </trim>
+            <trim prefix="description = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.description}
+                </foreach>
+            </trim>
+            <trim prefix="`type` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.type}
+                </foreach>
+            </trim>
+            <trim prefix="`value` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.value}
+                </foreach>
+            </trim>
+            <trim prefix="`order` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.order}
+                </foreach>
+            </trim>
+            <trim prefix="`system` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.system}
+                </foreach>
+            </trim>
+            <trim prefix="`enable` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.enable}
+                </foreach>
+            </trim>
+            <trim prefix="del = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.del}
+                </foreach>
+            </trim>
+            <trim prefix="create_by = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.createBy}
+                </foreach>
+            </trim>
+            <trim prefix="create_time = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.createTime}
+                </foreach>
+            </trim>
+            <trim prefix="update_by = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.updateBy}
+                </foreach>
+            </trim>
+            <trim prefix="update_time = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.updateTime}
+                </foreach>
+            </trim>
+            <trim prefix="remark = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.remark}
+                </foreach>
+            </trim>
+            <trim prefix="_version = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item._version}
+                </foreach>
+            </trim>
+        </trim>
+        where id in
+        <foreach close=")" collection="list" item="item" open="(" separator=", ">
+            #{item.id}
+        </foreach>
+    </update>
+    <update id="updateBatchSelective" parameterType="java.util.List">
+        update ff_code_item
+        <trim prefix="set" suffixOverrides=",">
+            <trim prefix="title = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.title != null">
+                        when id = #{item.id} then #{item.title}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="description = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.description != null">
+                        when id = #{item.id} then #{item.description}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="`type` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.type != null">
+                        when id = #{item.id} then #{item.type}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="`value` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.value != null">
+                        when id = #{item.id} then #{item.value}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="`order` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.order != null">
+                        when id = #{item.id} then #{item.order}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="`system` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.system != null">
+                        when id = #{item.id} then #{item.system}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="`enable` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.enable != null">
+                        when id = #{item.id} then #{item.enable}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="del = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.del != null">
+                        when id = #{item.id} then #{item.del}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="create_by = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.createBy != null">
+                        when id = #{item.id} then #{item.createBy}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="create_time = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.createTime != null">
+                        when id = #{item.id} then #{item.createTime}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="update_by = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.updateBy != null">
+                        when id = #{item.id} then #{item.updateBy}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="update_time = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.updateTime != null">
+                        when id = #{item.id} then #{item.updateTime}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="remark = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.remark != null">
+                        when id = #{item.id} then #{item.remark}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="_version = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item._version != null">
+                        when id = #{item.id} then #{item._version}
+                    </if>
+                </foreach>
+            </trim>
+        </trim>
+        where id in
+        <foreach close=")" collection="list" item="item" open="(" separator=", ">
+            #{item.id}
+        </foreach>
+    </update>
+    <insert id="batchInsert" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
+        insert into ff_code_item
+                (title, description, `type`, `value`, `order`, `system`, `enable`, del, create_by,
+                 create_time, update_by, update_time, remark, _version)
+                values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.title}, #{item.description}, #{item.type}, #{item.value}, #{item.order},
+             #{item.system}, #{item.enable}, #{item.del}, #{item.createBy}, #{item.createTime},
+             #{item.updateBy}, #{item.updateTime}, #{item.remark}, #{item._version})
+        </foreach>
+    </insert>
+    <insert id="insertOrUpdate" keyColumn="id" keyProperty="id" parameterType="io.gitee.define.entity.CodeItem"
+            useGeneratedKeys="true">
+        insert into ff_code_item
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            title,
+            description,
+            `type`,
+            `value`,
+            `order`,
+            `system`,
+            `enable`,
+            del,
+            create_by,
+            create_time,
+            update_by,
+            update_time,
+            remark,
+            _version,
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id},
+            </if>
+            #{title},
+            #{description},
+            #{type},
+            #{value},
+            #{order},
+            #{system},
+            #{enable},
+            #{del},
+            #{createBy},
+            #{createTime},
+            #{updateBy},
+            #{updateTime},
+            #{remark},
+            #{_version},
+        </trim>
+        on duplicate key update
+        <trim suffixOverrides=",">
+            <if test="id != null">
+                id = #{id},
+            </if>
+            title       = #{title},
+            description = #{description},
+            `type`      = #{type},
+            `value`     = #{value},
+            `order`     = #{order},
+            `system`    = #{system},
+            `enable`    = #{enable},
+            del         = #{del},
+            create_by   = #{createBy},
+            create_time = #{createTime},
+            update_by   = #{updateBy},
+            update_time = #{updateTime},
+            remark      = #{remark},
+            _version    = #{_version},
+        </trim>
+    </insert>
+    <insert id="insertOrUpdateSelective" keyColumn="id" keyProperty="id"
+            parameterType="io.gitee.define.entity.CodeItem" useGeneratedKeys="true">
+        insert into ff_code_item
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="title != null">
+                title,
+            </if>
+            <if test="description != null">
+                description,
+            </if>
+            <if test="type != null">
+                `type`,
+            </if>
+            <if test="value != null">
+                `value`,
+            </if>
+            <if test="order != null">
+                `order`,
+            </if>
+            <if test="system != null">
+                `system`,
+            </if>
+            <if test="enable != null">
+                `enable`,
+            </if>
+            <if test="del != null">
+                del,
+            </if>
+            <if test="createBy != null">
+                create_by,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateBy != null">
+                update_by,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+            <if test="remark != null">
+                remark,
+            </if>
+            <if test="_version != null">
+                _version,
+            </if>
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id},
+            </if>
+            <if test="title != null">
+                #{title},
+            </if>
+            <if test="description != null">
+                #{description},
+            </if>
+            <if test="type != null">
+                #{type},
+            </if>
+            <if test="value != null">
+                #{value},
+            </if>
+            <if test="order != null">
+                #{order},
+            </if>
+            <if test="system != null">
+                #{system},
+            </if>
+            <if test="enable != null">
+                #{enable},
+            </if>
+            <if test="del != null">
+                #{del},
+            </if>
+            <if test="createBy != null">
+                #{createBy},
+            </if>
+            <if test="createTime != null">
+                #{createTime},
+            </if>
+            <if test="updateBy != null">
+                #{updateBy},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime},
+            </if>
+            <if test="remark != null">
+                #{remark},
+            </if>
+            <if test="_version != null">
+                #{_version},
+            </if>
+        </trim>
+        on duplicate key update
+        <trim suffixOverrides=",">
+            <if test="id != null">
+                id = #{id},
+            </if>
+            <if test="title != null">
+                title = #{title},
+            </if>
+            <if test="description != null">
+                description = #{description},
+            </if>
+            <if test="type != null">
+                `type` = #{type},
+            </if>
+            <if test="value != null">
+                `value` = #{value},
+            </if>
+            <if test="order != null">
+                `order` = #{order},
+            </if>
+            <if test="system != null">
+                `system` = #{system},
+            </if>
+            <if test="enable != null">
+                `enable` = #{enable},
+            </if>
+            <if test="del != null">
+                del = #{del},
+            </if>
+            <if test="createBy != null">
+                create_by = #{createBy},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="updateBy != null">
+                update_by = #{updateBy},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+            <if test="remark != null">
+                remark = #{remark},
+            </if>
+            <if test="_version != null">
+                _version = #{_version},
+            </if>
+        </trim>
+    </insert>
+    <select id="isExpires" resultType="java.lang.Boolean">
+        select IF(#{_version} - code_item._version, 0, 1)
+        from ff_code_item code_item
+        where id = #{id}
+    </select>
+    <select id="isSystem" resultType="java.lang.Boolean">
+        select IF(code_item.`system` = 0, 0, 1)
+        from ff_code_item code_item
+        where id = #{id}
+    </select>
+</mapper>

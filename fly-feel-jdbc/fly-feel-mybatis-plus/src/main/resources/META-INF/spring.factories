@@ -1,0 +1,6 @@
+# Auto Configure
+org.springframework.boot.env.EnvironmentPostProcessor=\
+  io.gitee.mybatis.plus.SafetyEncryptProcessor
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  io.gitee.mybatis.plus.MybatisPlusLanguageDriverAutoConfiguration,\
+  io.gitee.mybatis.plus.MybatisPlusAutoConfiguration

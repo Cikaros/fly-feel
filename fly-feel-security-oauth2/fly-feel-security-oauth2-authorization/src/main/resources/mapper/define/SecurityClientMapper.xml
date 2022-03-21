@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.gitee.define.mapper.SecurityClientMapper">
+    <resultMap id="BaseResultMap" type="io.gitee.define.entity.SecurityClient"
+               extends="io.gitee.define.mapper.ClientMapper.BaseResultMap">
+        <!--@Table ff_client-->
+        <collection property="servers" ofType="io.gitee.define.entity.Server"
+                    select="io.gitee.define.mapper.SecurityServerMapper.selectByClientId"
+                    column="id">
+        </collection>
+        <collection property="grantTypes" ofType="io.gitee.define.entity.ClientGrantType"
+                    select="io.gitee.define.mapper.SecurityGrantTypeMapper.selectByClientId"
+                    column="id">
+        </collection>
+        <collection property="roles" ofType="io.gitee.define.entity.SecurityRole"
+                    select="io.gitee.define.mapper.SecurityRoleMapper.selectByAccountId"
+                    column="id">
+        </collection>
+    </resultMap>
+
+    <select id="selectByClientId" resultMap="BaseResultMap">
+        select
+        <include refid="io.gitee.define.mapper.ClientMapper.Base_Column_List"/>
+        from ff_client client
+        where client.client_id = #{clientId}
+          and client.del = false
+    </select>
+</mapper>

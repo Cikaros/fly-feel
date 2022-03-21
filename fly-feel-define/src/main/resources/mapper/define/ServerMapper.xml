@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.gitee.define.mapper.ServerMapper">
+    <resultMap id="BaseResultMap" type="io.gitee.define.entity.Server"
+               extends="BaseModelMapper.BaseResultMap">
+        <!--@Table ff_server-->
+        <result column="name" property="name"/>
+        <result column="description" property="description"/>
+        <result column="resource_id" property="resourceId"/>
+        <result column="address" property="address"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@sql select -->
+        server.id,
+        server.`name`,
+        server.description,
+        server.resource_id,
+        server.address,
+        server.`system`,
+        server.`enable`,
+        server.del,
+        server.create_by,
+        server.create_time,
+        server.update_by,
+        server.update_time,
+        server.remark,
+        server._version
+        <!--@sql from ff_server server-->
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from ff_server server
+        where id = #{id}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        delete
+        from ff_server
+        where id = #{id}
+    </delete>
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="io.gitee.define.entity.Server"
+            useGeneratedKeys="true">
+        insert into ff_server (`name`, description, resource_id, address, `system`, `enable`,
+                               del, create_by, create_time, update_by, update_time, remark, _version)
+        values (#{name}, #{description}, #{resourceId}, #{address}, #{system}, #{enable},
+                #{del}, #{createBy}, #{createTime}, #{updateBy}, #{updateTime}, #{remark}, #{_version})
+    </insert>
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="io.gitee.define.entity.Server"
+            useGeneratedKeys="true">
+        insert into ff_server
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="name != null">
+                `name`,
+            </if>
+            <if test="description != null">
+                description,
+            </if>
+            <if test="resourceId != null">
+                resource_id,
+            </if>
+            <if test="address != null">
+                address,
+            </if>
+            <if test="system != null">
+                `system`,
+            </if>
+            <if test="enable != null">
+                `enable`,
+            </if>
+            <if test="del != null">
+                del,
+            </if>
+            <if test="createBy != null">
+                create_by,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateBy != null">
+                update_by,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+            <if test="remark != null">
+                remark,
+            </if>
+            <if test="_version != null">
+                _version,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="name != null">
+                #{name},
+            </if>
+            <if test="description != null">
+                #{description},
+            </if>
+            <if test="resourceId != null">
+                #{resourceId},
+            </if>
+            <if test="address != null">
+                #{address},
+            </if>
+            <if test="system != null">
+                #{system},
+            </if>
+            <if test="enable != null">
+                #{enable},
+            </if>
+            <if test="del != null">
+                #{del},
+            </if>
+            <if test="createBy != null">
+                #{createBy},
+            </if>
+            <if test="createTime != null">
+                #{createTime},
+            </if>
+            <if test="updateBy != null">
+                #{updateBy},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime},
+            </if>
+            <if test="remark != null">
+                #{remark},
+            </if>
+            <if test="_version != null">
+                #{_version},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="io.gitee.define.entity.Server">
+        update ff_server
+        <set>
+            <if test="name != null">
+                `name` = #{name},
+            </if>
+            <if test="description != null">
+                description = #{description},
+            </if>
+            <if test="resourceId != null">
+                resource_id = #{resourceId},
+            </if>
+            <if test="address != null">
+                address = #{address},
+            </if>
+            <if test="system != null">
+                `system` = #{system},
+            </if>
+            <if test="enable != null">
+                `enable` = #{enable},
+            </if>
+            <if test="del != null">
+                del = #{del},
+            </if>
+            <if test="createBy != null">
+                create_by = #{createBy},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="updateBy != null">
+                update_by = #{updateBy},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+            <if test="remark != null">
+                remark = #{remark},
+            </if>
+            <if test="_version != null">
+                _version = #{_version},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="io.gitee.define.entity.Server">
+        update ff_server
+        set `name`      = #{name},
+            description = #{description},
+            resource_id = #{resourceId},
+            address     = #{address},
+            `system`    = #{system},
+            `enable`    = #{enable},
+            del         = #{del},
+            create_by   = #{createBy},
+            create_time = #{createTime},
+            update_by   = #{updateBy},
+            update_time = #{updateTime},
+            remark      = #{remark},
+            _version    = #{_version}
+        where id = #{id}
+    </update>
+    <update id="updateBatch" parameterType="java.util.List">
+        update ff_server
+        <trim prefix="set" suffixOverrides=",">
+            <trim prefix="`name` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.name}
+                </foreach>
+            </trim>
+            <trim prefix="description = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.description}
+                </foreach>
+            </trim>
+            <trim prefix="resource_id = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.resourceId}
+                </foreach>
+            </trim>
+            <trim prefix="address = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.address}
+                </foreach>
+            </trim>
+            <trim prefix="`system` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.system}
+                </foreach>
+            </trim>
+            <trim prefix="`enable` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.enable}
+                </foreach>
+            </trim>
+            <trim prefix="del = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.del}
+                </foreach>
+            </trim>
+            <trim prefix="create_by = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.createBy}
+                </foreach>
+            </trim>
+            <trim prefix="create_time = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.createTime}
+                </foreach>
+            </trim>
+            <trim prefix="update_by = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.updateBy}
+                </foreach>
+            </trim>
+            <trim prefix="update_time = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.updateTime}
+                </foreach>
+            </trim>
+            <trim prefix="remark = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.remark}
+                </foreach>
+            </trim>
+            <trim prefix="_version = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item._version}
+                </foreach>
+            </trim>
+        </trim>
+        where id in
+        <foreach close=")" collection="list" item="item" open="(" separator=", ">
+            #{item.id}
+        </foreach>
+    </update>
+    <update id="updateBatchSelective" parameterType="java.util.List">
+        update ff_server
+        <trim prefix="set" suffixOverrides=",">
+            <trim prefix="`name` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.name != null">
+                        when id = #{item.id} then #{item.name}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="description = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.description != null">
+                        when id = #{item.id} then #{item.description}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="resource_id = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.resourceId != null">
+                        when id = #{item.id} then #{item.resourceId}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="address = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.address != null">
+                        when id = #{item.id} then #{item.address}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="`system` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.system != null">
+                        when id = #{item.id} then #{item.system}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="`enable` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.enable != null">
+                        when id = #{item.id} then #{item.enable}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="del = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.del != null">
+                        when id = #{item.id} then #{item.del}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="create_by = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.createBy != null">
+                        when id = #{item.id} then #{item.createBy}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="create_time = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.createTime != null">
+                        when id = #{item.id} then #{item.createTime}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="update_by = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.updateBy != null">
+                        when id = #{item.id} then #{item.updateBy}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="update_time = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.updateTime != null">
+                        when id = #{item.id} then #{item.updateTime}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="remark = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.remark != null">
+                        when id = #{item.id} then #{item.remark}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="_version = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item._version != null">
+                        when id = #{item.id} then #{item._version}
+                    </if>
+                </foreach>
+            </trim>
+        </trim>
+        where id in
+        <foreach close=")" collection="list" item="item" open="(" separator=", ">
+            #{item.id}
+        </foreach>
+    </update>
+    <insert id="batchInsert" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
+        insert into ff_server
+                (`name`, description, resource_id, address, `system`, `enable`, del, create_by, create_time,
+                 update_by, update_time, remark, _version)
+                values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.name}, #{item.description}, #{item.resourceId}, #{item.address}, #{item.system},
+             #{item.enable}, #{item.del}, #{item.createBy}, #{item.createTime}, #{item.updateBy},
+             #{item.updateTime}, #{item.remark}, #{item._version})
+        </foreach>
+    </insert>
+    <insert id="insertOrUpdate" keyColumn="id" keyProperty="id" parameterType="io.gitee.define.entity.Server"
+            useGeneratedKeys="true">
+        insert into ff_server
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            `name`,
+            description,
+            resource_id,
+            address,
+            `system`,
+            `enable`,
+            del,
+            create_by,
+            create_time,
+            update_by,
+            update_time,
+            remark,
+            _version,
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id},
+            </if>
+            #{name},
+            #{description},
+            #{resourceId},
+            #{address},
+            #{system},
+            #{enable},
+            #{del},
+            #{createBy},
+            #{createTime},
+            #{updateBy},
+            #{updateTime},
+            #{remark},
+            #{_version},
+        </trim>
+        on duplicate key update
+        <trim suffixOverrides=",">
+            <if test="id != null">
+                id = #{id},
+            </if>
+            `name`      = #{name},
+            description = #{description},
+            resource_id = #{resourceId},
+            address     = #{address},
+            `system`    = #{system},
+            `enable`    = #{enable},
+            del         = #{del},
+            create_by   = #{createBy},
+            create_time = #{createTime},
+            update_by   = #{updateBy},
+            update_time = #{updateTime},
+            remark      = #{remark},
+            _version    = #{_version},
+        </trim>
+    </insert>
+    <insert id="insertOrUpdateSelective" keyColumn="id" keyProperty="id"
+            parameterType="io.gitee.define.entity.Server" useGeneratedKeys="true">
+        insert into ff_server
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="name != null">
+                `name`,
+            </if>
+            <if test="description != null">
+                description,
+            </if>
+            <if test="resourceId != null">
+                resource_id,
+            </if>
+            <if test="address != null">
+                address,
+            </if>
+            <if test="system != null">
+                `system`,
+            </if>
+            <if test="enable != null">
+                `enable`,
+            </if>
+            <if test="del != null">
+                del,
+            </if>
+            <if test="createBy != null">
+                create_by,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateBy != null">
+                update_by,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+            <if test="remark != null">
+                remark,
+            </if>
+            <if test="_version != null">
+                _version,
+            </if>
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id},
+            </if>
+            <if test="name != null">
+                #{name},
+            </if>
+            <if test="description != null">
+                #{description},
+            </if>
+            <if test="resourceId != null">
+                #{resourceId},
+            </if>
+            <if test="address != null">
+                #{address},
+            </if>
+            <if test="system != null">
+                #{system},
+            </if>
+            <if test="enable != null">
+                #{enable},
+            </if>
+            <if test="del != null">
+                #{del},
+            </if>
+            <if test="createBy != null">
+                #{createBy},
+            </if>
+            <if test="createTime != null">
+                #{createTime},
+            </if>
+            <if test="updateBy != null">
+                #{updateBy},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime},
+            </if>
+            <if test="remark != null">
+                #{remark},
+            </if>
+            <if test="_version != null">
+                #{_version},
+            </if>
+        </trim>
+        on duplicate key update
+        <trim suffixOverrides=",">
+            <if test="id != null">
+                id = #{id},
+            </if>
+            <if test="name != null">
+                `name` = #{name},
+            </if>
+            <if test="description != null">
+                description = #{description},
+            </if>
+            <if test="resourceId != null">
+                resource_id = #{resourceId},
+            </if>
+            <if test="address != null">
+                address = #{address},
+            </if>
+            <if test="system != null">
+                `system` = #{system},
+            </if>
+            <if test="enable != null">
+                `enable` = #{enable},
+            </if>
+            <if test="del != null">
+                del = #{del},
+            </if>
+            <if test="createBy != null">
+                create_by = #{createBy},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="updateBy != null">
+                update_by = #{updateBy},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+            <if test="remark != null">
+                remark = #{remark},
+            </if>
+            <if test="_version != null">
+                _version = #{_version},
+            </if>
+        </trim>
+    </insert>
+    <select id="isExpires" resultType="java.lang.Boolean">
+        select IF(#{_version} - server._version, 0, 1)
+        from ff_server server
+        where id = #{id}
+    </select>
+    <select id="isSystem" resultType="java.lang.Boolean">
+        select IF(server.`system` = 0, 0, 1)
+        from ff_server server
+        where id = #{id}
+    </select>
+</mapper>

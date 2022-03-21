@@ -1,0 +1,93 @@
+{
+  "hints": [
+    {
+      "name": "spring.security.cors.allowed-methods",
+      "values": [
+        {
+          "value": "GET"
+        },
+        {
+          "value": "POST"
+        },
+        {
+          "value": "PUT"
+        },
+        {
+          "value": "DELETE"
+        },
+        {
+          "value": "OPTIONS"
+        },
+        {
+          "value": "HEAD"
+        },
+        {
+          "value": "CONNECT"
+        },
+        {
+          "value": "TRACE"
+        },
+        {
+          "value": "PATCH"
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "sourceType": "io.gitee.security.config.props.CorsConfigProperties",
+      "name": "spring.security.cors",
+      "type": "io.gitee.security.config.props.CorsConfigProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "spring.security.cors.allowed-origins",
+      "type": "java.util.Collection<java.lang.String>",
+      "description": "指定允许的跨域请求的来源."
+    },
+    {
+      "name": "spring.security.cors.allowed-methods",
+      "type": "java.util.Collection<java.lang.String>",
+      "description": "指定允许的跨域请求方法."
+    },
+    {
+      "name": "spring.security.cors.allow-credentials",
+      "type": "java.lang.Boolean",
+      "description": "Description for spring.security.cors.allow-credentials."
+    },
+    {
+      "name": "spring.security.cors.allowed-headers",
+      "type": "java.util.Collection<java.lang.String>",
+      "description": "指定允许的请求头."
+    },
+    {
+      "name": "spring.security.cors.exposed-headers",
+      "type": "java.util.Collection<java.lang.String>",
+      "description": "指定排除的请求头."
+    },
+    {
+      "name": "spring.security.cors.max-age",
+      "type": "java.lang.Long",
+      "description": "缓存时间."
+    },
+    {
+      "sourceType": "io.gitee.security.config.props.XssConfigProperties",
+      "name": "spring.security.xss.enabled",
+      "type": "java.lang.Boolean",
+      "description": "是否开启XSS攻击防护."
+    },
+    {
+      "sourceType": "io.gitee.security.config.props.XssConfigProperties",
+      "name": "spring.security.xss.url-excludes",
+      "type": "java.util.Collection<java.lang.String>",
+      "description": "排除的路由地址."
+    },
+    {
+      "sourceType": "io.gitee.security.config.props.XssConfigProperties",
+      "name": "spring.security.xss.url-patterns",
+      "type": "java.util.Collection<java.lang.String>",
+      "description": "拦截的路由地址."
+    }
+  ]
+}
