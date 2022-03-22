@@ -19,14 +19,12 @@
         <main.basedir>${project.parent.basedir}</main.basedir>
         <fly-feel.core.version>1.0</fly-feel.core.version>
         <fly-feel.define.version>1.0</fly-feel.define.version>
+        <fly-feel.define.impl.version>1.0</fly-feel.define.impl.version>
         <fly-feel.activit.version>1.0</fly-feel.activit.version>
-        <fly-feel.jdbc.base.version>1.0</fly-feel.jdbc.base.version>
-        <fly-feel.jdbc.mybatis.version>1.0</fly-feel.jdbc.mybatis.version>
-        <fly-feel.jdbc.mybatis.plus.version>1.0</fly-feel.jdbc.mybatis.plus.version>
-        <fly-feel.jdbc.fluent.version>1.0</fly-feel.jdbc.fluent.version>
         <fly-feel.security.version>1.0</fly-feel.security.version>
-        <fly-feel.security.oauth2.authorization.version>1.0</fly-feel.security.oauth2.authorization.version>
-        <fly-feel.security.oauth2.resource.version>1.0</fly-feel.security.oauth2.resource.version>
+        <fly-feel.security.core.version>1.0</fly-feel.security.core.version>
+        <fly-feel.security.license.version>1.0</fly-feel.security.license.version>
+        <fly-feel.security.resource.version>1.0</fly-feel.security.resource.version>
         <fly-feel.task.version>1.0</fly-feel.task.version>
         <fly-feel.verify.version>1.0</fly-feel.verify.version>
         <fly-feel.test.version>1.0</fly-feel.test.version>
@@ -46,28 +44,13 @@
             </dependency>
             <dependency>
                 <groupId>io.gitee.cikaros</groupId>
+                <artifactId>fly-feel-define-impl</artifactId>
+                <version>${fly-feel.define.impl.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.gitee.cikaros</groupId>
                 <artifactId>fly-feel-activit</artifactId>
                 <version>${fly-feel.activit.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.gitee.cikaros</groupId>
-                <artifactId>fly-feel-jdbc-base</artifactId>
-                <version>${fly-feel.jdbc.base.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.gitee.cikaros</groupId>
-                <artifactId>fly-feel-mybatis</artifactId>
-                <version>${fly-feel.jdbc.mybatis.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.gitee.cikaros</groupId>
-                <artifactId>fly-feel-mybatis-plus</artifactId>
-                <version>${fly-feel.jdbc.mybatis.plus.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.gitee.cikaros</groupId>
-                <artifactId>fly-feel-fluent-mybatis</artifactId>
-                <version>${fly-feel.jdbc.fluent.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.gitee.cikaros</groupId>
@@ -76,13 +59,18 @@
             </dependency>
             <dependency>
                 <groupId>io.gitee.cikaros</groupId>
-                <artifactId>fly-feel-security-oauth2-authorization</artifactId>
-                <version>${fly-feel.security.oauth2.authorization.version}</version>
+                <artifactId>fly-feel-security-core</artifactId>
+                <version>${fly-feel.security.core.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.gitee.cikaros</groupId>
-                <artifactId>fly-feel-security-oauth2-resource</artifactId>
-                <version>${fly-feel.security.oauth2.resource.version}</version>
+                <artifactId>fly-feel-security-license</artifactId>
+                <version>${fly-feel.security.license.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.gitee.cikaros</groupId>
+                <artifactId>fly-feel-security-resource</artifactId>
+                <version>${fly-feel.security.resource.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.gitee.cikaros</groupId>

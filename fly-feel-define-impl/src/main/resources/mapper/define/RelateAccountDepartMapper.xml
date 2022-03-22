@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.gitee.define.mapper.RelateAccountDepartMapper">
+    <resultMap id="BaseResultMap" type="io.gitee.define.entity.RelateAccountDepart"
+               extends="io.gitee.define.mapper.BaseModelMapper.BaseResultMap">
+        <!--@Table ff_relate_account_depart-->
+        <result column="account_id" property="accountId"/>
+        <result column="depart_id" property="departId"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@sql select -->
+        relate.id,
+        relate.account_id,
+        relate.depart_id,
+        relate.`system`,
+        relate.`enable`,
+        relate.del,
+        relate.create_by,
+        relate.create_time,
+        relate.update_by,
+        relate.update_time,
+        relate.remark,
+        relate._version
+        <!--@sql from ff_relate_account_depart relate-->
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from ff_relate_account_depart relate
+        where id = #{id}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        delete
+        from ff_relate_account_depart
+        where id = #{id}
+    </delete>
+    <insert id="insert" keyColumn="id" keyProperty="id"
+            parameterType="io.gitee.define.entity.RelateAccountDepart" useGeneratedKeys="true">
+        insert into ff_relate_account_depart (account_id, depart_id, `system`, `enable`, del, create_by, create_time,
+                                              update_by, update_time, remark, _version)
+        values (#{accountId}, #{departId}, #{system}, #{enable}, #{del}, #{createBy}, #{createTime},
+                #{updateBy}, #{updateTime}, #{remark}, #{_version})
+    </insert>
+    <insert id="insertSelective" keyColumn="id" keyProperty="id"
+            parameterType="io.gitee.define.entity.RelateAccountDepart" useGeneratedKeys="true">
+        insert into ff_relate_account_depart
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="accountId != null">
+                account_id,
+            </if>
+            <if test="departId != null">
+                depart_id,
+            </if>
+            <if test="system != null">
+                `system`,
+            </if>
+            <if test="enable != null">
+                `enable`,
+            </if>
+            <if test="del != null">
+                del,
+            </if>
+            <if test="createBy != null">
+                create_by,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateBy != null">
+                update_by,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+            <if test="remark != null">
+                remark,
+            </if>
+            <if test="_version != null">
+                _version,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="accountId != null">
+                #{accountId},
+            </if>
+            <if test="departId != null">
+                #{departId},
+            </if>
+            <if test="system != null">
+                #{system},
+            </if>
+            <if test="enable != null">
+                #{enable},
+            </if>
+            <if test="del != null">
+                #{del},
+            </if>
+            <if test="createBy != null">
+                #{createBy},
+            </if>
+            <if test="createTime != null">
+                #{createTime},
+            </if>
+            <if test="updateBy != null">
+                #{updateBy},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime},
+            </if>
+            <if test="remark != null">
+                #{remark},
+            </if>
+            <if test="_version != null">
+                #{_version},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="io.gitee.define.entity.RelateAccountDepart">
+        update ff_relate_account_depart
+        <set>
+            <if test="accountId != null">
+                account_id = #{accountId},
+            </if>
+            <if test="departId != null">
+                depart_id = #{departId},
+            </if>
+            <if test="system != null">
+                `system` = #{system},
+            </if>
+            <if test="enable != null">
+                `enable` = #{enable},
+            </if>
+            <if test="del != null">
+                del = #{del},
+            </if>
+            <if test="createBy != null">
+                create_by = #{createBy},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="updateBy != null">
+                update_by = #{updateBy},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+            <if test="remark != null">
+                remark = #{remark},
+            </if>
+            <if test="_version != null">
+                _version = #{_version},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="io.gitee.define.entity.RelateAccountDepart">
+        update ff_relate_account_depart
+        set account_id  = #{accountId},
+            depart_id   = #{departId},
+            `system`    = #{system},
+            `enable`    = #{enable},
+            del         = #{del},
+            create_by   = #{createBy},
+            create_time = #{createTime},
+            update_by   = #{updateBy},
+            update_time = #{updateTime},
+            remark      = #{remark},
+            _version    = #{_version}
+        where id = #{id}
+    </update>
+    <update id="updateBatch" parameterType="java.util.List">
+        update ff_relate_account_depart
+        <trim prefix="set" suffixOverrides=",">
+            <trim prefix="account_id = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.accountId}
+                </foreach>
+            </trim>
+            <trim prefix="depart_id = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.departId}
+                </foreach>
+            </trim>
+            <trim prefix="`system` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.system}
+                </foreach>
+            </trim>
+            <trim prefix="`enable` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.enable}
+                </foreach>
+            </trim>
+            <trim prefix="del = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.del}
+                </foreach>
+            </trim>
+            <trim prefix="create_by = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.createBy}
+                </foreach>
+            </trim>
+            <trim prefix="create_time = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.createTime}
+                </foreach>
+            </trim>
+            <trim prefix="update_by = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.updateBy}
+                </foreach>
+            </trim>
+            <trim prefix="update_time = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.updateTime}
+                </foreach>
+            </trim>
+            <trim prefix="remark = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.remark}
+                </foreach>
+            </trim>
+            <trim prefix="_version = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item._version}
+                </foreach>
+            </trim>
+        </trim>
+        where id in
+        <foreach close=")" collection="list" item="item" open="(" separator=", ">
+            #{item.id}
+        </foreach>
+    </update>
+    <update id="updateBatchSelective" parameterType="java.util.List">
+        update ff_relate_account_depart
+        <trim prefix="set" suffixOverrides=",">
+            <trim prefix="account_id = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.accountId != null">
+                        when id = #{item.id} then #{item.accountId}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="depart_id = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.departId != null">
+                        when id = #{item.id} then #{item.departId}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="`system` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.system != null">
+                        when id = #{item.id} then #{item.system}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="`enable` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.enable != null">
+                        when id = #{item.id} then #{item.enable}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="del = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.del != null">
+                        when id = #{item.id} then #{item.del}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="create_by = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.createBy != null">
+                        when id = #{item.id} then #{item.createBy}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="create_time = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.createTime != null">
+                        when id = #{item.id} then #{item.createTime}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="update_by = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.updateBy != null">
+                        when id = #{item.id} then #{item.updateBy}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="update_time = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.updateTime != null">
+                        when id = #{item.id} then #{item.updateTime}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="remark = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.remark != null">
+                        when id = #{item.id} then #{item.remark}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="_version = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item._version != null">
+                        when id = #{item.id} then #{item._version}
+                    </if>
+                </foreach>
+            </trim>
+        </trim>
+        where id in
+        <foreach close=")" collection="list" item="item" open="(" separator=", ">
+            #{item.id}
+        </foreach>
+    </update>
+    <insert id="batchInsert" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
+        insert into ff_relate_account_depart
+                (account_id, depart_id, `system`, `enable`, del, create_by, create_time, update_by,
+                 update_time, remark, _version)
+                values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.accountId}, #{item.departId}, #{item.system}, #{item.enable}, #{item.del},
+             #{item.createBy}, #{item.createTime}, #{item.updateBy}, #{item.updateTime}, #{item.remark},
+             #{item._version})
+        </foreach>
+    </insert>
+    <insert id="insertOrUpdate" keyColumn="id" keyProperty="id"
+            parameterType="io.gitee.define.entity.RelateAccountDepart" useGeneratedKeys="true">
+        insert into ff_relate_account_depart
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            account_id,
+            depart_id,
+            `system`,
+            `enable`,
+            del,
+            create_by,
+            create_time,
+            update_by,
+            update_time,
+            remark,
+            _version,
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id},
+            </if>
+            #{accountId},
+            #{departId},
+            #{system},
+            #{enable},
+            #{del},
+            #{createBy},
+            #{createTime},
+            #{updateBy},
+            #{updateTime},
+            #{remark},
+            #{_version},
+        </trim>
+        on duplicate key update
+        <trim suffixOverrides=",">
+            <if test="id != null">
+                id = #{id},
+            </if>
+            account_id  = #{accountId},
+            depart_id   = #{departId},
+            `system`    = #{system},
+            `enable`    = #{enable},
+            del         = #{del},
+            create_by   = #{createBy},
+            create_time = #{createTime},
+            update_by   = #{updateBy},
+            update_time = #{updateTime},
+            remark      = #{remark},
+            _version    = #{_version},
+        </trim>
+    </insert>
+    <insert id="insertOrUpdateSelective" keyColumn="id" keyProperty="id"
+            parameterType="io.gitee.define.entity.RelateAccountDepart" useGeneratedKeys="true">
+        insert into ff_relate_account_depart
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="accountId != null">
+                account_id,
+            </if>
+            <if test="departId != null">
+                depart_id,
+            </if>
+            <if test="system != null">
+                `system`,
+            </if>
+            <if test="enable != null">
+                `enable`,
+            </if>
+            <if test="del != null">
+                del,
+            </if>
+            <if test="createBy != null">
+                create_by,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateBy != null">
+                update_by,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+            <if test="remark != null">
+                remark,
+            </if>
+            <if test="_version != null">
+                _version,
+            </if>
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id},
+            </if>
+            <if test="accountId != null">
+                #{accountId},
+            </if>
+            <if test="departId != null">
+                #{departId},
+            </if>
+            <if test="system != null">
+                #{system},
+            </if>
+            <if test="enable != null">
+                #{enable},
+            </if>
+            <if test="del != null">
+                #{del},
+            </if>
+            <if test="createBy != null">
+                #{createBy},
+            </if>
+            <if test="createTime != null">
+                #{createTime},
+            </if>
+            <if test="updateBy != null">
+                #{updateBy},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime},
+            </if>
+            <if test="remark != null">
+                #{remark},
+            </if>
+            <if test="_version != null">
+                #{_version},
+            </if>
+        </trim>
+        on duplicate key update
+        <trim suffixOverrides=",">
+            <if test="id != null">
+                id = #{id},
+            </if>
+            <if test="accountId != null">
+                account_id = #{accountId},
+            </if>
+            <if test="departId != null">
+                depart_id = #{departId},
+            </if>
+            <if test="system != null">
+                `system` = #{system},
+            </if>
+            <if test="enable != null">
+                `enable` = #{enable},
+            </if>
+            <if test="del != null">
+                del = #{del},
+            </if>
+            <if test="createBy != null">
+                create_by = #{createBy},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="updateBy != null">
+                update_by = #{updateBy},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+            <if test="remark != null">
+                remark = #{remark},
+            </if>
+            <if test="_version != null">
+                _version = #{_version},
+            </if>
+        </trim>
+    </insert>
+    <select id="isExpires" resultType="java.lang.Boolean">
+        select IF(#{_version} - relate._version, 0, 1)
+        from ff_relate_account_depart relate
+        where id = #{id}
+    </select>
+    <select id="isSystem" resultType="java.lang.Boolean">
+        select IF(relate.`system` = 0, 0, 1)
+        from ff_relate_account_depart relate
+        where id = #{id}
+    </select>
+</mapper>

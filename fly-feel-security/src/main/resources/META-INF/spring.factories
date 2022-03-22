@@ -1,5 +1,0 @@
-# Auto Configure
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  io.gitee.security.config.DefaultWebSecurityConfigurerAdapter,\
-  io.gitee.security.config.SecurityJdbcAutoScannerConfiguration,\
-  io.gitee.security.config.SecurityAutoConfiguration

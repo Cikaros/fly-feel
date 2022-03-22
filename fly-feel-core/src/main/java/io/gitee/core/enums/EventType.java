@@ -24,6 +24,10 @@ public enum EventType {
     /**
      * 生成事件
      */
-    GENERATE;
+    GENERATE,
+    /**
+     * 系统事件
+     */
+    SYSTEM,
 
 }

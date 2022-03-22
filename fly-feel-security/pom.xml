@@ -10,7 +10,14 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <modules>
+        <module>fly-feel-security-core</module>
+        <module>fly-feel-security-license</module>
+        <module>fly-feel-security-resource</module>
+    </modules>
+
     <artifactId>fly-feel-security</artifactId>
+    <packaging>pom</packaging>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -36,48 +43,6 @@
             <groupId>io.gitee.cikaros</groupId>
             <artifactId>fly-feel-define</artifactId>
         </dependency>
-        <dependency>
-            <groupId>io.gitee.cikaros</groupId>
-            <artifactId>fly-feel-mybatis</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.gitee.cikaros</groupId>
-            <artifactId>fly-feel-fluent-mybatis</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.gitee.cikaros</groupId>
-            <artifactId>fly-feel-mybatis-plus</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <!--springboot security-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-autoconfigure-processor</artifactId>
-            <optional>true</optional>
-        </dependency>
-
-        <!-- @ConfigurationProperties annotation processing (metadata for IDEs) -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
-        </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <!--加入Java代码混淆-->
-            <!--            <plugin>-->
-            <!--                <groupId>org.codehaus.mojo</groupId>-->
-            <!--                <artifactId>exec-maven-plugin</artifactId>-->
-            <!--            </plugin>-->
-        </plugins>
-    </build>
 
 </project>

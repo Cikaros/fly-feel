@@ -14,6 +14,9 @@ import javax.servlet.Filter;
 
 /**
  * 核心模块的自动装配
+ *
+ * @author Cikaros
+ * @date 2021/7/7
  */
 @Configuration(proxyBeanMethods = false)
 @EnableConfigurationProperties({ServerProperties.class})
@@ -23,6 +26,9 @@ public class CoreAutoConfiguration {
     @Value("${server.error.path:${error.path:/error}}")
     protected String errorPath;
 
+    /**
+     * Request包装过滤器
+     */
     @Bean
     public FilterRegistrationBean<Filter> repeatableFilter() {
         FilterRegistrationBean<Filter> registrationBean = new FilterRegistrationBean<>();

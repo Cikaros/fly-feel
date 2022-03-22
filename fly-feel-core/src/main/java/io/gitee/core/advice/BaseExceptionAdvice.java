@@ -7,17 +7,21 @@ import io.gitee.core.util.ExceptionHandlerBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.NoSuchMessageException;
-import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseStatus;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Collections;
 import java.util.ResourceBundle;
 
+/**
+ * 核心基础全局异常处理
+ *
+ * @author Cikaros
+ * @date 2021/7/7
+ */
 @ControllerAdvice
 public class BaseExceptionAdvice {
 
@@ -42,7 +46,6 @@ public class BaseExceptionAdvice {
     }
 
     @ExceptionHandler(BaseException.class)
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public Object baseExceptionHandler(BaseException e, HttpServletRequest request) {
         return ExceptionHandlerBuilder.getInstance(request)
                 .page("5xx", Collections.singletonMap("msg", e.getMessage()))

@@ -12,6 +12,8 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
+ * 全局异常处理构造器
+ *
  * @author Cikaros
  * @date 2022/3/20
  * @since v1.0

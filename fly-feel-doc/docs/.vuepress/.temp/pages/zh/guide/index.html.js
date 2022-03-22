@@ -16,8 +16,8 @@ export const data = {
       "children": [
         {
           "level": 3,
-          "title": "hello",
-          "slug": "hello",
+          "title": "模块介绍",
+          "slug": "模块介绍",
           "children": []
         }
       ]
@@ -30,7 +30,7 @@ export const data = {
         {
           "level": 3,
           "title": "hello",
-          "slug": "hello-1",
+          "slug": "hello",
           "children": []
         }
       ]
@@ -43,7 +43,7 @@ export const data = {
         {
           "level": 3,
           "title": "hello",
-          "slug": "hello-2",
+          "slug": "hello-1",
           "children": []
         }
       ]
@@ -56,7 +56,7 @@ export const data = {
         {
           "level": 3,
           "title": "hello",
-          "slug": "hello-3",
+          "slug": "hello-2",
           "children": []
         }
       ]
@@ -69,12 +69,34 @@ export const data = {
         {
           "level": 3,
           "title": "hello",
-          "slug": "hello-4",
+          "slug": "hello-3",
           "children": []
         }
       ]
     }
   ],
-  "git": {},
+  "git": {
+    "updatedTime": 1647856290000,
+    "contributors": [
+      {
+        "name": "Cikaros",
+        "email": "Cikaros@qq.com",
+        "commits": 1
+      }
+    ]
+  },
   "filePathRelative": "zh/guide/index.md"
+}
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
 }

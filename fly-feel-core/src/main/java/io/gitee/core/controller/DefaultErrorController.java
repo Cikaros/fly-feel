@@ -23,6 +23,8 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
+ * 自定义异常统一入口
+ *
  * @author Cikaros
  * @date 2022/3/20
  * @since v1.0
@@ -75,19 +77,19 @@ public class DefaultErrorController extends AbstractErrorController implements E
     protected ErrorAttributeOptions getErrorAttributeOptions(HttpServletRequest request, MediaType mediaType) {
         ErrorAttributeOptions options = ErrorAttributeOptions.defaults();
         if (this.errorProperties.isIncludeException()) {
-            options = options.including(new ErrorAttributeOptions.Include[]{ErrorAttributeOptions.Include.EXCEPTION});
+            options = options.including(ErrorAttributeOptions.Include.EXCEPTION);
         }
 
         if (this.isIncludeStackTrace(request, mediaType)) {
-            options = options.including(new ErrorAttributeOptions.Include[]{ErrorAttributeOptions.Include.STACK_TRACE});
+            options = options.including(ErrorAttributeOptions.Include.STACK_TRACE);
         }
 
-        if (this.isIncludeMessage(request, mediaType)) {
-            options = options.including(new ErrorAttributeOptions.Include[]{ErrorAttributeOptions.Include.MESSAGE});
+        if (this.isIncludeMessage(request)) {
+            options = options.including(ErrorAttributeOptions.Include.MESSAGE);
         }
 
-        if (this.isIncludeBindingErrors(request, mediaType)) {
-            options = options.including(new ErrorAttributeOptions.Include[]{ErrorAttributeOptions.Include.BINDING_ERRORS});
+        if (this.isIncludeBindingErrors(request)) {
+            options = options.including(ErrorAttributeOptions.Include.BINDING_ERRORS);
         }
 
         return options;
@@ -98,14 +100,13 @@ public class DefaultErrorController extends AbstractErrorController implements E
             case ALWAYS:
                 return true;
             case ON_PARAM:
-            case ON_TRACE_PARAM:
                 return this.getTraceParameter(request);
             default:
                 return false;
         }
     }
 
-    protected boolean isIncludeMessage(HttpServletRequest request, MediaType produces) {
+    protected boolean isIncludeMessage(HttpServletRequest request) {
         switch (this.getErrorProperties().getIncludeMessage()) {
             case ALWAYS:
                 return true;
@@ -116,7 +117,7 @@ public class DefaultErrorController extends AbstractErrorController implements E
         }
     }
 
-    protected boolean isIncludeBindingErrors(HttpServletRequest request, MediaType produces) {
+    protected boolean isIncludeBindingErrors(HttpServletRequest request) {
         switch (this.getErrorProperties().getIncludeBindingErrors()) {
             case ALWAYS:
                 return true;

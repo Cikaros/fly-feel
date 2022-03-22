@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.gitee.define.mapper.BaseModelMapper">
+    <resultMap id="BaseResultMap" type="io.gitee.core.entity.model.BaseModel">
+        <id column="id" property="id"/>
+        <result column="enable" property="enable"/>
+        <result column="del" property="del"/>
+        <result column="create_by" property="createBy"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_by" property="updateBy"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="remark" property="remark"/>
+        <result column="_version" property="_version"/>
+    </resultMap>
+
+    <sql id="SQL_BaseModel">
+        <!--@sql select -->
+        `${param1}`.id,
+        `${param1}`.enable,
+        `${param1}`.del,
+        `${param1}`.create_by,
+        `${param1}`.create_time,
+        `${param1}`.update_by,
+        `${param1}`.update_time,
+        `${param1}`.remark,
+        `${param1}`._version
+        <!--@sql from `${param1}`-->
+    </sql>
+
+    <select id="selectByBaseModel" resultMap="BaseResultMap" resultType="io.gitee.core.entity.model.BaseModel">
+        select
+        <include refid="SQL_BaseModel"/>
+        from `${param1}`
+        <where>
+            <if test="param2.id != null">
+                and id = #{param2.id}
+            </if>
+            <if test="param2.enable != null">
+                and `enable` = #{param2.enable}
+            </if>
+            <if test="param2.del != null">
+                and del = #{param2.del}
+            </if>
+            <if test="param2.createBy != null">
+                and create_by = #{param2.createBy}
+            </if>
+            <choose>
+                <when test="param2.createTime != null">
+                    and create_time = #{param2.createTime}
+                </when>
+                <otherwise>
+                    <choose>
+                        <when test="param2.createBefore != null and param2.createAfter != null">
+                            and create_time between #{param2.createBefore} and #{param2.createAfter}
+                        </when>
+                        <when test="param2.createBefore != null and param2.createAfter == null">
+                            and create_time &lt; #{param2.createBefore}
+                        </when>
+                        <when test="param2.createBefore == null and param2.createAfter != null">
+                            and create_time &gt; #{param2.createAfter}
+                        </when>
+                    </choose>
+                </otherwise>
+            </choose>
+            <if test="param2.updateBy != null">
+                and update_by = #{param2.updateBy}
+            </if>
+            <choose>
+                <when test="param2.updateTime != null">
+                    and update_time = #{param2.updateTime}
+                </when>
+                <otherwise>
+                    <choose>
+                        <when test="param2.updateBefore != null and param2.updateAfter != null">
+                            and update_time between #{param2.updateBefore} and #{param2.updateAfter}
+                        </when>
+                        <when test="param2.updateBefore != null and param2.updateAfter == null">
+                            and update_time &lt; #{param2.updateBefore}
+                        </when>
+                        <when test="param2.updateBefore == null and param2.updateAfter != null">
+                            and update_time &gt; #{param2.updateAfter}
+                        </when>
+                    </choose>
+                </otherwise>
+            </choose>
+            <if test="param2.remark != null">
+                and remark = #{param2.remark}
+            </if>
+        </where>
+    </select>
+
+    <select id="selectAllByBaseModel" resultMap="BaseResultMap"
+            resultType="io.gitee.core.entity.model.BaseModel">
+        select
+        <include refid="SQL_BaseModel"/>
+        from `${param1}`
+        <where>
+            <if test="param2.id != null">
+                and id = #{param2.id}
+            </if>
+            <if test="param2.enable != null">
+                and `enable` = #{param2.enable}
+            </if>
+            <if test="param2.del != null">
+                and del = #{param2.del}
+            </if>
+            <if test="param2.createBy != null">
+                and create_by = #{param2.createBy}
+            </if>
+            <choose>
+                <when test="param2.createTime != null">
+                    and create_time = #{param2.createTime}
+                </when>
+                <otherwise>
+                    <choose>
+                        <when test="param2.createBefore != null and param2.createAfter != null">
+                            and create_time between #{param2.createBefore} and #{param2.createAfter}
+                        </when>
+                        <when test="param2.createBefore != null and param2.createAfter == null">
+                            and create_time &lt; #{param2.createBefore}
+                        </when>
+                        <when test="param2.createBefore == null and param2.createAfter != null">
+                            and create_time &gt; #{param2.createAfter}
+                        </when>
+                    </choose>
+                </otherwise>
+            </choose>
+            <if test="param2.updateBy != null">
+                and update_by = #{param2.updateBy}
+            </if>
+            <choose>
+                <when test="param2.updateTime != null">
+                    and update_time = #{param2.updateTime}
+                </when>
+                <otherwise>
+                    <choose>
+                        <when test="param2.updateBefore != null and param2.updateAfter != null">
+                            and update_time between #{param2.updateBefore} and #{param2.updateAfter}
+                        </when>
+                        <when test="param2.updateBefore != null and param2.updateAfter == null">
+                            and update_time &lt; #{param2.updateBefore}
+                        </when>
+                        <when test="param2.updateBefore == null and param2.updateAfter != null">
+                            and update_time &gt; #{param2.updateAfter}
+                        </when>
+                    </choose>
+                </otherwise>
+            </choose>
+            <if test="param2.remark != null">
+                and remark = #{param2.remark}
+            </if>
+        </where>
+    </select>
+
+    <delete id="deleteByPrimaryKey">
+        delete
+        from `${param1}`
+        where `${param1}`.id = #{param2}
+    </delete>
+    <update id="updateByPrimaryKeySelective" parameterType="io.gitee.core.entity.model.BaseModel">
+        update `${param1}`
+        <set>
+            `${param1}`.id          = `${param1}`.id,
+            `${param1}`.update_by   = #{param2.updateBy},
+            `${param1}`.update_time = now(),
+            <if test="param2.enable != null">
+                `${param1}`.`enable` = #{param2.enable},
+            </if>
+            <if test="param2.del != null">
+                `${param1}`.del = #{param2.del},
+            </if>
+            <if test="param2.remark != null and param2.remark != ''">
+                `${param1}`.remark = #{param2.remark},
+            </if>
+            <if test="param2._version != null">
+                `${param1}`._version = #{param2._version},
+            </if>
+        </set>
+        where `${param1}`.id = #{param2.id}
+    </update>
+
+    <select id="isExpiresByBaseModel" resultType="java.lang.Boolean">
+        select #{param2._version} - `${param1}`._version
+        from `${param1}`
+        where `${param1}`.id = #{param2.id}
+    </select>
+</mapper>

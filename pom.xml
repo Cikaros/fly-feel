@@ -12,7 +12,7 @@
     <licenses>
         <license>
             <name>Apache License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
@@ -36,13 +36,12 @@
         <module>fly-feel-core</module>
         <module>fly-feel-test</module>
         <module>fly-feel-security</module>
-        <module>fly-feel-security-oauth2</module>
-        <module>fly-feel-jdbc</module>
-<!--        <module>fly-feel-verify</module>-->
-<!--        <module>fly-feel-task</module>-->
-<!--        <module>fly-feel-activit</module>-->
+        <module>fly-feel-verify</module>
+        <module>fly-feel-task</module>
+        <module>fly-feel-activit</module>
         <module>fly-feel-dependencies</module>
         <module>fly-feel-define</module>
+        <module>fly-feel-define-impl</module>
     </modules>
 
     <parent>
@@ -73,9 +72,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.source>${jdk.version}</maven.compiler.source>
         <maven.compiler.target>${jdk.version}</maven.compiler.target>
-
         <main.basedir>${basedir}</main.basedir>
-
         <easyexcel.version>2.2.10</easyexcel.version>
         <!-- Spring版本号 -->
         <spring.version>5.2.12.RELEASE</spring.version>
@@ -179,8 +176,9 @@
         <maven.plugin.tomcat7.version>2.2</maven.plugin.tomcat7.version>
         <maven.plugin.javadoc.version>3.3.0</maven.plugin.javadoc.version>
         <maven.plugin.info.reports.version>3.1.2</maven.plugin.info.reports.version>
+        <maven.plugin.spring.boot.version>2.6.4</maven.plugin.spring.boot.version>
         <!--Maven Compiler Configuration-->
-        <maven.plugin.compiler.config.executable></maven.plugin.compiler.config.executable>
+        <maven.plugin.compiler.config.executable/>
         <maven.plugin.compiler.config.skip>false</maven.plugin.compiler.config.skip>
         <maven.plugin.compiler.config.verbose>false</maven.plugin.compiler.config.verbose>
         <maven.plugin.compiler.config.showWarnings>false</maven.plugin.compiler.config.showWarnings>
@@ -188,7 +186,7 @@
         <maven.plugin.compiler.config.compilerVersion>8</maven.plugin.compiler.config.compilerVersion>
         <maven.plugin.compiler.config.meminitial>128m</maven.plugin.compiler.config.meminitial>
         <maven.plugin.compiler.config.maxmem>512m</maven.plugin.compiler.config.maxmem>
-        <maven.plugin.compiler.config.compilerArgument></maven.plugin.compiler.config.compilerArgument>
+        <maven.plugin.compiler.config.compilerArgument/>
         <maven.plugin.tomcat7.config.path>/</maven.plugin.tomcat7.config.path>
         <maven.plugin.tomcat7.config.port>8080</maven.plugin.tomcat7.config.port>
         <!--Maven Surefire Configuration-->
@@ -770,16 +768,21 @@
         <pluginManagement>
             <plugins>
                 <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${maven.plugin.spring.boot.version}</version>
+                </plugin>
+                <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>
                     <version>${maven.plugin.source.version}</version>
                     <executions>
-<!--                        <execution>-->
-<!--                            <id>attach-sources</id>-->
-<!--                            <goals>-->
-<!--                                <goal>jar</goal>-->
-<!--                            </goals>-->
-<!--                        </execution>-->
+                        <!--                        <execution>-->
+                        <!--                            <id>attach-sources</id>-->
+                        <!--                            <goals>-->
+                        <!--                                <goal>jar</goal>-->
+                        <!--                            </goals>-->
+                        <!--                        </execution>-->
                         <execution>
                             <id>attach-sources</id>
                             <goals>

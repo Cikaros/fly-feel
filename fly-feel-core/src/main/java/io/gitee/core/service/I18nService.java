@@ -5,6 +5,12 @@ import org.springframework.stereotype.Service;
 
 import java.util.Locale;
 
+/**
+ * 国际化支持
+ *
+ * @author Cikaros
+ * @date 2021/7/8
+ */
 @Service
 public class I18nService {
 
