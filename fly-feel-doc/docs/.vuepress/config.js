@@ -1,6 +1,6 @@
 module.exports = {
     // 站点配置
-    base: '/',
+    base: '/fly-feel/',
     lang: 'zh-CN',
     title: 'fly-feel框架',
     description: '一个集成了常用功能和业务需求的开发框架。',
