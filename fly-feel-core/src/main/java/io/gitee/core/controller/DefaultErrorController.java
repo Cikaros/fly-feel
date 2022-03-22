@@ -73,7 +73,6 @@ public class DefaultErrorController extends AbstractErrorController implements E
         }
     }
 
-
     protected ErrorAttributeOptions getErrorAttributeOptions(HttpServletRequest request, MediaType mediaType) {
         ErrorAttributeOptions options = ErrorAttributeOptions.defaults();
         if (this.errorProperties.isIncludeException()) {

@@ -8,10 +8,6 @@ export const themeData = {
   "prevLinks": true,
   "navbar": [
     {
-      "text": "指南",
-      "link": "/zh/guide/"
-    },
-    {
       "text": "关于作者",
       "link": "https://cikaros.gitee.io/about/"
     }
@@ -41,17 +37,4 @@ export const themeData = {
   "openInNewWindow": "open in new window",
   "toggleDarkMode": "toggle dark mode",
   "toggleSidebar": "toggle sidebar"
-}
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updateThemeData) {
-    __VUE_HMR_RUNTIME__.updateThemeData(themeData)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ themeData }) => {
-    __VUE_HMR_RUNTIME__.updateThemeData(themeData)
-  })
 }

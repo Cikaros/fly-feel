@@ -5,7 +5,7 @@ heroText: fly-feel
 tagline: 一个集成了常用功能和业务需求的开发框架
 actions:
 - text: 快速上手 →
-  link: /zh/guide/
+  link: https://cikaros.gitee.io/fly-feel/zh/guide/
   type: primary
 features:
 - title: 简洁至上

@@ -76,27 +76,14 @@ export const data = {
     }
   ],
   "git": {
-    "updatedTime": 1647856290000,
+    "updatedTime": 1647940954000,
     "contributors": [
       {
         "name": "Cikaros",
         "email": "Cikaros@qq.com",
-        "commits": 1
+        "commits": 2
       }
     ]
   },
   "filePathRelative": "zh/guide/index.md"
-}
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
 }
