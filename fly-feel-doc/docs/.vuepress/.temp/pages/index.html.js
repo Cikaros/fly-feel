@@ -11,7 +11,7 @@ export const data = {
     "actions": [
       {
         "text": "快速上手 →",
-        "link": "https://cikaros.gitee.io/fly-feel/zh/guide/",
+        "link": "/zh/guide/",
         "type": "primary"
       }
     ],
@@ -42,12 +42,12 @@ export const data = {
   "excerpt": "",
   "headers": [],
   "git": {
-    "updatedTime": 1647940954000,
+    "updatedTime": 1647942150000,
     "contributors": [
       {
         "name": "Cikaros",
         "email": "Cikaros@qq.com",
-        "commits": 2
+        "commits": 3
       }
     ]
   },
