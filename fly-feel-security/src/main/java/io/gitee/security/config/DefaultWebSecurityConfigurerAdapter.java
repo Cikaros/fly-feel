@@ -1,10 +1,11 @@
 package io.gitee.security.config;
 
-import io.gitee.security.handler.DefaultLoginFailHandler;
 import io.gitee.security.handler.DefaultAccessDeniedHandler;
+import io.gitee.security.handler.DefaultLoginFailHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -13,6 +14,7 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
 
 /**
  * 基础Security配置
@@ -20,9 +22,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
  * @author Cikaros
  * @date 2021/12/20
  */
-
 @Configuration
-@ConditionalOnMissingBean(WebSecurityConfigurerAdapter.class)
+@ConditionalOnMissingBean({WebSecurityConfigurerAdapter.class, ResourceServerConfigurerAdapter.class})
 public class DefaultWebSecurityConfigurerAdapter extends WebSecurityConfigurerAdapter {
 
     @Value("${server.error.path:${error.path:/error}}")
@@ -45,7 +46,8 @@ public class DefaultWebSecurityConfigurerAdapter extends WebSecurityConfigurerAd
                         "/**/*.js",
                         "/**/*.json",
                         "/images/**",
-                        "/favicon.*"
+                        "/favicon.*",
+                        "/"
                 );
     }
 

@@ -2,10 +2,10 @@ package io.gitee.oauth.config;
 
 import io.gitee.oauth.filter.DefaultClientCredentialsTokenEndpointFilter;
 import io.gitee.oauth.handler.AuthExceptionEntryPoint;
+import io.gitee.oauth.handler.DefaultAccessDeniedHandler;
 import io.gitee.oauth.handler.DefaultWebResponseExceptionTranslator;
 import io.gitee.oauth.service.impl.DefaultClientDetailsService;
-import io.gitee.security.handler.DefaultAccessDeniedHandler;
-import io.gitee.security.service.impl.DefaultUserDetailsService;
+import io.gitee.oauth.service.impl.DefaultUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
@@ -37,6 +38,7 @@ import javax.sql.DataSource;
 @Configuration
 @EnableAuthorizationServer
 @ConditionalOnMissingBean(AuthorizationServerConfigurerAdapter.class)
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class DefaultAuthorizationServerConfigurerAdapter extends AuthorizationServerConfigurerAdapter {
 
     @Value("${server.error.path:${error.path:/error}}")
@@ -52,8 +54,6 @@ public class DefaultAuthorizationServerConfigurerAdapter extends AuthorizationSe
 
     private TokenStore tokenStore;
 
-    private DataSource dataSource;
-
     private PasswordEncoder passwordEncoder;
 
     @Autowired
@@ -67,13 +67,13 @@ public class DefaultAuthorizationServerConfigurerAdapter extends AuthorizationSe
     }
 
     @Autowired
-    public void setUserDetailsService(DefaultUserDetailsService userDetailsService) {
-        this.userDetailsService = userDetailsService;
+    public void setClientDetailsService(DefaultClientDetailsService clientDetailsService) {
+        this.clientDetailsService = clientDetailsService;
     }
 
     @Autowired
-    public void setClientDetailsService(DefaultClientDetailsService clientDetailsService) {
-        this.clientDetailsService = clientDetailsService;
+    public void setUserDetailsService(DefaultUserDetailsService userDetailsService) {
+        this.userDetailsService = userDetailsService;
     }
 
     @Autowired
@@ -84,12 +84,6 @@ public class DefaultAuthorizationServerConfigurerAdapter extends AuthorizationSe
     @Autowired
     public void setTokenStore(JdbcTokenStore tokenStore) {
         this.tokenStore = tokenStore;
-    }
-
-
-    @Autowired
-    public void setDataSource(DataSource dataSource) {
-        this.dataSource = dataSource;
     }
 
     /**
@@ -109,7 +103,7 @@ public class DefaultAuthorizationServerConfigurerAdapter extends AuthorizationSe
      * 认证服务端点配置
      */
     @Override
-    public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
+    public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
         endpoints
                 //用户管理
                 .userDetailsService(userDetailsService)
@@ -124,7 +118,7 @@ public class DefaultAuthorizationServerConfigurerAdapter extends AuthorizationSe
                 //异常处理
                 .exceptionTranslator(new DefaultWebResponseExceptionTranslator())
                 //接收GET和POST
-                .allowedTokenEndpointRequestMethods(HttpMethod.GET, HttpMethod.POST);
+                .allowedTokenEndpointRequestMethods(HttpMethod.POST);
     }
 
     /**
@@ -140,11 +134,13 @@ public class DefaultAuthorizationServerConfigurerAdapter extends AuthorizationSe
         oauthServer
                 //允许表单认证
                 .allowFormAuthenticationForClients()
+                //加密方式
                 .passwordEncoder(passwordEncoder)
                 // /oauth/token_key公开
                 .tokenKeyAccess("permitAll()")
                 // /oauth/check_token公开
-                .checkTokenAccess("permitAll()")
+                .checkTokenAccess("isAuthenticated()")
+                .authenticationEntryPoint(new AuthExceptionEntryPoint(errorPath))
                 .accessDeniedHandler(new DefaultAccessDeniedHandler(errorPath))
                 //统一认证前的失败信息格式
                 .addTokenEndpointAuthenticationFilter(filter);
@@ -153,22 +149,26 @@ public class DefaultAuthorizationServerConfigurerAdapter extends AuthorizationSe
     }
 
     @Bean
-    public DefaultTokenServices tokenServices(TokenStore tokenStore) {
+    public DefaultTokenServices defaultTokenServices(DefaultClientDetailsService clientDetailsService, JdbcTokenStore tokenStore, AuthenticationManager authenticationManager) throws Exception {
         DefaultTokenServices services = new DefaultTokenServices();
         //配置token存储
         services.setClientDetailsService(clientDetailsService);
+        //配置authenticationManager
+        services.setAuthenticationManager(authenticationManager);
         services.setTokenStore(tokenStore);
         //开启支持refresh_token，此处如果之前没有配置，启动服务后再配置重启服务，可能会导致不返回token的问题，解决方式：清除redis对应token存储
         services.setSupportRefreshToken(true);
         // 允许重复使用refresh token
         services.setReuseRefreshToken(false);
+        services.afterPropertiesSet();
         return services;
     }
 
 
     @Bean
-    public JdbcTokenStore jdbcTokenStore() {
-        return new JdbcTokenStore(dataSource);
+    public JdbcTokenStore jdbcTokenStore(DataSource dataSources) {
+        return new JdbcTokenStore(dataSources);
     }
+
 
 }

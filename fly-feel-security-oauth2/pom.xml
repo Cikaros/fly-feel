@@ -40,7 +40,7 @@
     <dependencies>
         <dependency>
             <groupId>io.gitee.cikaros</groupId>
-            <artifactId>fly-feel-security</artifactId>
+            <artifactId>fly-feel-define</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.security.oauth</groupId>

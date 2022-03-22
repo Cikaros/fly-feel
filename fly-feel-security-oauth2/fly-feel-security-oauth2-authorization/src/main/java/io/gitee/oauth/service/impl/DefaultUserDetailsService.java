@@ -1,4 +1,4 @@
-package io.gitee.security.service.impl;
+package io.gitee.oauth.service.impl;
 
 import io.gitee.core.service.BaseService;
 import io.gitee.define.entity.SecurityAccount;

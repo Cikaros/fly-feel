@@ -32,7 +32,7 @@ public class DefaultClientDetailsService extends BaseService implements ClientDe
     public ClientDetails loadClientByClientId(String s) throws ClientRegistrationException {
         SecurityClient client = service.findByClientId(s);
         if (Objects.isNull(client))
-            throw new ClientRegistrationException(s);
+            throw new ClientRegistrationException(i18n.get("org.springframework.security.oauth2.provider.ClientRegistrationException", s));
         return client;
     }
 }

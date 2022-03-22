@@ -7,15 +7,14 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.security.oauth2.resource.OAuth2ResourceServerProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
-import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
+import org.springframework.security.oauth2.provider.token.RemoteTokenServices;
 import org.springframework.security.oauth2.provider.token.ResourceServerTokenServices;
-import org.springframework.security.oauth2.provider.token.TokenStore;
-import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 
 /**
  * 资源配置
@@ -26,38 +25,31 @@ import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 @Configuration
 @EnableResourceServer
 @EnableConfigurationProperties(OAuth2ResourceServerProperties.class)
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class DefaultResourceServerConfigurerAdapter extends ResourceServerConfigurerAdapter {
 
     @Value("${server.error.path:${error.path:/error}}")
     protected String errorPath;
 
-    private ResourceServerTokenServices tokenServices;
-
     private OAuth2ResourceServerProperties.Opaquetoken resourceServer;
 
-    private TokenStore tokenStore;
-
-    @Autowired
-    public void setTokenStore(JdbcTokenStore tokenStore) {
-        this.tokenStore = tokenStore;
-    }
-
-    @Autowired
-    public void setTokenServices(DefaultTokenServices tokenServices) {
-        this.tokenServices = tokenServices;
-    }
+    private ResourceServerTokenServices tokenServices;
 
     @Autowired
     public void setResourceServer(OAuth2ResourceServerProperties resourceServer) {
         this.resourceServer = resourceServer.getOpaquetoken();
     }
 
+    @Autowired
+    public void setTokenServices(RemoteTokenServices tokenServices) {
+        this.tokenServices = tokenServices;
+    }
+
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) {
         resources
                 .resourceId(resourceServer.getClientId())
-                .tokenServices(tokenServices)
-                .tokenStore(tokenStore);
+                .tokenServices(tokenServices);
         resources
                 .authenticationEntryPoint(new AuthExceptionEntryPoint(errorPath))
                 .accessDeniedHandler(new DefaultAccessDeniedHandler(errorPath));
@@ -80,18 +72,10 @@ public class DefaultResourceServerConfigurerAdapter extends ResourceServerConfig
      */
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        http
-                // CSRF禁用，因为不使用session
-                .csrf().disable()
-                // 禁用loginForm
-                .logout().disable()
-                //禁止frame调用
-                .headers().frameOptions().disable()
-                .and()
-                // 基于token，所以不需要session
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.NEVER).and()
-                // 除上面外的所有请求全部需要鉴权认证
-                .authorizeRequests().anyRequest().authenticated();
+        http.authorizeRequests().anyRequest().authenticated();
+        http.sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.NEVER)
+                .and().headers().frameOptions().disable();
     }
 
 }

@@ -11,12 +11,6 @@ import org.springframework.context.annotation.Configuration;
  * @since v1.0
  */
 @Configuration(proxyBeanMethods = false)
-@ComponentScan(
-        value = {
-                "io.gitee.security.service.impl",
-                "io.gitee.security.advice",
-                "io.gitee.core.controller",
-        }
-)
+@ComponentScan({"io.gitee.security.advice", "io.gitee.security.service.impl"})
 public class SecurityJdbcAutoScannerConfiguration {
 }

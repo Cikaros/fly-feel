@@ -1,4 +1,4 @@
-package io.gitee.security.advice;
+package io.gitee.oauth.advice;
 
 import io.gitee.core.entity.model.RestResult;
 import io.gitee.core.util.ExceptionHandlerBuilder;
@@ -18,6 +18,7 @@ import java.util.Collections;
  * @date 2022/3/20
  * @since v1.0
  */
+@Order(100)
 @ControllerAdvice
 public class SecurityControllerAdvice {
 

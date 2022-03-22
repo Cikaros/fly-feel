@@ -1,7 +1,7 @@
-package io.gitee.security.handler;
+package io.gitee.oauth.handler;
 
 import io.gitee.core.controller.DefaultErrorController;
-import io.gitee.security.context.SecurityUtils;
+import io.gitee.oauth.context.SecurityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.access.AccessDeniedException;

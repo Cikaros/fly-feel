@@ -29,10 +29,9 @@ public class AuthExceptionEntryPoint implements AuthenticationEntryPoint {
 
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException e) throws IOException, ServletException {
-        log.debug("认证过程中发生异常:{}", e.getMessage());
+        log.debug("认证异常处理:{}", e.getMessage());
         request.setAttribute(DefaultErrorController.class.getName(), e);
         request.getRequestDispatcher(errorPath).forward(request, response);
     }
-
 
 }

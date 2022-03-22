@@ -1,19 +1,15 @@
 package io.gitee.oauth.config;
 
-import io.gitee.oauth.service.impl.DefaultUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.autoconfigure.security.oauth2.resource.OAuth2ResourceServerProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.oauth2.provider.token.RemoteTokenServices;
 
 /**
  * 基础Security配置
@@ -25,21 +21,11 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @ConditionalOnMissingBean(DefaultWebSecurityConfigurerAdapter.class)
 public class DefaultWebSecurityConfigurerAdapter extends WebSecurityConfigurerAdapter {
 
-    @Value("${server.error.path:${error.path:/error}}")
-    protected String errorPath;
-
-    private UserDetailsService userDetailsService;
-
-    private PasswordEncoder passwordEncoder;
+    private OAuth2ResourceServerProperties.Opaquetoken resourceServer;
 
     @Autowired
-    public void setUserDetailsService(DefaultUserDetailsService userDetailsService) {
-        this.userDetailsService = userDetailsService;
-    }
-
-    @Autowired
-    public void setPasswordEncoder(PasswordEncoder passwordEncoder) {
-        this.passwordEncoder = passwordEncoder;
+    public void setResourceServer(OAuth2ResourceServerProperties resourceServer) {
+        this.resourceServer = resourceServer.getOpaquetoken();
     }
 
     @Override
@@ -76,16 +62,23 @@ public class DefaultWebSecurityConfigurerAdapter extends WebSecurityConfigurerAd
 
     }
 
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth
-                .userDetailsService(userDetailsService)
-                .passwordEncoder(passwordEncoder);
-    }
-
+    /**
+     * 配置资源服务器如何验证token有效性
+     * 1. DefaultTokenServices
+     * 如果认证服务器和资源服务器同一服务时,则直接采用此默认服务验证即可
+     * 2. RemoteTokenServices (当前采用这个)
+     * 当认证服务器和资源服务器不是同一服务时, 要使用此服务去远程认证服务器验证
+     */
     @Bean
-    @Override
-    public AuthenticationManager authenticationManagerBean() throws Exception {
-        return super.authenticationManagerBean();
+    public RemoteTokenServices tokenServices() {
+        // 资源服务器去远程认证服务器验证 token 是否有效
+        RemoteTokenServices service = new RemoteTokenServices();
+        // 请求认证服务器验证URL，注意：默认这个端点是拒绝访问的，要设置认证后可访问
+        service.setCheckTokenEndpointUrl(resourceServer.getIntrospectionUri());
+        // 在认证服务器配置的客户端id
+        service.setClientId(resourceServer.getClientId());
+        // 在认证服务器配置的客户端密码
+        service.setClientSecret(resourceServer.getClientSecret());
+        return service;
     }
 }
