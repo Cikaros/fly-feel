@@ -5,32 +5,19 @@
     <parent>
         <artifactId>fly-feel-security</artifactId>
         <groupId>io.gitee.cikaros</groupId>
-        <version>1.0</version>
+        <version>1.0.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>fly-feel-security-core</artifactId>
-    <version>1.0</version>
+    <version>1.0.0</version>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <main.basedir>${project.parent.basedir}</main.basedir>
-        <fly-feel.dependencies.version>1.0</fly-feel.dependencies.version>
     </properties>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>io.gitee.cikaros</groupId>
-                <artifactId>fly-feel-dependencies</artifactId>
-                <version>${fly-feel.dependencies.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <dependencies><!--springboot security-->
         <dependency>

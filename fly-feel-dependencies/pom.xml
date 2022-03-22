@@ -5,29 +5,29 @@
     <parent>
         <artifactId>fly-feel</artifactId>
         <groupId>io.gitee.cikaros</groupId>
-        <version>1.0</version>
+        <version>1.0.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>fly-feel-dependencies</artifactId>
-    <version>1.0</version>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <main.basedir>${project.parent.basedir}</main.basedir>
-        <fly-feel.core.version>1.0</fly-feel.core.version>
-        <fly-feel.define.version>1.0</fly-feel.define.version>
-        <fly-feel.define.impl.version>1.0</fly-feel.define.impl.version>
-        <fly-feel.activit.version>1.0</fly-feel.activit.version>
-        <fly-feel.security.version>1.0</fly-feel.security.version>
-        <fly-feel.security.core.version>1.0</fly-feel.security.core.version>
-        <fly-feel.security.license.version>1.0</fly-feel.security.license.version>
-        <fly-feel.security.resource.version>1.0</fly-feel.security.resource.version>
-        <fly-feel.task.version>1.0</fly-feel.task.version>
-        <fly-feel.verify.version>1.0</fly-feel.verify.version>
-        <fly-feel.test.version>1.0</fly-feel.test.version>
+        <fly-feel.core.version>1.0.0</fly-feel.core.version>
+        <fly-feel.define.version>1.0.0</fly-feel.define.version>
+        <fly-feel.define.impl.version>1.0.0</fly-feel.define.impl.version>
+        <fly-feel.activit.version>1.0.0</fly-feel.activit.version>
+        <fly-feel.security.version>1.0.0</fly-feel.security.version>
+        <fly-feel.security.core.version>1.0.0</fly-feel.security.core.version>
+        <fly-feel.security.license.version>1.0.0</fly-feel.security.license.version>
+        <fly-feel.security.resource.version>1.0.0</fly-feel.security.resource.version>
+        <fly-feel.task.version>1.0.0</fly-feel.task.version>
+        <fly-feel.verify.version>1.0.0</fly-feel.verify.version>
+        <fly-feel.test.version>1.0.0</fly-feel.test.version>
     </properties>
 
     <dependencyManagement>
