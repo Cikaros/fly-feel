@@ -4,7 +4,7 @@ module.exports = {
     lang: 'zh-CN',
     title: 'fly-feel框架',
     description: '一个集成了常用功能和业务需求的开发框架。',
-    head: [['link', {rel: 'icon', href: '/images/favicon.svg'}]],
+    head: [['link', {rel: 'icon', href: '/fly-feel/images/favicon.svg'}]],
     // 主题和它的配置
     theme: '@vuepress/theme-default',
     themeConfig: {

@@ -8,7 +8,7 @@ export const siteData = {
       "link",
       {
         "rel": "icon",
-        "href": "/images/favicon.svg"
+        "href": "/fly-feel/images/favicon.svg"
       }
     ]
   ],

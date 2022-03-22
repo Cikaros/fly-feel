@@ -3,10 +3,6 @@ home: true
 heroImage: /images/favicon.svg
 heroText: fly-feel
 tagline: 一个集成了常用功能和业务需求的开发框架
-actions:
-- text: 快速上手 →
-  link: /zh/guide/
-  type: primary
 features:
 - title: 简洁至上
   details: 以最少的代码和最少的配置帮助你完成基础环境建设。
