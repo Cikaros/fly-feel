@@ -1,5 +1,5 @@
 export const themeData = {
-  "logo": "./images/favicon.svg",
+  "logo": "/images/favicon.svg",
   "home": "/",
   "darkMode": true,
   "repo": "https://gitee.com/cikaros",

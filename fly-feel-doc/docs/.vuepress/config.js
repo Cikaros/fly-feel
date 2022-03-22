@@ -8,7 +8,7 @@ module.exports = {
     // 主题和它的配置
     theme: '@vuepress/theme-default',
     themeConfig: {
-        logo: './images/favicon.svg',
+        logo: '/images/favicon.svg',
         home: '/',
         darkMode: true,
         repo: 'https://gitee.com/cikaros',
