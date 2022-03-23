@@ -9,6 +9,12 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.OutputStream;
 
+/**
+ * 中文Gif验证码
+ *
+ * @author Cikaros
+ * @date 2021/3/23
+ */
 public class ChineseGifCaptcha extends ChineseCaptchaAbstract {
 
 	public ChineseGifCaptcha() {
@@ -34,7 +40,7 @@ public class ChineseGifCaptcha extends ChineseCaptchaAbstract {
 		try {
 			char[] strs = textChar(); // 获取验证码数组
 			// 随机生成每个文字的颜色
-			Color fontColor[] = new Color[len];
+			Color[] fontColor = new Color[len];
 			for (int i = 0; i < len; i++) {
 				fontColor[i] = color();
 			}

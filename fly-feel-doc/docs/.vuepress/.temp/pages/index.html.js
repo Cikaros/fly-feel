@@ -7,6 +7,12 @@ export const data = {
     "home": true,
     "heroImage": "/images/favicon.svg",
     "heroText": "fly-feel",
+    "actions": [
+      {
+        "text": "快速上手",
+        "link": "/zh/guide/"
+      }
+    ],
     "tagline": "一个集成了常用功能和业务需求的开发框架",
     "features": [
       {
@@ -22,11 +28,15 @@ export const data = {
         "details": "完善的XSS攻击、跨域处理、防重复请求拦截。"
       },
       {
-        "title": "日志记录",
+        "title": "认证/授权",
+        "details": "支持基于Oauth2的授权服务器与资源服务器的创建。"
+      },
+      {
+        "title": "日志记录（未实现）",
         "details": "日志记录，可按需记录对应接口的请求和响应数据以及SQL日志，便于后期做日志分析。"
       },
       {
-        "title": "OpenFeign",
+        "title": "OpenFeign（未实现）",
         "details": "可在项目内像访问本地数据一样调用HTTP请求。"
       }
     ],
@@ -35,12 +45,12 @@ export const data = {
   "excerpt": "",
   "headers": [],
   "git": {
-    "updatedTime": 1647942213000,
+    "updatedTime": 1647962110000,
     "contributors": [
       {
         "name": "Cikaros",
         "email": "Cikaros@qq.com",
-        "commits": 4
+        "commits": 5
       }
     ]
   },

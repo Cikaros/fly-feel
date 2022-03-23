@@ -5,13 +5,14 @@
     <parent>
         <artifactId>fly-feel</artifactId>
         <groupId>io.gitee.cikaros</groupId>
-        <version>1.0.0</version>
+        <version>2.0.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>fly-feel-core</artifactId>
     <name>fly-feel-core</name>
+    <version>2.0.0</version>
     <description>fly-feel核心组件。可构建最基础的fly-feel项目</description>
 
     <properties>

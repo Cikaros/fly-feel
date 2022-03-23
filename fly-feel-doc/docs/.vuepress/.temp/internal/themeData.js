@@ -2,7 +2,7 @@ export const themeData = {
   "logo": "/images/favicon.svg",
   "home": "/",
   "darkMode": true,
-  "repo": "https://gitee.com/cikaros",
+  "repo": "https://gitee.com/cikaros/fly-feel",
   "repoLabel": "Gitee",
   "nextLinks": true,
   "prevLinks": true,

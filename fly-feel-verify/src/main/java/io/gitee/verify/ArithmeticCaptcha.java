@@ -10,7 +10,10 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 /**
- * png格式验证码 Created by 王帆 on 2018-07-27 上午 10:08.
+ * 算数png格式验证码
+ *
+ * @author Cikaros
+ * @date 2021/3/23
  */
 public class ArithmeticCaptcha extends ArithmeticCaptchaAbstract {
 

@@ -5,13 +5,14 @@
     <parent>
         <artifactId>fly-feel</artifactId>
         <groupId>io.gitee.cikaros</groupId>
-        <version>1.0.0</version>
+        <version>2.0.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>fly-feel-verify</artifactId>
     <name>fly-feel-verify</name>
+    <version>2.0.0</version>
     <description>fly-feel验证组件。可构建相应的验证机制。</description>
 
     <properties>
@@ -20,7 +21,23 @@
         <main.basedir>${project.parent.basedir}</main.basedir>
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.gitee.cikaros</groupId>
+                <artifactId>fly-feel-dependencies</artifactId>
+                <version>2.0.0</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
+        <dependency>
+            <groupId>io.gitee.cikaros</groupId>
+            <artifactId>fly-feel-core</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.googlecode.aviator</groupId>
             <artifactId>aviator</artifactId>

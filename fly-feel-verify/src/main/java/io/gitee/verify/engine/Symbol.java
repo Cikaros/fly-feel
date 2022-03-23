@@ -19,13 +19,18 @@ package io.gitee.verify.engine;
 /**
  * 标识符
  *
- * @author L.cm
+ * @author Cikaros
+ * @date 2021/3/23
  */
 public enum Symbol {
-	/**
-	 * 标识符
-	 */
-	NUM('n', false), ADD('+', false), SUB('-', false), MUL('x', true), DIV('÷', true);
+    /**
+     * 标识符
+     */
+    NUM('n', false),
+    ADD('+', false),
+    SUB('-', false),
+    MUL('x', true),
+    DIV('÷', true);
 
     Symbol(char value, boolean priority) {
         this.value = value;
@@ -34,17 +39,17 @@ public enum Symbol {
 
     private final char value;
 
-	private final boolean priority;
+    private final boolean priority;
 
-	public static Symbol of(char c) {
-		Symbol[] values = Symbol.values();
-		for (Symbol value : values) {
-			if (value.value == c) {
-				return value;
-			}
-		}
-		throw new IllegalArgumentException("不支持的标识符，仅仅支持(+、-、×、÷)");
-	}
+    public static Symbol of(char c) {
+        Symbol[] values = Symbol.values();
+        for (Symbol value : values) {
+            if (value.value == c) {
+                return value;
+            }
+        }
+        throw new IllegalArgumentException("不支持的标识符，仅仅支持(+、-、×、÷)");
+    }
 
     public char getValue() {
         return value;

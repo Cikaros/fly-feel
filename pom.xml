@@ -6,7 +6,7 @@
 
     <groupId>io.gitee.cikaros</groupId>
     <artifactId>fly-feel</artifactId>
-    <version>1.0.0</version>
+    <version>2.0.0</version>
     <packaging>pom</packaging>
 
     <licenses>
@@ -36,9 +36,8 @@
         <module>fly-feel-core</module>
         <module>fly-feel-test</module>
         <module>fly-feel-security</module>
-        <module>fly-feel-verify</module>
-        <module>fly-feel-task</module>
-        <module>fly-feel-activit</module>
+<!--        <module>fly-feel-verify</module>-->
+<!--        <module>fly-feel-activit</module>-->
         <module>fly-feel-dependencies</module>
         <module>fly-feel-define</module>
         <module>fly-feel-define-impl</module>

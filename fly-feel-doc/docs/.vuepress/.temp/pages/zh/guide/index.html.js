@@ -3,10 +3,7 @@ export const data = {
   "path": "/zh/guide/",
   "title": "指南",
   "lang": "zh-CN",
-  "frontmatter": {
-    "head": "auto",
-    "sidebarDepth": 2
-  },
+  "frontmatter": {},
   "excerpt": "",
   "headers": [
     {
@@ -19,6 +16,48 @@ export const data = {
           "title": "模块介绍",
           "slug": "模块介绍",
           "children": []
+        },
+        {
+          "level": 3,
+          "title": "fly-feel-dependencies",
+          "slug": "fly-feel-dependencies",
+          "children": []
+        },
+        {
+          "level": 3,
+          "title": "fly-feel-core",
+          "slug": "fly-feel-core",
+          "children": []
+        },
+        {
+          "level": 3,
+          "title": "fly-feel-define",
+          "slug": "fly-feel-define",
+          "children": []
+        },
+        {
+          "level": 3,
+          "title": "fly-feel-define-impl",
+          "slug": "fly-feel-define-impl",
+          "children": []
+        },
+        {
+          "level": 3,
+          "title": "fly-feel-test",
+          "slug": "fly-feel-test",
+          "children": []
+        },
+        {
+          "level": 3,
+          "title": "fly-feel-verify",
+          "slug": "fly-feel-verify",
+          "children": []
+        },
+        {
+          "level": 3,
+          "title": "fly-feel-security",
+          "slug": "fly-feel-security",
+          "children": []
         }
       ]
     },
@@ -26,53 +65,7 @@ export const data = {
       "level": 2,
       "title": "快速上手",
       "slug": "快速上手",
-      "children": [
-        {
-          "level": 3,
-          "title": "hello",
-          "slug": "hello",
-          "children": []
-        }
-      ]
-    },
-    {
-      "level": 2,
-      "title": "配置",
-      "slug": "配置",
-      "children": [
-        {
-          "level": 3,
-          "title": "hello",
-          "slug": "hello-1",
-          "children": []
-        }
-      ]
-    },
-    {
-      "level": 2,
-      "title": "打包",
-      "slug": "打包",
-      "children": [
-        {
-          "level": 3,
-          "title": "hello",
-          "slug": "hello-2",
-          "children": []
-        }
-      ]
-    },
-    {
-      "level": 2,
-      "title": "部署",
-      "slug": "部署",
-      "children": [
-        {
-          "level": 3,
-          "title": "hello",
-          "slug": "hello-3",
-          "children": []
-        }
-      ]
+      "children": []
     }
   ],
   "git": {

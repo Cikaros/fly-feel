@@ -10,53 +10,43 @@ import java.util.Base64;
 import java.util.Objects;
 
 /**
- * 验证码抽象类 Created by 王帆 on 2018-07-27 上午 10:08.
+ * 验证码抽象类
+ *
+ * @author Cikaros
+ * @date 2021/3/23
  */
 public abstract class Captcha extends Randoms {
 
-    // 常用颜色
-    public static final int[][] COLOR = {{0, 135, 255}, {51, 153, 51}, {255, 102, 102}, {255, 153, 0},
-        {153, 102, 0}, {153, 102, 153}, {51, 153, 153}, {102, 102, 255}, {0, 102, 204}, {204, 51, 51},
-        {0, 153, 204}, {0, 51, 102}};
+    /**
+     * 常用颜色
+     */
+    public static final int[][] COLOR = {
+            {0, 135, 255}, {51, 153, 51}, {255, 102, 102}, {255, 153, 0},
+            {153, 102, 0}, {153, 102, 153}, {51, 153, 153}, {102, 102, 255},
+            {0, 102, 204}, {204, 51, 51}, {0, 153, 204}, {0, 51, 102}};
 
-    // 验证码文本类型
-    public static final int TYPE_DEFAULT = 1; // 字母数字混合
-
-    public static final int TYPE_ONLY_NUMBER = 2; // 纯数字
-
-    public static final int TYPE_ONLY_CHAR = 3; // 纯字母
-
-    public static final int TYPE_ONLY_UPPER = 4; // 纯大写字母
-
-    public static final int TYPE_ONLY_LOWER = 5; // 纯小写字母
-
-    public static final int TYPE_NUM_AND_UPPER = 6; // 数字大写字母
-
-    // 内置字体
-    public static final int FONT_1 = 0;
-
-    public static final int FONT_2 = 1;
-
-    public static final int FONT_3 = 2;
-
-    public static final int FONT_4 = 3;
-
-    public static final int FONT_5 = 4;
-
-    public static final int FONT_6 = 5;
-
-    public static final int FONT_7 = 6;
-
-    public static final int FONT_8 = 7;
-
-    public static final int FONT_9 = 8;
-
-    public static final int FONT_10 = 9;
-
-    private static final String[] FONT_NAMES = new String[]{
-        "font/actionj.ttf", "font/epilog.ttf", "font/fresnel.ttf",
-        "font/progbot.ttf", "font/actionj.ttf", "font/epilog.ttf", "font/fresnel.ttf",
-        "font/progbot.ttf", "font/actionj.ttf"};
+    public enum VerifyType {
+        /**
+         * 默认（数字字母混合）
+         */
+        DEFAULT,
+        /**
+         * 纯数字
+         */
+        ONLY_DIGIT,
+        /**
+         * 纯字母
+         */
+        ONLY_LITTER,
+        /**
+         * 大写字母
+         */
+        ONLY_UPPER,
+        /**
+         * 纯小写字母
+         */
+        ONLY_LOWER,
+    }
 
     private Font font = null; // 验证码的字体
 
@@ -66,7 +56,7 @@ public abstract class Captcha extends Randoms {
 
     protected int height = 48; // 验证码显示高度
 
-    protected int charType = TYPE_DEFAULT; // 验证码类型
+    protected VerifyType charType = VerifyType.DEFAULT; // 验证码类型
 
     protected String chars = null; // 当前验证码
 
@@ -77,20 +67,17 @@ public abstract class Captcha extends Randoms {
         char[] cs = new char[len];
         for (int i = 0; i < len; i++) {
             switch (charType) {
-                case 2:
+                case ONLY_DIGIT:
                     cs[i] = alpha(numMaxIndex);
                     break;
-                case 3:
+                case ONLY_LITTER:
                     cs[i] = alpha(charMinIndex, charMaxIndex);
                     break;
-                case 4:
+                case ONLY_UPPER:
                     cs[i] = alpha(upperMinIndex, upperMaxIndex);
                     break;
-                case 5:
+                case ONLY_LOWER:
                     cs[i] = alpha(lowerMinIndex, lowerMaxIndex);
-                    break;
-                case 6:
-                    cs[i] = alpha(upperMaxIndex);
                     break;
                 default:
                     cs[i] = alpha();
@@ -285,11 +272,7 @@ public abstract class Captcha extends Randoms {
 
     public Font getFont() {
         if (font == null) {
-            try {
-                setFont(FONT_1);
-            } catch (Exception e) {
-                setFont(new Font("Arial", Font.BOLD, 32));
-            }
+            setFont(new Font("Arial", Font.BOLD, 32));
         }
         return font;
     }
@@ -298,17 +281,17 @@ public abstract class Captcha extends Randoms {
         this.font = font;
     }
 
-    public void setFont(int font) throws IOException, FontFormatException {
+    public void setFont(String font) throws IOException, FontFormatException {
         setFont(font, 32f);
     }
 
-    public void setFont(int font, float size) throws IOException, FontFormatException {
+    public void setFont(String font, float size) throws IOException, FontFormatException {
         setFont(font, Font.BOLD, size);
     }
 
-    public void setFont(int font, int style, float size) throws IOException, FontFormatException {
-        this.font = Font.createFont(Font.TRUETYPE_FONT, Objects.requireNonNull(getClass().getResourceAsStream("/" + FONT_NAMES[font])))
-            .deriveFont(style, size);
+    public void setFont(String font, int style, float size) throws IOException, FontFormatException {
+        this.font = Font.createFont(Font.TRUETYPE_FONT, Objects.requireNonNull(getClass().getResourceAsStream("/" + font)))
+                .deriveFont(style, size);
     }
 
     public int getLen() {
@@ -335,11 +318,11 @@ public abstract class Captcha extends Randoms {
         this.height = height;
     }
 
-    public int getCharType() {
+    public VerifyType getCharType() {
         return charType;
     }
 
-    public void setCharType(int charType) {
+    public void setCharType(VerifyType charType) {
         this.charType = charType;
     }
 
