@@ -30,7 +30,7 @@ footer: MIT Licensed | Copyright © 2022-present Cikaros
         <dependency>
             <groupId>io.gitee.cikaros</groupId>
             <artifactId>fly-feel-dependencies</artifactId>
-            <version>2.0.1</version>
+            <version>2.0.2</version>
             <type>pom</type>
             <scope>import</scope>
         </dependency>

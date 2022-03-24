@@ -69,7 +69,7 @@ fly-feel项目基础核心部件，内部提供了最基础的一些规范和部
             <dependency>
                 <groupId>io.gitee.cikaros</groupId>
                 <artifactId>fly-feel-dependencies</artifactId>
-                <version>2.0.0</version>
+                <version>2.0.2</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

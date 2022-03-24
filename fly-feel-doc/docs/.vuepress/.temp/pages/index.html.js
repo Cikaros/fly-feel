@@ -45,12 +45,12 @@ export const data = {
   "excerpt": "",
   "headers": [],
   "git": {
-    "updatedTime": 1648030624000,
+    "updatedTime": 1648109251000,
     "contributors": [
       {
         "name": "Cikaros",
         "email": "Cikaros@qq.com",
-        "commits": 6
+        "commits": 7
       }
     ]
   },
