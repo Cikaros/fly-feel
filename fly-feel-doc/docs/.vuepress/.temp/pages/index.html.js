@@ -1,7 +1,7 @@
 export const data = {
   "key": "v-8daa1a0e",
   "path": "/",
-  "title": "",
+  "title": "版本依赖",
   "lang": "zh-CN",
   "frontmatter": {
     "home": true,
@@ -45,12 +45,12 @@ export const data = {
   "excerpt": "",
   "headers": [],
   "git": {
-    "updatedTime": 1647962110000,
+    "updatedTime": 1648030624000,
     "contributors": [
       {
         "name": "Cikaros",
         "email": "Cikaros@qq.com",
-        "commits": 5
+        "commits": 6
       }
     ]
   },

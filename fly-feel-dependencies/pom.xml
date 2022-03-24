@@ -10,14 +10,14 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>fly-feel-dependencies</artifactId>
-    <version>2.0.0</version>
+    <version>2.0.1</version>
     <packaging>pom</packaging>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <main.basedir>${project.parent.basedir}</main.basedir>
-        <fly-feel.core.version>2.0.0</fly-feel.core.version>
+        <fly-feel.core.version>2.0.1</fly-feel.core.version>
         <fly-feel.define.version>2.0.0</fly-feel.define.version>
         <fly-feel.define.impl.version>2.0.0</fly-feel.define.impl.version>
         <fly-feel.activit.version>2.0.0</fly-feel.activit.version>

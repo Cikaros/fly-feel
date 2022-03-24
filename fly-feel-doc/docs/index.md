@@ -21,3 +21,19 @@ features:
   details: 可在项目内像访问本地数据一样调用HTTP请求。
 footer: MIT Licensed | Copyright © 2022-present Cikaros
 ---
+
+# 版本依赖
+
+```xml
+<dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>io.gitee.cikaros</groupId>
+            <artifactId>fly-feel-dependencies</artifactId>
+            <version>2.0.1</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+    </dependencies>
+</dependencyManagement>
+```

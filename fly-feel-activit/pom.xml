@@ -19,6 +19,10 @@
         <main.basedir>${project.parent.basedir}</main.basedir>
     </properties>
 
+    <dependencies>
+
+    </dependencies>
+
     <build>
         <plugins>
             <!--加入Java代码混淆-->

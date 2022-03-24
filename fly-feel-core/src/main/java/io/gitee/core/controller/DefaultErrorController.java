@@ -11,6 +11,7 @@ import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -46,10 +47,10 @@ public class DefaultErrorController extends AbstractErrorController implements E
     @RequestMapping(
             produces = {"text/html"}
     )
-    public ModelAndView errorHtml(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    public ModelAndView errorHtml(HttpServletRequest request, HttpServletResponse response) throws Throwable {
         Exception exception = (Exception) request.getAttribute(DefaultErrorController.class.getName());
         if (Objects.nonNull(exception)) {
-            throw exception;
+            throw this.getCoreException(exception);
         }
         HttpStatus status = this.getStatus(request);
         Map<String, Object> model = Collections.unmodifiableMap(this.getErrorAttributes(request, this.getErrorAttributeOptions(request, MediaType.TEXT_HTML)));
@@ -59,10 +60,10 @@ public class DefaultErrorController extends AbstractErrorController implements E
     }
 
     @RequestMapping(produces = {"application/json"})
-    public ResponseEntity<Map<String, Object>> error(HttpServletRequest request) throws Exception {
+    public ResponseEntity<Map<String, Object>> error(HttpServletRequest request) throws Throwable {
         Exception exception = (Exception) request.getAttribute(DefaultErrorController.class.getName());
         if (Objects.nonNull(exception)) {
-            throw exception;
+            throw this.getCoreException(exception);
         }
         HttpStatus status = this.getStatus(request);
         if (status == HttpStatus.NO_CONTENT) {
@@ -134,5 +135,16 @@ public class DefaultErrorController extends AbstractErrorController implements E
     @Override
     public String getErrorPath() {
         return errorPath;
+    }
+
+    private Throwable getCoreException(@NonNull Throwable parent) {
+        Throwable cause = parent;
+        Throwable core;
+        do {
+            core = cause;
+            cause = core.getCause();
+        }
+        while (Objects.nonNull(cause) && core != cause);
+        return core;
     }
 }
