@@ -1,10 +1,12 @@
 package io.gitee.core.config;
 
+import io.gitee.core.config.props.RequestLoggerProperties;
 import io.gitee.core.filter.RepeatableFilter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.web.ServerProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -19,8 +21,9 @@ import javax.servlet.Filter;
  * @date 2021/7/7
  */
 @Configuration(proxyBeanMethods = false)
-@EnableConfigurationProperties({ServerProperties.class})
+@EnableConfigurationProperties({ServerProperties.class, RequestLoggerProperties.class})
 @ComponentScan("io.gitee.core.*")
+@ServletComponentScan("io.gitee.core.listener")
 public class CoreAutoConfiguration {
 
     @Value("${server.error.path:${error.path:/error}}")

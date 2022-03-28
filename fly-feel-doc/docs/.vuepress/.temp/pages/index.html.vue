@@ -1,4 +1,4 @@
-<template><h1 id="版本依赖" tabindex="-1"><a class="header-anchor" href="#版本依赖" aria-hidden="true">#</a> 版本依赖</h1>
+<template><h2 id="版本依赖" tabindex="-1"><a class="header-anchor" href="#版本依赖" aria-hidden="true">#</a> 版本依赖</h2>
 <div class="language-xml ext-xml line-numbers-mode"><pre v-pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencyManagement</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencies</span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>

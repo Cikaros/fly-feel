@@ -36,8 +36,8 @@
         <module>fly-feel-core</module>
         <module>fly-feel-test</module>
         <module>fly-feel-security</module>
-        <!--        <module>fly-feel-verify</module>-->
-        <!--        <module>fly-feel-activit</module>-->
+        <module>fly-feel-verify</module>
+        <module>fly-feel-activit</module>
         <module>fly-feel-dependencies</module>
         <module>fly-feel-define</module>
         <module>fly-feel-define-impl</module>
@@ -737,6 +737,11 @@
             <dependency>
                 <groupId>io.github.openfeign</groupId>
                 <artifactId>feign-slf4j</artifactId>
+                <version>${openfeign.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.openfeign</groupId>
+                <artifactId>feign-httpclient</artifactId>
                 <version>${openfeign.version}</version>
             </dependency>
             <dependency>

@@ -1,0 +1,21 @@
+{
+  "groups": [
+    {
+      "sourceType": "io.gitee.core.config.props.RequestLoggerProperties",
+      "name": "fly-feel.request-log",
+      "type": "io.gitee.core.config.props.RequestLoggerProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "fly-feel.request-log.exclude-paths",
+      "type": "java.util.Collection<java.lang.String>",
+      "description": "指定需要派出的请求路径."
+    },
+    {
+      "name": "fly-feel.request-log.timeout",
+      "type": "java.lang.Long",
+      "description": "指定最优请求时长."
+    }
+  ]
+}

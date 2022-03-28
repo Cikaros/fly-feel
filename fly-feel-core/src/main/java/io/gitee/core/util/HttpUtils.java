@@ -49,4 +49,27 @@ public class HttpUtils {
         }
         return sb.toString();
     }
+
+    public static String getReduceBodyString(ServletRequest request) throws IOException {
+        StringBuilder sb = new StringBuilder();
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(request.getInputStream(), UTF_8))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                sb.append(line);
+            }
+        }
+        int index = 0;
+        while (index < sb.length()) {
+            char c = sb.charAt(index);
+            if (Character.isWhitespace(c)
+                    || Character.isDefined('\n')
+                    || Character.isDefined('\r')
+                    || Character.isDefined('\t')) {
+                sb.deleteCharAt(index);
+                continue;
+            }
+            index++;
+        }
+        return sb.toString();
+    }
 }

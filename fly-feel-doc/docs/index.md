@@ -17,12 +17,12 @@ features:
   details: 支持基于Oauth2的授权服务器与资源服务器的创建。
 - title: 日志记录（未实现）
   details: 日志记录，可按需记录对应接口的请求和响应数据以及SQL日志，便于后期做日志分析。
-- title: OpenFeign（未实现）
-  details: 可在项目内像访问本地数据一样调用HTTP请求。
+- title: activiti（未实现）
+  details: 支持Activiti7工作流处理。
 footer: MIT Licensed | Copyright © 2022-present Cikaros
 ---
 
-# 版本依赖
+## 版本依赖
 
 ```xml
 <dependencyManagement>

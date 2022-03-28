@@ -1,7 +1,7 @@
 export const data = {
   "key": "v-8daa1a0e",
   "path": "/",
-  "title": "版本依赖",
+  "title": "",
   "lang": "zh-CN",
   "frontmatter": {
     "home": true,
@@ -43,16 +43,36 @@ export const data = {
     "footer": "MIT Licensed | Copyright © 2022-present Cikaros"
   },
   "excerpt": "",
-  "headers": [],
+  "headers": [
+    {
+      "level": 2,
+      "title": "版本依赖",
+      "slug": "版本依赖",
+      "children": []
+    }
+  ],
   "git": {
-    "updatedTime": 1648109251000,
+    "updatedTime": 1648111053000,
     "contributors": [
       {
         "name": "Cikaros",
         "email": "Cikaros@qq.com",
-        "commits": 7
+        "commits": 8
       }
     ]
   },
   "filePathRelative": "index.md"
+}
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
 }
