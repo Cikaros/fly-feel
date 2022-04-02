@@ -12,7 +12,7 @@
 
 ```shell script
 #项目名称
-jar_name='solution-integration-project-2.0.0'
+jar_name='xxxxxxxx'
 # shellcheck disable=SC2006
 # shellcheck disable=SC2009
 pid=$(ps -aux | grep $jar_name | grep -v grep | awk '{print $2}')
@@ -54,20 +54,20 @@ fi
 FROM dragonwelljdk/build_jdk:8u
 
 #这里可根据需要修改
-ENV PROJECT_HOME /usr/spring-boot-project
+ENV PROJECT_HOME /usr/xxxxxx
 
 WORKDIR ${PROJECT_HOME}
 
 #这里可根据需要修改
-COPY ./target/spring-boot-project-1.7.0.jar ./spring-boot-project.jar
+COPY ./target/xxxxxx.jar ./xxxxxx.jar
 
 #这里可根据需要修改 可开放端口
 EXPOSE 8888 5005
 
 #这里可根据需要修改
-VOLUME /usr/spring-boot-project/log/* /etc/localtime
+VOLUME /usr/xxxxxx/log/* /etc/localtime
 
-CMD ["java","-jar","spring-boot-project.jar"]
+CMD ["java","-jar","xxxxxx.jar"]
 ```
 
 构建运行即可。这里也可以改为shell脚本的方式运行。

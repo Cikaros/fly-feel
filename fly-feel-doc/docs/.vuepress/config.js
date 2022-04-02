@@ -22,7 +22,7 @@ module.exports = {
         sidebar: [
             {
                 text: "开始",
-                link: "/guide/",
+                link: "/zh/guide/",
                 children: [
                     {
                         text: "规范说明文档",

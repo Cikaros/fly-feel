@@ -11,6 +11,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>fly-feel-define</artifactId>
+    <name>fly-feel-define</name>
+    <description>fly-feel基础定义API。后续基础的顶级接口设计。</description>
     <version>2.0.2</version>
 
     <properties>

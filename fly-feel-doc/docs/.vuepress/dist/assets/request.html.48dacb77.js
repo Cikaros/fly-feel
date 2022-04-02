@@ -1,0 +1,1 @@
+const e={key:"v-68e21b05",path:"/zh/guide/request.html",title:"",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[{level:2,title:"HTTP\u72B6\u6001\u8BF4\u660E",slug:"http\u72B6\u6001\u8BF4\u660E",children:[]}],git:{updatedTime:1648458273e3,contributors:[{name:"Cikaros",email:"Cikaros@qq.com",commits:1}]},filePathRelative:"zh/guide/request.md"};export{e as data};

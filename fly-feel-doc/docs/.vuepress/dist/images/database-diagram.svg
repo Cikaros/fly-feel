@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 生成 数据库设计.svg 页-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="11.5955in" height="6.17604in"
+		viewBox="0 0 834.873 444.675" xml:space="preserve" color-interpolation-filters="sRGB" class="st11">
+	<v:documentProperties v:langID="2052" v:metric="true" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {marker-end:url(#mrkr13-8);stroke:#5592c9;stroke-linecap:round;stroke-linejoin:round;stroke-width:3}
+		.st2 {fill:#5592c9;fill-opacity:1;stroke:#5592c9;stroke-opacity:1;stroke-width:0.48076923076923}
+		.st3 {marker-start:url(#mrkr13-15);stroke:#5592c9;stroke-linecap:round;stroke-linejoin:round;stroke-width:3}
+		.st4 {fill:#5b9bd5;stroke:#ffffff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5}
+		.st5 {fill:#ff0000;font-family:Calibri;font-size:1.16666em}
+		.st6 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5}
+		.st7 {fill:#000000;font-family:宋体;font-size:1.16666em;font-weight:bold}
+		.st8 {font-size:1em}
+		.st9 {fill:#000000;font-family:Calibri;font-size:1.16666em;font-weight:bold}
+		.st10 {font-family:宋体;font-size:1em}
+		.st11 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<defs id="Markers">
+		<g id="lend13">
+			<path d="M 3 1 L 0 0 L 3 -1 L 3 1 " style="stroke:none"/>
+		</g>
+		<marker id="mrkr13-8" class="st2" v:arrowType="13" v:arrowSize="3" v:setback="6.24" refX="-6.24" orient="auto"
+				markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend13" transform="scale(-2.08,-2.08) "/>
+		</marker>
+		<marker id="mrkr13-15" class="st2" v:arrowType="13" v:arrowSize="3" v:setback="6.12" refX="6.12" orient="auto"
+				markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend13" transform="scale(2.08) "/>
+		</marker>
+	</defs>
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>页-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<v:layer v:name="连接线" v:index="0"/>
+		<g id="group139-1" transform="translate(156.156,-0.25)" v:mID="139" v:groupContext="group">
+			<title>工作表.139</title>
+			<g id="group25-2" transform="translate(267.272,-218.668)" v:mID="25" v:groupContext="group" v:layerMember="0">
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="ShowMulti" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="BeginAngle" v:prompt="" v:val="VT0(-0.78539816339745):32"/>
+					<v:ud v:nameU="BeginAngle" v:prompt="" v:val="VT0(0):32"/>
+				</v:userDefs>
+				<title>动态连接线.25</title>
+				<g id="shape25-3" v:mID="25" v:groupContext="groupContent" v:layerMember="0">
+					<path d="M0 437.59 L44.67 437.59" class="st1"/>
+				</g>
+			</g>
+			<g id="group30-9" transform="translate(485.997,-218.75)" v:mID="30" v:groupContext="group" v:layerMember="0">
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="ShowMulti" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="BeginAngle" v:prompt="" v:val="VT0(-0.78539816339745):32"/>
+					<v:ud v:nameU="BeginAngle" v:prompt="" v:val="VT0(0):32"/>
+				</v:userDefs>
+				<title>动态连接线.30</title>
+				<g id="shape30-10" v:mID="30" v:groupContext="groupContent" v:layerMember="0">
+					<path d="M18.36 437.59 L18.72 437.59 L73.54 437.59" class="st3"/>
+				</g>
+			</g>
+			<g id="group44-16" transform="translate(522.364,-117.963)" v:mID="44" v:groupContext="group" v:layerMember="0">
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="ShowMulti" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="BeginAngle" v:prompt="" v:val="VT0(-0.78539816339745):32"/>
+					<v:ud v:nameU="BeginAngle" v:prompt="" v:val="VT0(3.1415926535898):32"/>
+				</v:userDefs>
+				<title>动态连接线.44</title>
+				<g id="shape44-17" v:mID="44" v:groupContext="groupContent" v:layerMember="0">
+					<path d="M-18.36 437.59 L-18.72 437.59 L-63.69 437.59" class="st3"/>
+				</g>
+			</g>
+			<g id="group56-22" transform="translate(592.951,-198.836)" v:mID="56" v:groupContext="group" v:layerMember="0">
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="ShowMulti" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="BeginAngle" v:prompt="" v:val="VT0(-0.78539816339745):32"/>
+					<v:ud v:nameU="BeginAngle" v:prompt="" v:val="VT0(-1.5707963267949):32"/>
+				</v:userDefs>
+				<title>动态连接线.56</title>
+				<g id="shape56-23" v:mID="56" v:groupContext="groupContent" v:layerMember="0">
+					<path d="M7.09 444.68 L7.09 465.48" class="st1"/>
+				</g>
+			</g>
+			<g id="group66-28" transform="translate(594.349,-90.5185)" v:mID="66" v:groupContext="group" v:layerMember="0">
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="ShowMulti" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="BeginAngle" v:prompt="" v:val="VT0(-0.78539816339745):32"/>
+					<v:ud v:nameU="BeginAngle" v:prompt="" v:val="VT0(-1.5707963267949):32"/>
+				</v:userDefs>
+				<title>动态连接线.66</title>
+				<g id="shape66-29" v:mID="66" v:groupContext="groupContent" v:layerMember="0">
+					<path d="M7.09 463.04 L7.09 463.4 L7.09 481.19" class="st3"/>
+				</g>
+			</g>
+			<g id="shape102-34" v:mID="102" v:groupContext="shape" v:layerMember="0" transform="translate(68.9134,-201.671)">
+				<title>动态连接线.102</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="ShowMulti" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="BeginAngle" v:prompt="" v:val="VT0(-1.5707963267949):32"/>
+				</v:userDefs>
+				<path d="M7.09 463.04 L7.09 463.4 L7.09 482.3" class="st3"/>
+			</g>
+			<g id="shape113-39" v:mID="113" v:groupContext="shape" v:layerMember="0" transform="translate(68.9134,-110.049)">
+				<title>动态连接线</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="ShowMulti" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="BeginAngle" v:prompt="" v:val="VT0(-1.5707963267949):32"/>
+				</v:userDefs>
+				<path d="M7.09 463.04 L7.09 463.4 L7.09 499.74" class="st3"/>
+			</g>
+			<g id="shape122-44" v:mID="122" v:groupContext="shape" v:layerMember="0" transform="translate(186.272,-220.126)">
+				<title>动态连接线.122</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="ShowMulti" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="BeginAngle" v:prompt="" v:val="VT0(3.1415926535898):32"/>
+				</v:userDefs>
+				<path d="M0 437.59 L-43.9 437.59" class="st1"/>
+			</g>
+			<g id="group129-49" transform="translate(521.357,-198.836)" v:mID="129" v:groupContext="group">
+				<title>工作表.129</title>
+				<g id="shape22-50" v:mID="22" v:groupContext="shape" transform="translate(38.1805,0)">
+					<title>实体.22</title>
+					<desc>Authority</desc>
+					<v:userDefs>
+						<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(Database;DbEntity)"/>
+						<v:ud v:nameU="EntityName" v:prompt="" v:val="VT4()"/>
+						<v:ud v:nameU="EntityNameSpace" v:prompt="" v:val="VT4()"/>
+						<v:ud v:nameU="Weak" v:prompt="" v:val="VT0(0):26"/>
+						<v:ud v:nameU="Composite" v:prompt="" v:val="VT0(0):5"/>
+						<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+						<v:ud v:nameU="EntityName" v:prompt="" v:val="VT4(Authority)"/>
+						<v:ud v:nameU="EntityNameSpace" v:prompt="" v:val="VT4(Authority)"/>
+					</v:userDefs>
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="40.5" cy="417.675" width="81" height="54"/>
+					<path d="M0 444.68 L81 444.68 L81 390.68 L0 390.68 L0 444.68 Z" class="st4"/>
+					<text x="13.5" y="421.88" class="st5" v:langID="1033"><v:paragraph v:horizAlign="1"/><v:tabList/>Authority</text>				</g>
+				<g id="shape93-53" v:mID="93" v:groupContext="shape" transform="translate(-7.99361E-14,-34)">
+					<title>工作表.93</title>
+					<desc>权限</desc>
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="76" cy="434.675" width="152.01" height="20"/>
+					<rect x="0" y="424.675" width="152" height="20" class="st6"/>
+					<text x="61.95" y="439.33" class="st7" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>权限</text>				</g>
+			</g>
+			<g id="group130-56" transform="translate(521.357,-89.8444)" v:mID="130" v:groupContext="group">
+				<title>工作表.130</title>
+				<g id="shape43-57" v:mID="43" v:groupContext="shape">
+					<title>关系.43</title>
+					<desc>Authority_Resource</desc>
+					<v:userDefs>
+						<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(Database;DbRelationshipNode)"/>
+						<v:ud v:nameU="RelationshipName" v:prompt="" v:val="VT4()"/>
+						<v:ud v:nameU="Identifying" v:prompt="" v:val="VT0(0):26"/>
+						<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+						<v:ud v:nameU="RelationshipName" v:prompt="" v:val="VT4(Authority_Resource)"/>
+					</v:userDefs>
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="78.5551" cy="409.915" width="157.12" height="69.5197"/>
+					<path d="M78.56 444.68 L157.11 409.92 L78.56 375.16 L0 409.92 L78.56 444.68 Z" class="st4"/>
+					<text x="21.79" y="414.12" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Authority_Resource</text>				</g>
+				<g id="shape94-60" v:mID="94" v:groupContext="shape" transform="translate(-7.99361E-14,-42.5197)">
+					<title>工作表.94</title>
+					<desc>权限资源关联</desc>
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="76" cy="434.675" width="152.01" height="20"/>
+					<rect x="0" y="424.675" width="152" height="20" class="st6"/>
+					<text x="33.84" y="439.33" class="st7" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>权限资源关联</text>				</g>
+			</g>
+			<g id="group131-63" transform="translate(522.21,-5.68434E-14)" v:mID="131" v:groupContext="group">
+				<title>工作表.131</title>
+				<g id="shape49-64" v:mID="49" v:groupContext="shape" transform="translate(10.3791,0)">
+					<title>实体.49</title>
+					<desc>Component_Resource</desc>
+					<v:userDefs>
+						<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(Database;DbEntity)"/>
+						<v:ud v:nameU="EntityName" v:prompt="" v:val="VT4()"/>
+						<v:ud v:nameU="EntityNameSpace" v:prompt="" v:val="VT4()"/>
+						<v:ud v:nameU="Weak" v:prompt="" v:val="VT0(0):26"/>
+						<v:ud v:nameU="Composite" v:prompt="" v:val="VT0(0):5"/>
+						<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+						<v:ud v:nameU="EntityName" v:prompt="" v:val="VT4(Component_Resource)"/>
+						<v:ud v:nameU="EntityNameSpace" v:prompt="" v:val="VT4(Component_Resource)"/>
+					</v:userDefs>
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="68.8465" cy="417.675" width="137.7" height="54"/>
+					<path d="M0 444.68 L137.69 444.68 L137.69 390.68 L0 390.68 L0 444.68 Z" class="st4"/>
+					<text x="5.52" y="421.88" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Component_Resource</text>				</g>
+				<g id="shape97-67" v:mID="97" v:groupContext="shape" transform="translate(-7.99361E-14,-34)">
+					<title>工作表.97</title>
+					<desc>组件资源</desc>
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="76" cy="434.675" width="152.01" height="20"/>
+					<rect x="0" y="424.675" width="152" height="20" class="st6"/>
+					<text x="47.89" y="439.33" class="st7" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>组件资源</text>				</g>
+			</g>
+			<g id="group132-70" transform="translate(337.105,-5.68434E-14)" v:mID="132" v:groupContext="group">
+				<title>工作表.132</title>
+				<g id="shape35-71" v:mID="35" v:groupContext="shape" transform="translate(19.3071,0)">
+					<title>实体.35</title>
+					<desc>Object_Resource</desc>
+					<v:userDefs>
+						<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(Database;DbEntity)"/>
+						<v:ud v:nameU="EntityName" v:prompt="" v:val="VT4()"/>
+						<v:ud v:nameU="EntityNameSpace" v:prompt="" v:val="VT4()"/>
+						<v:ud v:nameU="Weak" v:prompt="" v:val="VT0(0):26"/>
+						<v:ud v:nameU="Composite" v:prompt="" v:val="VT0(0):5"/>
+						<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+						<v:ud v:nameU="EntityName" v:prompt="" v:val="VT4(Object_Resource)"/>
+						<v:ud v:nameU="EntityNameSpace" v:prompt="" v:val="VT4(Object_Resource)"/>
+					</v:userDefs>
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="56.6929" cy="417.675" width="113.39" height="54"/>
+					<path d="M0 444.68 L113.39 444.68 L113.39 390.68 L0 390.68 L0 444.68 Z" class="st4"/>
+					<text x="8.16" y="421.88" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Object_Resource</text>				</g>
+				<g id="shape95-74" v:mID="95" v:groupContext="shape" transform="translate(0,-35.9782)">
+					<title>工作表.95</title>
+					<desc>对象资源</desc>
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="76" cy="434.675" width="152.01" height="20"/>
+					<rect x="0" y="424.675" width="152" height="20" class="st6"/>
+					<text x="47.89" y="439.33" class="st7" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>对象资源</text>				</g>
+			</g>
+			<g id="group133-77" transform="translate(325.984,-98.0499)" v:mID="133" v:groupContext="group">
+				<title>工作表.133</title>
+				<g id="shape42-78" v:mID="42" v:groupContext="shape" transform="translate(30.5748,0)">
+					<title>实体.42</title>
+					<desc>Api_Resource</desc>
+					<v:userDefs>
+						<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(Database;DbEntity)"/>
+						<v:ud v:nameU="EntityName" v:prompt="" v:val="VT4()"/>
+						<v:ud v:nameU="EntityNameSpace" v:prompt="" v:val="VT4()"/>
+						<v:ud v:nameU="Weak" v:prompt="" v:val="VT0(0):26"/>
+						<v:ud v:nameU="Composite" v:prompt="" v:val="VT0(0):5"/>
+						<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+						<v:ud v:nameU="EntityName" v:prompt="" v:val="VT4(Api_Resource)"/>
+						<v:ud v:nameU="EntityNameSpace" v:prompt="" v:val="VT4(Api_Resource)"/>
+					</v:userDefs>
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="51.0591" cy="417.675" width="102.12" height="54"/>
+					<path d="M0 444.68 L102.12 444.68 L102.12 390.68 L0 390.68 L0 444.68 Z" class="st4"/>
+					<text x="11.96" y="421.88" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Api_Resource</text>				</g>
+				<g id="shape96-81" v:mID="96" v:groupContext="shape" transform="translate(-7.99361E-14,-29.6063)">
+					<title>工作表.96</title>
+					<desc>服务资源</desc>
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="76" cy="434.675" width="152.01" height="20"/>
+					<rect x="0" y="424.675" width="152" height="20" class="st6"/>
+					<text x="47.89" y="439.33" class="st7" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>服务资源</text>				</g>
+			</g>
+			<g id="group134-84" transform="translate(150.772,-198.754)" v:mID="134" v:groupContext="group">
+				<title>工作表.134</title>
+				<g id="shape2-85" v:mID="2" v:groupContext="shape" transform="translate(35.5,0)">
+					<title>实体.2</title>
+					<desc>Role</desc>
+					<v:userDefs>
+						<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(Database;DbEntity)"/>
+						<v:ud v:nameU="EntityName" v:prompt="" v:val="VT4()"/>
+						<v:ud v:nameU="EntityNameSpace" v:prompt="" v:val="VT4()"/>
+						<v:ud v:nameU="Weak" v:prompt="" v:val="VT0(0):26"/>
+						<v:ud v:nameU="Composite" v:prompt="" v:val="VT0(0):5"/>
+						<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+						<v:ud v:nameU="EntityName" v:prompt="" v:val="VT4(Role)"/>
+						<v:ud v:nameU="EntityNameSpace" v:prompt="" v:val="VT4(Role)"/>
+					</v:userDefs>
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="40.5" cy="417.675" width="81" height="54"/>
+					<path d="M0 444.68 L81 444.68 L81 390.68 L0 390.68 L0 444.68 Z" class="st4"/>
+					<text x="27.92" y="421.88" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Role</text>				</g>
+				<g id="shape91-88" v:mID="91" v:groupContext="shape" transform="translate(0,-34)">
+					<title>工作表.91</title>
+					<desc>角色</desc>
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="76" cy="434.675" width="152.01" height="20"/>
+					<rect x="0" y="424.675" width="152" height="20" class="st6"/>
+					<text x="61.95" y="439.33" class="st7" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>角色</text>				</g>
+			</g>
+			<g id="group135-91" transform="translate(-2.23821E-13,-201.671)" v:mID="135" v:groupContext="group">
+				<title>工作表.135</title>
+				<g id="shape118-92" v:mID="118" v:groupContext="shape" transform="translate(28.4803,0)">
+					<title>实体.2</title>
+					<desc>Account_Role</desc>
+					<v:userDefs>
+						<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(Database;DbEntity)"/>
+						<v:ud v:nameU="EntityName" v:prompt="" v:val="VT4()"/>
+						<v:ud v:nameU="EntityNameSpace" v:prompt="" v:val="VT4()"/>
+						<v:ud v:nameU="Weak" v:prompt="" v:val="VT0(0):26"/>
+						<v:ud v:nameU="Composite" v:prompt="" v:val="VT0(0):5"/>
+						<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+						<v:ud v:nameU="EntityName" v:prompt="" v:val="VT4(Account_Role)"/>
+						<v:ud v:nameU="EntityNameSpace" v:prompt="" v:val="VT4(Account_Role)"/>
+					</v:userDefs>
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="47.5866" cy="417.675" width="95.18" height="54"/>
+					<path d="M0 444.68 L95.17 444.68 L95.17 390.68 L0 390.68 L0 444.68 Z" class="st4"/>
+					<text x="8.16" y="421.88" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Account_Role</text>				</g>
+				<g id="shape119-95" v:mID="119" v:groupContext="shape" transform="translate(0,-34)">
+					<title>工作表.119</title>
+					<desc>账号角色管理</desc>
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="76" cy="434.675" width="152.01" height="20"/>
+					<rect x="0" y="424.675" width="152" height="20" class="st6"/>
+					<text x="33.84" y="439.33" class="st7" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>账号角色管理</text>				</g>
+			</g>
+			<g id="group136-98" transform="translate(0,-110.049)" v:mID="136" v:groupContext="group">
+				<title>工作表.136</title>
+				<g id="shape1-99" v:mID="1" v:groupContext="shape" transform="translate(35.5,0)">
+					<title>实体</title>
+					<desc>Account</desc>
+					<v:userDefs>
+						<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(Database;DbEntity)"/>
+						<v:ud v:nameU="EntityName" v:prompt="" v:val="VT4()"/>
+						<v:ud v:nameU="EntityNameSpace" v:prompt="" v:val="VT4()"/>
+						<v:ud v:nameU="Weak" v:prompt="" v:val="VT0(0):26"/>
+						<v:ud v:nameU="Composite" v:prompt="" v:val="VT0(0):5"/>
+						<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+						<v:ud v:nameU="EntityName" v:prompt="" v:val="VT4(Account)"/>
+						<v:ud v:nameU="EntityNameSpace" v:prompt="" v:val="VT4(Account)"/>
+					</v:userDefs>
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="40.5" cy="417.675" width="81" height="54"/>
+					<path d="M0 444.68 L81 444.68 L81 390.68 L0 390.68 L0 444.68 Z" class="st4"/>
+					<text x="17.14" y="421.88" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Account</text>				</g>
+				<g id="shape87-102" v:mID="87" v:groupContext="shape" transform="translate(0,-34)">
+					<title>工作表.87</title>
+					<desc>主账号</desc>
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="76" cy="434.675" width="152.01" height="20"/>
+					<rect x="0" y="424.675" width="152" height="20" class="st6"/>
+					<text x="54.92" y="439.33" class="st7" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>主账号</text>				</g>
+			</g>
+			<g id="group137-105" transform="translate(0,-0.989097)" v:mID="137" v:groupContext="group">
+				<title>工作表.137</title>
+				<g id="shape107-106" v:mID="107" v:groupContext="shape" transform="translate(35.5,0)">
+					<title>实体.107</title>
+					<desc>Department</desc>
+					<v:userDefs>
+						<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(Database;DbEntity)"/>
+						<v:ud v:nameU="EntityName" v:prompt="" v:val="VT4()"/>
+						<v:ud v:nameU="EntityNameSpace" v:prompt="" v:val="VT4()"/>
+						<v:ud v:nameU="Weak" v:prompt="" v:val="VT0(0):26"/>
+						<v:ud v:nameU="Composite" v:prompt="" v:val="VT0(0):5"/>
+						<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+						<v:ud v:nameU="EntityName" v:prompt="" v:val="VT4(Department)"/>
+						<v:ud v:nameU="EntityNameSpace" v:prompt="" v:val="VT4(Department)"/>
+					</v:userDefs>
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="40.5" cy="417.675" width="81" height="54"/>
+					<path d="M0 444.68 L81 444.68 L81 390.68 L0 390.68 L0 444.68 Z" class="st4"/>
+					<text x="5.8" y="421.88" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Department</text>				</g>
+				<g id="shape108-109" v:mID="108" v:groupContext="shape" transform="translate(0,-34)">
+					<title>工作表.108</title>
+					<desc>组织</desc>
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="76" cy="434.675" width="152.01" height="20"/>
+					<rect x="0" y="424.675" width="152" height="20" class="st6"/>
+					<text x="61.95" y="439.33" class="st7" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>组织</text>				</g>
+			</g>
+			<g id="group138-112" transform="translate(329.89,-197.49)" v:mID="138" v:groupContext="group">
+				<title>工作表.138</title>
+				<g id="shape23-113" v:mID="23" v:groupContext="shape">
+					<title>关系.23</title>
+					<desc>Role_Authority</desc>
+					<v:userDefs>
+						<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(Database;DbRelationshipNode)"/>
+						<v:ud v:nameU="RelationshipName" v:prompt="" v:val="VT4()"/>
+						<v:ud v:nameU="Identifying" v:prompt="" v:val="VT0(0):26"/>
+						<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+						<v:ud v:nameU="RelationshipName" v:prompt="" v:val="VT4(Role_Authority)"/>
+					</v:userDefs>
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="78.5551" cy="416.686" width="157.12" height="55.9782"/>
+					<path d="M78.56 444.68 L157.11 416.69 L78.56 388.7 L0 416.69 L78.56 444.68 Z" class="st4"/>
+					<text x="35.49" y="420.89" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Role_Authority</text>				</g>
+				<g id="shape92-116" v:mID="92" v:groupContext="shape" transform="translate(2.55512,-49.5197)">
+					<title>工作表.92</title>
+					<desc>角色权限关联</desc>
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="76" cy="434.675" width="152.01" height="20"/>
+					<rect x="0" y="424.675" width="152" height="20" class="st6"/>
+					<text x="33.84" y="439.33" class="st7" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>角色权限关联</text>				</g>
+			</g>
+		</g>
+		<g id="group140-119" transform="translate(301.793,-92.7873)" v:mID="140" v:groupContext="group">
+			<title>工作表.140</title>
+			<g id="shape162-120" v:mID="162" v:groupContext="shape" transform="translate(5.66929,0)">
+				<title>实体.2</title>
+				<desc>Department_Role</desc>
+				<v:userDefs>
+					<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(Database;DbRelationshipNode)"/>
+					<v:ud v:nameU="RelationshipName" v:prompt="" v:val="VT4()"/>
+					<v:ud v:nameU="Identifying" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="RelationshipName" v:prompt="" v:val="VT4(Department_Role)"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="76" cy="417.675" width="152.01" height="54"/>
+				<path d="M76 444.68 L152 417.68 L76 390.68 L0 417.68 L76 444.68 Z" class="st4"/>
+				<text x="25.23" y="421.88" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Department_Role</text>			</g>
+			<g id="shape142-123" v:mID="142" v:groupContext="shape" transform="translate(28.3465,-34.4596)">
+				<title>工作表.142</title>
+				<desc>部门角色管理</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="56.6929" cy="434.675" width="113.39" height="20"/>
+				<rect x="0" y="424.675" width="113.386" height="20" class="st6"/>
+				<text x="14.53" y="439.33" class="st7" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>部门角色管理</text>			</g>
+		</g>
+		<g id="shape149-126" v:mID="149" v:groupContext="shape" v:layerMember="0" transform="translate(326.291,-113.098)">
+			<title>动态连接线.102</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+				<v:ud v:nameU="ShowMulti" v:prompt="" v:val="VT0(0):26"/>
+				<v:ud v:nameU="BeginAngle" v:prompt="" v:val="VT0(-2.3183290474154):32"/>
+			</v:userDefs>
+			<path d="M-12.48 458.14 L-12.73 458.4 L-53.64 502.53" class="st3"/>
+		</g>
+		<g id="shape150-131" v:mID="150" v:groupContext="shape" v:layerMember="0" transform="translate(375.841,-199.004)">
+			<title>动态连接线.122</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+				<v:ud v:nameU="ShowMulti" v:prompt="" v:val="VT0(0):26"/>
+				<v:ud v:nameU="BeginAngle" v:prompt="" v:val="VT0(-1.5707963267949):32"/>
+			</v:userDefs>
+			<path d="M7.09 444.68 L7.09 478.36" class="st1"/>
+		</g>
+		<g id="group151-136" transform="translate(315.967,-0.25)" v:mID="151" v:groupContext="group">
+			<title>工作表.151</title>
+			<g id="shape164-137" v:mID="164" v:groupContext="shape">
+				<title>关系</title>
+				<desc>Department_Resource</desc>
+				<v:userDefs>
+					<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(Database;DbRelationshipNode)"/>
+					<v:ud v:nameU="RelationshipName" v:prompt="" v:val="VT4()"/>
+					<v:ud v:nameU="Identifying" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="RelationshipName" v:prompt="" v:val="VT4(Department_Resource)"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="76" cy="416.686" width="152.01" height="55.9782"/>
+				<path d="M76 444.68 L152 416.69 L76 388.7 L0 416.69 L76 444.68 Z" class="st4"/>
+				<text x="11.54" y="420.89" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Department_Resource</text>			</g>
+			<g id="shape153-140" v:mID="153" v:groupContext="shape" transform="translate(0,-35.9782)">
+				<title>工作表.153</title>
+				<desc>组织资源关联</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="76" cy="434.675" width="152.01" height="20"/>
+				<rect x="0" y="424.675" width="152" height="20" class="st6"/>
+				<text x="33.84" y="439.33" class="st7" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>组织资源关联</text>			</g>
+		</g>
+		<g id="shape154-143" v:mID="154" v:groupContext="shape" v:layerMember="0" transform="translate(315.967,-21.1525)">
+			<title>动态连接线.154</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+				<v:ud v:nameU="ShowMulti" v:prompt="" v:val="VT0(0):26"/>
+				<v:ud v:nameU="BeginAngle" v:prompt="" v:val="VT0(3.1415926535898):32"/>
+			</v:userDefs>
+			<path d="M-18.36 437.59 L-18.72 437.59 L-43.31 437.59" class="st3"/>
+		</g>
+		<g id="shape155-148" v:mID="155" v:groupContext="shape" v:layerMember="0" transform="translate(465.281,-20.1634)">
+			<title>动态连接线.155</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+				<v:ud v:nameU="ShowMulti" v:prompt="" v:val="VT0(0):26"/>
+				<v:ud v:nameU="BeginAngle" v:prompt="" v:val="VT0(0):32"/>
+			</v:userDefs>
+			<path d="M18.36 437.59 L18.72 437.59 L47.29 437.59" class="st3"/>
+		</g>
+		<g id="group156-153" transform="translate(486.045,-289.866)" v:mID="156" v:groupContext="group">
+			<title>工作表.156</title>
+			<g id="shape157-154" v:mID="157" v:groupContext="shape" transform="translate(24.378,0)">
+				<title>实体</title>
+				<desc>OAuth_Client</desc>
+				<v:userDefs>
+					<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(Database;DbEntity)"/>
+					<v:ud v:nameU="EntityName" v:prompt="" v:val="VT4()"/>
+					<v:ud v:nameU="EntityNameSpace" v:prompt="" v:val="VT4()"/>
+					<v:ud v:nameU="Weak" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="Composite" v:prompt="" v:val="VT0(0):5"/>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="EntityName" v:prompt="" v:val="VT4(OAuth_Client)"/>
+					<v:ud v:nameU="EntityNameSpace" v:prompt="" v:val="VT4(OAuth_Client)"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="51.5906" cy="417.675" width="103.19" height="54"/>
+				<path d="M0 444.68 L103.18 444.68 L103.18 390.68 L0 390.68 L0 444.68 Z" class="st4"/>
+				<text x="13.27" y="421.88" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>OAuth_Client</text>			</g>
+			<g id="shape158-157" v:mID="158" v:groupContext="shape" transform="translate(0,-34)">
+				<title>工作表.158</title>
+				<desc>客户端</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="76" cy="434.675" width="152.01" height="20"/>
+				<rect x="0" y="424.675" width="152" height="20" class="st6"/>
+				<text x="54.92" y="439.33" class="st7" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>客户端</text>			</g>
+		</g>
+		<g id="group159-160" transform="translate(306.927,-289.866)" v:mID="159" v:groupContext="group">
+			<title>工作表.159</title>
+			<g id="shape165-161" v:mID="165" v:groupContext="shape" transform="translate(10.8031,0)">
+				<title>实体.2</title>
+				<desc>OAuth_Client_Role</desc>
+				<v:userDefs>
+					<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(Database;DbRelationshipNode)"/>
+					<v:ud v:nameU="RelationshipName" v:prompt="" v:val="VT4()"/>
+					<v:ud v:nameU="Identifying" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="RelationshipName" v:prompt="" v:val="VT4(OAuth_Client_Role)"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="65.9055" cy="417.675" width="131.82" height="54"/>
+				<path d="M65.91 444.68 L131.81 417.68 L65.91 390.68 L0 417.68 L65.91 444.68 Z" class="st4"/>
+				<text x="11.52" y="421.88" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>OAuth_Client_Role</text>			</g>
+			<g id="shape161-164" v:mID="161" v:groupContext="shape" transform="translate(0,-34)">
+				<title>工作表.161</title>
+				<desc>客户端角色管理</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="76" cy="434.675" width="152.01" height="20"/>
+				<rect x="0" y="424.675" width="152" height="20" class="st6"/>
+				<text x="26.81" y="439.33" class="st7" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>客户端角色管理</text>			</g>
+		</g>
+		<g id="shape166-167" v:mID="166" v:groupContext="shape" v:layerMember="0" transform="translate(510.423,-309.688)">
+			<title>动态连接线.166</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+				<v:ud v:nameU="ShowMulti" v:prompt="" v:val="VT0(0):26"/>
+				<v:ud v:nameU="BeginAngle" v:prompt="" v:val="VT0(3.1415926535898):32"/>
+			</v:userDefs>
+			<path d="M0 437.59 L-42.38 437.59" class="st1"/>
+		</g>
+		<g id="shape167-172" v:mID="167" v:groupContext="shape" v:layerMember="0" transform="translate(376.511,-290.108)">
+			<title>动态连接线.167</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+				<v:ud v:nameU="ShowMulti" v:prompt="" v:val="VT0(0):26"/>
+				<v:ud v:nameU="BeginAngle" v:prompt="" v:val="VT0(-1.5410258887259):32"/>
+			</v:userDefs>
+			<path d="M6.53 444.68 L7.08 463.07" class="st1"/>
+		</g>
+		<g id="group168-177" transform="translate(682.623,-289.866)" v:mID="168" v:groupContext="group">
+			<title>工作表.168</title>
+			<g id="shape169-178" v:mID="169" v:groupContext="shape">
+				<title>实体</title>
+				<desc>OAuth_Client_GrantType</desc>
+				<v:userDefs>
+					<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(Database;DbEntity)"/>
+					<v:ud v:nameU="EntityName" v:prompt="" v:val="VT4()"/>
+					<v:ud v:nameU="EntityNameSpace" v:prompt="" v:val="VT4()"/>
+					<v:ud v:nameU="Weak" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="Composite" v:prompt="" v:val="VT0(0):5"/>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="EntityName" v:prompt="" v:val="VT4(OAuth_Client_GrantType)"/>
+					<v:ud v:nameU="EntityNameSpace" v:prompt="" v:val="VT4(OAuth_Client_GrantType)"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="76" cy="417.675" width="152.01" height="54"/>
+				<path d="M0 444.68 L152 444.68 L152 390.68 L0 390.68 L0 444.68 Z" class="st4"/>
+				<text x="4.22" y="421.88" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>OAuth_Client_GrantType</text>			</g>
+			<g id="shape170-181" v:mID="170" v:groupContext="shape" transform="translate(0,-34)">
+				<title>工作表.170</title>
+				<desc>客户端模式</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="76" cy="434.675" width="152.01" height="20"/>
+				<rect x="0" y="424.675" width="152" height="20" class="st6"/>
+				<text x="40.86" y="439.33" class="st7" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>客户端模式</text>			</g>
+		</g>
+		<g id="shape171-184" v:mID="171" v:groupContext="shape" v:layerMember="0" transform="translate(613.604,-313.791)">
+			<title>动态连接线.171</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+				<v:ud v:nameU="ShowMulti" v:prompt="" v:val="VT0(0):26"/>
+				<v:ud v:nameU="BeginAngle" v:prompt="" v:val="VT0(0):32"/>
+			</v:userDefs>
+			<path d="M0 437.59 L50.3 437.59" class="st1"/>
+		</g>
+		<g id="group172-189" transform="translate(0.25,-163.653)" v:mID="172" v:groupContext="group">
+			<title>工作表.172</title>
+			<g id="shape173-190" v:mID="173" v:groupContext="shape">
+				<title>实体</title>
+				<desc>Operate_Log</desc>
+				<v:userDefs>
+					<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(Database;DbEntity)"/>
+					<v:ud v:nameU="EntityName" v:prompt="" v:val="VT4()"/>
+					<v:ud v:nameU="EntityNameSpace" v:prompt="" v:val="VT4()"/>
+					<v:ud v:nameU="Weak" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="Composite" v:prompt="" v:val="VT0(0):5"/>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="EntityName" v:prompt="" v:val="VT4(Operate_Log)"/>
+					<v:ud v:nameU="EntityNameSpace" v:prompt="" v:val="VT4(Operate_Log)"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="76" cy="417.675" width="152.01" height="54"/>
+				<path d="M0 444.68 L152 444.68 L152 390.68 L0 390.68 L0 444.68 Z" class="st4"/>
+				<text x="39.17" y="421.88" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>O<tspan
+							class="st8" v:langID="1033">perate_</tspan>L<tspan class="st8" v:langID="1033">og</tspan></text>			</g>
+			<g id="shape174-195" v:mID="174" v:groupContext="shape" transform="translate(0,-34)">
+				<title>工作表.174</title>
+				<desc>操作日志</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="76" cy="434.675" width="152.01" height="20"/>
+				<rect x="0" y="424.675" width="152" height="20" class="st6"/>
+				<text x="47.89" y="439.33" class="st7" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>操作日志</text>			</g>
+		</g>
+		<g id="group175-198" transform="translate(0.25,-61.7479)" v:mID="175" v:groupContext="group">
+			<title>工作表.175</title>
+			<g id="shape176-199" v:mID="176" v:groupContext="shape">
+				<title>实体</title>
+				<desc>SQL_Log</desc>
+				<v:userDefs>
+					<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(Database;DbEntity)"/>
+					<v:ud v:nameU="EntityName" v:prompt="" v:val="VT4()"/>
+					<v:ud v:nameU="EntityNameSpace" v:prompt="" v:val="VT4()"/>
+					<v:ud v:nameU="Weak" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="Composite" v:prompt="" v:val="VT0(0):5"/>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="EntityName" v:prompt="" v:val="VT4(SQL_Log)"/>
+					<v:ud v:nameU="EntityNameSpace" v:prompt="" v:val="VT4(SQL_Log)"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="76" cy="417.675" width="152.01" height="54"/>
+				<path d="M0 444.68 L152 444.68 L152 390.68 L0 390.68 L0 444.68 Z" class="st4"/>
+				<text x="51.72" y="421.88" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>SQL_Log</text>			</g>
+			<g id="shape177-202" v:mID="177" v:groupContext="shape" transform="translate(0,-34)">
+				<title>工作表.177</title>
+				<desc>SQL日志</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="76" cy="434.675" width="152.01" height="20"/>
+				<rect x="0" y="424.675" width="152" height="20" class="st6"/>
+				<text x="50.87" y="439.33" class="st9" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>SQL<tspan
+							class="st10">日志</tspan></text>			</g>
+		</g>
+		<g id="group178-206" transform="translate(682.623,-382.51)" v:mID="178" v:groupContext="group">
+			<title>工作表.178</title>
+			<g id="shape179-207" v:mID="179" v:groupContext="shape">
+				<title>实体</title>
+				<desc>OAuth_Resource_Server</desc>
+				<v:userDefs>
+					<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(Database;DbEntity)"/>
+					<v:ud v:nameU="EntityName" v:prompt="" v:val="VT4()"/>
+					<v:ud v:nameU="EntityNameSpace" v:prompt="" v:val="VT4()"/>
+					<v:ud v:nameU="Weak" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="Composite" v:prompt="" v:val="VT0(0):5"/>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="EntityName" v:prompt="" v:val="VT4(OAuth_Resource_Server)"/>
+					<v:ud v:nameU="EntityNameSpace" v:prompt="" v:val="VT4(OAuth_Resource_Server)"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="76" cy="417.675" width="152.01" height="54"/>
+				<path d="M0 444.68 L152 444.68 L152 390.68 L0 390.68 L0 444.68 Z" class="st4"/>
+				<text x="6.14" y="421.88" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>OAuth_Resource_Server</text>			</g>
+			<g id="shape180-210" v:mID="180" v:groupContext="shape" transform="translate(0,-34)">
+				<title>工作表.180</title>
+				<desc>资源服务器</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="76" cy="434.675" width="152.01" height="20"/>
+				<rect x="0" y="424.675" width="152" height="20" class="st6"/>
+				<text x="40.86" y="439.33" class="st7" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>资源服务器</text>			</g>
+		</g>
+		<g id="group181-213" transform="translate(486.045,-374.007)" v:mID="181" v:groupContext="group">
+			<title>工作表.181</title>
+			<g id="shape182-214" v:mID="182" v:groupContext="shape" transform="translate(10.8031,0)">
+				<title>实体.2</title>
+				<desc>OAuth_Client_Resource_Server</desc>
+				<v:userDefs>
+					<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(Database;DbRelationshipNode)"/>
+					<v:ud v:nameU="RelationshipName" v:prompt="" v:val="VT4()"/>
+					<v:ud v:nameU="Identifying" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="RelationshipName" v:prompt="" v:val="VT4(OAuth_Client_Resource_Server)"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="65.9055" cy="409.466" width="131.82" height="70.4186"/>
+				<path d="M65.91 444.68 L131.81 409.47 L65.91 374.26 L0 409.47 L65.91 444.68 Z" class="st4"/>
+				<text x="4.27" y="405.27" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>OAuth_Client_Resour<tspan
+							x="37.75" dy="1.2em" class="st8">ce_Server</tspan></text>			</g>
+			<g id="shape183-218" v:mID="183" v:groupContext="shape" transform="translate(0,-44.3376)">
+				<title>工作表.183</title>
+				<desc>客户端资源服务关联</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="76" cy="431.635" width="152.01" height="26.081"/>
+				<rect x="0" y="418.594" width="152" height="26.081" class="st6"/>
+				<text x="12.75" y="436.29" class="st7" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>客户端资源服务关联</text>			</g>
+		</g>
+		<g id="shape184-221" v:mID="184" v:groupContext="shape" v:layerMember="0" transform="translate(628.108,-402.424)">
+			<title>动态连接线.184</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+				<v:ud v:nameU="ShowMulti" v:prompt="" v:val="VT0(0):26"/>
+				<v:ud v:nameU="BeginAngle" v:prompt="" v:val="VT0(0):32"/>
+			</v:userDefs>
+			<path d="M0 437.59 L35.79 437.59" class="st1"/>
+		</g>
+		<g id="shape185-226" v:mID="185" v:groupContext="shape" v:layerMember="0" transform="translate(555.617,-376.371)">
+			<title>动态连接线.185</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+				<v:ud v:nameU="ShowMulti" v:prompt="" v:val="VT0(0):26"/>
+				<v:ud v:nameU="BeginAngle" v:prompt="" v:val="VT0(-1.5707963267949):32"/>
+			</v:userDefs>
+			<path d="M7.09 444.68 L7.09 458.46" class="st1"/>
+		</g>
+	</g>
+</svg>

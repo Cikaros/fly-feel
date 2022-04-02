@@ -1,32 +1,19 @@
 ## 单元测试
 
-单元测试时，请在业务模块的`src/test/java`路径下是实现`SpringbootTestEnterPoint`，之后的测试类继承这个入口即可。
+单元测试时，请在业务模块的`src/test/java`路径下创建测试类并继承`io.gitee.test.SpringBootTestParent~~~~`这个入口即可。
 
 ```java
+import io.gitee.test.SpringBootTestParent;
+
 /**
- * Springboot测试类入口
+ * 测试样例
  *
  * @author Cikaros
- * @date 2021/7/1
+ * @date 2022/3/25
+ * @since v1.0
  */
-@RunWith(SpringRunner.class)
-@SpringBootTest
-public class SpringbootTestEnterPoint {
+public class SimpleTest extends SpringBootTestParent {
 
-    protected static final Logger log = LoggerFactory.getLogger(SpringbootTestEnterPoint.class);
-
-}
-
-//------------------------------------------------------------------------
-public class CustomTest extends SpringbootTestEnterPoint {
-
-    @Test
-    public void test1() {
-    }
-
-    @Test
-    public void test2() {
-    }
 }
 ```
 
@@ -342,7 +329,7 @@ public class Pojo {
 
 ```java
     private final static DefaultClassInfoStrategy classInfoStrategy=DefaultClassInfoStrategy.getInstance();
-    classInfoStrategy.addExcludedField(Pojo.class,"somePojo");
+        classInfoStrategy.addExcludedField(Pojo.class,"somePojo");
 ```
 
 ### Podam 验证说明
@@ -367,7 +354,7 @@ public class ValidatedPojo {
 ```java
 Class<AttributeStrategy<?>>attrStrategy=(Class<AttributeStrategy<?>>)(Class<?>)EmailStrategy.class;
 ((RandomDataProviderStrategy)factory.getStrategy()).addAttributeStrategy(Email.class,attrStrategy);ValidatedPojo pojo
-    =factory.manufacturePojo(ValidatedPojo.class); 
+        =factory.manufacturePojo(ValidatedPojo.class); 
 ```
 
 电子邮件策略实现：
@@ -386,4 +373,6 @@ public class EmailStrategy implements AttributeStrategy<String> {
 #### 限制
 
 目前尚不支持`@Pattern`注解。
+
+## Mock
 
