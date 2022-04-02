@@ -1,1 +1,0 @@
-const e={key:"v-464ee4b0",path:"/zh/guide/permissions.html",title:"",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[{level:2,title:"\u6743\u9650\u7684\u4F7F\u7528",slug:"\u6743\u9650\u7684\u4F7F\u7528",children:[]}],git:{updatedTime:1648458273e3,contributors:[{name:"Cikaros",email:"Cikaros@qq.com",commits:1}]},filePathRelative:"zh/guide/permissions.md"};export{e as data};

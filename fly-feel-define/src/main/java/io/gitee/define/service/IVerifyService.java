@@ -1,5 +1,7 @@
 package io.gitee.define.service;
 
+import io.gitee.define.entity.Verify;
+
 /**
  * 验证码业务
  *
@@ -12,7 +14,7 @@ public interface IVerifyService {
     /**
      * 获取一个验证码对象
      */
-    void getInstance();
+    Verify getInstance();
 
     /**
      * 是否匹配
@@ -20,5 +22,5 @@ public interface IVerifyService {
      * @param code 验证码
      * @return 结果
      */
-    boolean isMatches(String code);
+    boolean isMatches(String uuid, String code);
 }

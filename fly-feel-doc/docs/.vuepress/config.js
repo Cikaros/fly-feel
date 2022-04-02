@@ -11,47 +11,69 @@ module.exports = {
     themeConfig: {
         logo: '/images/favicon.svg',
         home: '/',
-        darkMode: true,
+        darkMode: false,
         repo: 'https://gitee.com/cikaros/fly-feel',
         repoLabel: 'Gitee',
-        // 默认值是 true 。设置为 false 来禁用所有页面的 下一篇 链接
-        nextLinks: true,
-        // 默认值是 true 。设置为 false 来禁用所有页面的 上一篇 链接
-        prevLinks: true,
         sidebarDepth: 2,
-        sidebar: [
+        navbar: [
             {
-                text: "开始",
-                link: "/zh/guide/",
+                text: '首页',
+                link: '/'
+            },
+            {
+                text: '指南',
                 children: [
                     {
+                        text: "介绍",
+                        link: "/zh/guide/",
+                        activeMatch: '^/zh/guide/$'
+                    },
+                    {
                         text: "规范说明文档",
-                        link: "standard"
+                        link: "/zh/guide/standard",
+                        activeMatch: '^/zh/guide/standard'
                     },
                     {
                         text: "权限使用文档",
-                        link: "permissions"
+                        link: "/zh/guide/permissions",
+                        activeMatch: '^/zh/guide/permissions'
                     },
                     {
                         text: "测试说明文档",
-                        link: "test"
+                        link: "/zh/guide/test",
+                        activeMatch: '^/zh/guide/test'
                     },
                     {
                         text: "调试说明文档",
-                        link: "debug"
+                        link: "/zh/guide/debug",
+                        activeMatch: '^/zh/guide/debug'
                     },
                     {
                         text: "部署说明文档",
-                        link: "prod"
+                        link: "/zh/guide/prod",
+                        activeMatch: '^/zh/guide/prod'
                     },
                     {
                         text: "请求码说明文档",
-                        link: "request"
+                        link: "/zh/guide/request",
+                        activeMatch: '^/zh/guide/request'
                     }
                 ]
-            }
-        ],
-        navbar: [
+            }, {
+                text: '模块',
+                children: [
+                    {
+                        text: "介绍",
+                        link: "/zh/modules/",
+                        activeMatch: '^/zh/modules/$'
+                    },
+                    {
+                        text: "fly-feel-core",
+                        link: "/zh/modules/fly-feel-core",
+                        activeMatch: '^/zh/modules/fly-feel-core'
+                    }
+                ]
+            },
             {
                 text: '关于作者',
                 link: 'https://cikaros.gitee.io/about/'

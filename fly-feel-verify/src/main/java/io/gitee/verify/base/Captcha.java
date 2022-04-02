@@ -1,5 +1,7 @@
 package io.gitee.verify.base;
 
+import io.gitee.define.entity.Verify;
+
 import java.awt.*;
 import java.awt.geom.CubicCurve2D;
 import java.awt.geom.QuadCurve2D;
@@ -20,7 +22,7 @@ public abstract class Captcha extends Randoms {
     /**
      * 常用颜色
      */
-    public static final int[][] COLOR = {
+    protected static final int[][] COLOR = {
             {0, 135, 255}, {51, 153, 51}, {255, 102, 102}, {255, 153, 0},
             {153, 102, 0}, {153, 102, 153}, {51, 153, 153}, {102, 102, 255},
             {0, 102, 204}, {204, 51, 51}, {0, 153, 204}, {0, 51, 102}};
@@ -120,21 +122,34 @@ public abstract class Captcha extends Randoms {
      * @param os 输出流
      * @return 是否成功
      */
-    public abstract boolean out(OutputStream os);
+    protected abstract boolean out(OutputStream os);
 
     /**
      * 输出base64编码
      *
      * @return base64编码字符串
      */
-    public abstract String toBase64();
+    protected abstract String toBase64();
 
     /**
      * 获取图片类型
      *
      * @return 图片格式，MIME类型
      */
-    public abstract String getContentType();
+    protected abstract String getContentType();
+
+    /**
+     * 生成验证码对象
+     */
+    public Verify build() {
+        byte[] data = null;
+        try (ByteArrayOutputStream out = new ByteArrayOutputStream()) {
+            this.out(out);
+            data = out.toByteArray();
+        } catch (IOException ignored) {
+        }
+        return new Verify(chars, getContentType(), data);
+    }
 
     /**
      * 输出base64编码
@@ -142,7 +157,7 @@ public abstract class Captcha extends Randoms {
      * @param type 编码头
      * @return base64编码字符串
      */
-    public String toBase64(String type) {
+    protected String toBase64(String type) {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         out(outputStream);
         return type + Base64.getEncoder().encodeToString(outputStream.toByteArray());
@@ -153,7 +168,7 @@ public abstract class Captcha extends Randoms {
      *
      * @return 字符串
      */
-    public String text() {
+    protected String text() {
         checkAlpha();
         return chars;
     }
@@ -163,7 +178,7 @@ public abstract class Captcha extends Randoms {
      *
      * @return 字符数组
      */
-    public char[] textChar() {
+    protected char[] textChar() {
         checkAlpha();
         return chars.toCharArray();
     }
@@ -171,7 +186,7 @@ public abstract class Captcha extends Randoms {
     /**
      * 检查验证码是否生成，没有则立即生成
      */
-    public void checkAlpha() {
+    protected void checkAlpha() {
         if (chars == null) {
             alphas(); // 生成验证码
         }
@@ -211,7 +226,7 @@ public abstract class Captcha extends Randoms {
      * @param num 数量
      * @param g   Graphics2D
      */
-    public void drawOval(int num, Graphics2D g) {
+    protected void drawOval(int num, Graphics2D g) {
         drawOval(num, null, g);
     }
 
@@ -222,7 +237,7 @@ public abstract class Captcha extends Randoms {
      * @param color 颜色
      * @param g     Graphics2D
      */
-    public void drawOval(int num, Color color, Graphics2D g) {
+    protected void drawOval(int num, Color color, Graphics2D g) {
         for (int i = 0; i < num; i++) {
             g.setColor(color == null ? color() : color);
             int w = 5 + num(10);
@@ -236,7 +251,7 @@ public abstract class Captcha extends Randoms {
      * @param num 数量
      * @param g   Graphics2D
      */
-    public void drawBesselLine(int num, Graphics2D g) {
+    protected void drawBesselLine(int num, Graphics2D g) {
         drawBesselLine(num, null, g);
     }
 
@@ -247,7 +262,7 @@ public abstract class Captcha extends Randoms {
      * @param color 颜色
      * @param g     Graphics2D
      */
-    public void drawBesselLine(int num, Color color, Graphics2D g) {
+    protected void drawBesselLine(int num, Color color, Graphics2D g) {
         for (int i = 0; i < num; i++) {
             g.setColor(color == null ? color() : color);
             int x1 = 5, y1 = num(5, height / 2);
@@ -270,7 +285,7 @@ public abstract class Captcha extends Randoms {
         }
     }
 
-    public Font getFont() {
+    protected Font getFont() {
         if (font == null) {
             setFont(new Font("Arial", Font.BOLD, 32));
         }
@@ -294,7 +309,7 @@ public abstract class Captcha extends Randoms {
                 .deriveFont(style, size);
     }
 
-    public int getLen() {
+    protected int getLen() {
         return len;
     }
 
@@ -302,7 +317,7 @@ public abstract class Captcha extends Randoms {
         this.len = len;
     }
 
-    public int getWidth() {
+    protected int getWidth() {
         return width;
     }
 
@@ -310,7 +325,7 @@ public abstract class Captcha extends Randoms {
         this.width = width;
     }
 
-    public int getHeight() {
+    protected int getHeight() {
         return height;
     }
 
@@ -318,7 +333,7 @@ public abstract class Captcha extends Randoms {
         this.height = height;
     }
 
-    public VerifyType getCharType() {
+    protected VerifyType getCharType() {
         return charType;
     }
 
