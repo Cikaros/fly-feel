@@ -5,7 +5,7 @@ import io.gitee.define.entity.Role;
 import java.util.List;
 
 /**
- * $DESCRIPTION
+ * 角色管理Mapper
  * 
  * @author Cikaros
  * @date 2022/3/17

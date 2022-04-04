@@ -5,7 +5,7 @@ import io.gitee.define.entity.RelateClientServer;
 import java.util.List;
 
 /**
- * $DESCRIPTION
+ * 客户端服务管理Mapper
  * 
  * @author Cikaros
  * @date 2022/3/17

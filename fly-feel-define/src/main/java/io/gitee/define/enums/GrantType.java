@@ -1,6 +1,8 @@
 package io.gitee.define.enums;
 
 /**
+ * Oauth授权模式
+ *
  * @author Cikaros
  * @date 2022/3/19
  * @since v1.0

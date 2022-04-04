@@ -5,8 +5,8 @@ import io.gitee.define.entity.RelateAccountRole;
 import java.util.List;
 
 /**
- * $DESCRIPTION
- * 
+ * 用户角色管理
+ *
  * @author Cikaros
  * @date 2022/3/17
  * @since v1.0

@@ -5,8 +5,8 @@ import io.gitee.define.entity.Department;
 import java.util.List;
 
 /**
- * $DESCRIPTION
- * 
+ * 部门管理Mapper
+ *
  * @author Cikaros
  * @date 2022/3/17
  * @since v1.0

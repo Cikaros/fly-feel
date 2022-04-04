@@ -5,7 +5,7 @@ import io.gitee.define.entity.RelateRoleAuthority;
 import java.util.List;
 
 /**
- * $DESCRIPTION
+ * 角色权限管理Mapper
  * 
  * @author Cikaros
  * @date 2022/3/17

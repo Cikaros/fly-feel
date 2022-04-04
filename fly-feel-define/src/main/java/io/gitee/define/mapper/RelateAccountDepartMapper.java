@@ -5,8 +5,8 @@ import io.gitee.define.entity.RelateAccountDepart;
 import java.util.List;
 
 /**
- * $DESCRIPTION
- * 
+ * 用户部门管理Mapper
+ *
  * @author Cikaros
  * @date 2022/3/17
  * @since v1.0

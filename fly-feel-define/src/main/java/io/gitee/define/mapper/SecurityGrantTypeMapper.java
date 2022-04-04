@@ -3,7 +3,7 @@ package io.gitee.define.mapper;
 import io.gitee.define.entity.ClientGrantType;
 
 /**
- * Security扩充ClientMapper
+ * Security扩充GrantTypeMapper
  *
  * @author Cikaros
  * @date 2022/3/20

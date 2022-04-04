@@ -5,8 +5,8 @@ import io.gitee.define.entity.RelateClientRole;
 import java.util.List;
 
 /**
- * $DESCRIPTION
- * 
+ * 客户端角色管理Mapper
+ *
  * @author Cikaros
  * @date 2022/3/17
  * @since v1.0

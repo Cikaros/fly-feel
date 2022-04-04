@@ -5,7 +5,7 @@ import io.gitee.define.entity.Component;
 import java.util.List;
 
 /**
- * $DESCRIPTION
+ * 组件管理Mapper
  *
  * @author Cikaros
  * @date 2022/3/17

@@ -5,7 +5,7 @@ import io.gitee.define.entity.CodeItem;
 import java.util.List;
 
 /**
- * $DESCRIPTION
+ * 代码项Mapper
  *
  * @author Cikaros
  * @date 2022/3/17

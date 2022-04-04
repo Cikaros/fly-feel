@@ -41,10 +41,10 @@
     <build>
         <plugins>
             <!--加入Java代码混淆-->
-<!--            <plugin>-->
-<!--                <groupId>org.codehaus.mojo</groupId>-->
-<!--                <artifactId>exec-maven-plugin</artifactId>-->
-<!--            </plugin>-->
+            <!--            <plugin>-->
+            <!--                <groupId>org.codehaus.mojo</groupId>-->
+            <!--                <artifactId>exec-maven-plugin</artifactId>-->
+            <!--            </plugin>-->
         </plugins>
     </build>
 
