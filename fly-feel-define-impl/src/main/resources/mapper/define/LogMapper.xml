@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.gitee.define.mapper.LogMapper">
+    <resultMap id="BaseResultMap" type="io.gitee.define.entity.Log"
+               extends="io.gitee.define.mapper.BaseModelMapper.BaseResultMap">
+        <!--@Table ff_log-->
+        <result column="type" property="type"/>
+        <result column="msg" property="msg"/>
+        <result column="triggers" property="triggers"/>
+        <result column="location" property="location"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@sql select -->
+        log.id, log.`type`, log.msg, log.triggers, log.`location`, log.`system`, log.`enable`, log.del, log.create_by,
+        log.create_time,
+        log.update_by, log.update_time, log.remark, log._version
+        <!--@sql from ff_log log-->
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        <!--@mbg.generated-->
+        select
+        <include refid="Base_Column_List"/>
+        from ff_log log
+        where id = #{id}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        <!--@mbg.generated-->
+        delete
+        from ff_log
+        where id = #{id}
+    </delete>
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="io.gitee.define.entity.Log"
+            useGeneratedKeys="true">
+        <!--@mbg.generated-->
+        insert into ff_log (`type`, msg, triggers, `location`, `system`, `enable`, del,
+                            create_by, create_time, update_by, update_time, remark, _version)
+        values (#{type,typeHandler=org.apache.ibatis.type.EnumOrdinalTypeHandler}, #{msg}, #{triggers}, #{location}, #{system}, #{enable}, #{del},
+                #{createBy}, #{createTime}, #{updateBy}, #{updateTime}, #{remark}, #{_version})
+    </insert>
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="io.gitee.define.entity.Log"
+            useGeneratedKeys="true">
+        <!--@mbg.generated-->
+        insert into ff_log
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="type != null">
+                `type`,
+            </if>
+            <if test="msg != null">
+                msg,
+            </if>
+            <if test="triggers != null">
+                triggers,
+            </if>
+            <if test="location != null">
+                `location`,
+            </if>
+            <if test="system != null">
+                `system`,
+            </if>
+            <if test="enable != null">
+                `enable`,
+            </if>
+            <if test="del != null">
+                del,
+            </if>
+            <if test="createBy != null">
+                create_by,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateBy != null">
+                update_by,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+            <if test="remark != null">
+                remark,
+            </if>
+            <if test="_version != null">
+                _version,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="type != null">
+                #{type,typeHandler=org.apache.ibatis.type.EnumOrdinalTypeHandler},
+            </if>
+            <if test="msg != null">
+                #{msg},
+            </if>
+            <if test="triggers != null">
+                #{triggers},
+            </if>
+            <if test="location != null">
+                #{location},
+            </if>
+            <if test="system != null">
+                #{system},
+            </if>
+            <if test="enable != null">
+                #{enable},
+            </if>
+            <if test="del != null">
+                #{del},
+            </if>
+            <if test="createBy != null">
+                #{createBy},
+            </if>
+            <if test="createTime != null">
+                #{createTime},
+            </if>
+            <if test="updateBy != null">
+                #{updateBy},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime},
+            </if>
+            <if test="remark != null">
+                #{remark},
+            </if>
+            <if test="_version != null">
+                #{_version},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="io.gitee.define.entity.Log">
+        <!--@mbg.generated-->
+        update ff_log
+        <set>
+            <if test="type != null">
+                `type` = #{type,typeHandler=org.apache.ibatis.type.EnumOrdinalTypeHandler},
+            </if>
+            <if test="msg != null">
+                msg = #{msg},
+            </if>
+            <if test="triggers != null">
+                triggers = #{triggers},
+            </if>
+            <if test="location != null">
+                `location` = #{location},
+            </if>
+            <if test="system != null">
+                `system` = #{system},
+            </if>
+            <if test="enable != null">
+                `enable` = #{enable},
+            </if>
+            <if test="del != null">
+                del = #{del},
+            </if>
+            <if test="createBy != null">
+                create_by = #{createBy},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="updateBy != null">
+                update_by = #{updateBy},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+            <if test="remark != null">
+                remark = #{remark},
+            </if>
+            <if test="_version != null">
+                _version = #{_version},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="io.gitee.define.entity.Log">
+        <!--@mbg.generated-->
+        update ff_log
+        set `type`      = #{type,typeHandler=org.apache.ibatis.type.EnumOrdinalTypeHandler},
+            msg         = #{msg},
+            triggers    = #{triggers},
+            `location`  = #{location},
+            `system`    = #{system},
+            `enable`    = #{enable},
+            del         = #{del},
+            create_by   = #{createBy},
+            create_time = #{createTime},
+            update_by   = #{updateBy},
+            update_time = #{updateTime},
+            remark      = #{remark},
+            _version    = #{_version}
+        where id = #{id}
+    </update>
+    <update id="updateBatch" parameterType="java.util.List">
+        <!--@mbg.generated-->
+        update ff_log
+        <trim prefix="set" suffixOverrides=",">
+            <trim prefix="`type` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.type,typeHandler=org.apache.ibatis.type.EnumOrdinalTypeHandler}
+                </foreach>
+            </trim>
+            <trim prefix="msg = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.msg}
+                </foreach>
+            </trim>
+            <trim prefix="triggers = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.triggers}
+                </foreach>
+            </trim>
+            <trim prefix="`location` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.location}
+                </foreach>
+            </trim>
+            <trim prefix="`system` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.system}
+                </foreach>
+            </trim>
+            <trim prefix="`enable` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.enable}
+                </foreach>
+            </trim>
+            <trim prefix="del = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.del}
+                </foreach>
+            </trim>
+            <trim prefix="create_by = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.createBy}
+                </foreach>
+            </trim>
+            <trim prefix="create_time = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.createTime}
+                </foreach>
+            </trim>
+            <trim prefix="update_by = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.updateBy}
+                </foreach>
+            </trim>
+            <trim prefix="update_time = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.updateTime}
+                </foreach>
+            </trim>
+            <trim prefix="remark = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item.remark}
+                </foreach>
+            </trim>
+            <trim prefix="_version = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id} then #{item._version}
+                </foreach>
+            </trim>
+        </trim>
+        where id in
+        <foreach close=")" collection="list" item="item" open="(" separator=", ">
+            #{item.id}
+        </foreach>
+    </update>
+    <update id="updateBatchSelective" parameterType="java.util.List">
+        <!--@mbg.generated-->
+        update ff_log
+        <trim prefix="set" suffixOverrides=",">
+            <trim prefix="`type` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.type != null">
+                        when id = #{item.id} then #{item.type,typeHandler=org.apache.ibatis.type.EnumOrdinalTypeHandler}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="msg = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.msg != null">
+                        when id = #{item.id} then #{item.msg}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="triggers = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.triggers != null">
+                        when id = #{item.id} then #{item.triggers}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="`location` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.location != null">
+                        when id = #{item.id} then #{item.location}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="`system` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.system != null">
+                        when id = #{item.id} then #{item.system}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="`enable` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.enable != null">
+                        when id = #{item.id} then #{item.enable}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="del = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.del != null">
+                        when id = #{item.id} then #{item.del}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="create_by = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.createBy != null">
+                        when id = #{item.id} then #{item.createBy}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="create_time = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.createTime != null">
+                        when id = #{item.id} then #{item.createTime}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="update_by = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.updateBy != null">
+                        when id = #{item.id} then #{item.updateBy}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="update_time = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.updateTime != null">
+                        when id = #{item.id} then #{item.updateTime}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="remark = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.remark != null">
+                        when id = #{item.id} then #{item.remark}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="_version = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item._version != null">
+                        when id = #{item.id} then #{item._version}
+                    </if>
+                </foreach>
+            </trim>
+        </trim>
+        where id in
+        <foreach close=")" collection="list" item="item" open="(" separator=", ">
+            #{item.id}
+        </foreach>
+    </update>
+    <insert id="batchInsert" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
+        <!--@mbg.generated-->
+        insert into ff_log
+                (`type`, msg, triggers, `location`, `system`, `enable`, del, create_by, create_time,
+                 update_by, update_time, remark, _version)
+                values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.type,typeHandler=org.apache.ibatis.type.EnumOrdinalTypeHandler}, #{item.msg}, #{item.triggers}, #{item.location}, #{item.system}, #{item.enable},
+             #{item.del}, #{item.createBy}, #{item.createTime}, #{item.updateBy}, #{item.updateTime},
+             #{item.remark}, #{item._version})
+        </foreach>
+    </insert>
+    <insert id="insertOrUpdate" keyColumn="id" keyProperty="id" parameterType="io.gitee.define.entity.Log"
+            useGeneratedKeys="true">
+        <!--@mbg.generated-->
+        insert into ff_log
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            `type`,
+            msg,
+            triggers,
+            `location`,
+            `system`,
+            `enable`,
+            del,
+            create_by,
+            create_time,
+            update_by,
+            update_time,
+            remark,
+            _version,
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id},
+            </if>
+            #{type,typeHandler=org.apache.ibatis.type.EnumOrdinalTypeHandler},
+            #{msg},
+            #{triggers},
+            #{location},
+            #{system},
+            #{enable},
+            #{del},
+            #{createBy},
+            #{createTime},
+            #{updateBy},
+            #{updateTime},
+            #{remark},
+            #{_version},
+        </trim>
+        on duplicate key update
+        <trim suffixOverrides=",">
+            <if test="id != null">
+                id = #{id},
+            </if>
+            `type`      = #{type,typeHandler=org.apache.ibatis.type.EnumOrdinalTypeHandler},
+            msg         = #{msg},
+            triggers    = #{triggers},
+            `location`  = #{location},
+            `system`    = #{system},
+            `enable`    = #{enable},
+            del         = #{del},
+            create_by   = #{createBy},
+            create_time = #{createTime},
+            update_by   = #{updateBy},
+            update_time = #{updateTime},
+            remark      = #{remark},
+            _version    = #{_version},
+        </trim>
+    </insert>
+    <insert id="insertOrUpdateSelective" keyColumn="id" keyProperty="id" parameterType="io.gitee.define.entity.Log"
+            useGeneratedKeys="true">
+        <!--@mbg.generated-->
+        insert into ff_log
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="type != null">
+                `type`,
+            </if>
+            <if test="msg != null">
+                msg,
+            </if>
+            <if test="triggers != null">
+                triggers,
+            </if>
+            <if test="location != null">
+                `location`,
+            </if>
+            <if test="system != null">
+                `system`,
+            </if>
+            <if test="enable != null">
+                `enable`,
+            </if>
+            <if test="del != null">
+                del,
+            </if>
+            <if test="createBy != null">
+                create_by,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateBy != null">
+                update_by,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+            <if test="remark != null">
+                remark,
+            </if>
+            <if test="_version != null">
+                _version,
+            </if>
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id},
+            </if>
+            <if test="type != null">
+                #{type,typeHandler=org.apache.ibatis.type.EnumOrdinalTypeHandler},
+            </if>
+            <if test="msg != null">
+                #{msg},
+            </if>
+            <if test="triggers != null">
+                #{triggers},
+            </if>
+            <if test="location != null">
+                #{location},
+            </if>
+            <if test="system != null">
+                #{system},
+            </if>
+            <if test="enable != null">
+                #{enable},
+            </if>
+            <if test="del != null">
+                #{del},
+            </if>
+            <if test="createBy != null">
+                #{createBy},
+            </if>
+            <if test="createTime != null">
+                #{createTime},
+            </if>
+            <if test="updateBy != null">
+                #{updateBy},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime},
+            </if>
+            <if test="remark != null">
+                #{remark},
+            </if>
+            <if test="_version != null">
+                #{_version},
+            </if>
+        </trim>
+        on duplicate key update
+        <trim suffixOverrides=",">
+            <if test="id != null">
+                id = #{id},
+            </if>
+            <if test="type != null">
+                `type` = #{type,typeHandler=org.apache.ibatis.type.EnumOrdinalTypeHandler},
+            </if>
+            <if test="msg != null">
+                msg = #{msg},
+            </if>
+            <if test="triggers != null">
+                triggers = #{triggers},
+            </if>
+            <if test="location != null">
+                `location` = #{location},
+            </if>
+            <if test="system != null">
+                `system` = #{system},
+            </if>
+            <if test="enable != null">
+                `enable` = #{enable},
+            </if>
+            <if test="del != null">
+                del = #{del},
+            </if>
+            <if test="createBy != null">
+                create_by = #{createBy},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="updateBy != null">
+                update_by = #{updateBy},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+            <if test="remark != null">
+                remark = #{remark},
+            </if>
+            <if test="_version != null">
+                _version = #{_version},
+            </if>
+        </trim>
+    </insert>
+</mapper>

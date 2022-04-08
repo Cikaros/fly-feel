@@ -8,6 +8,10 @@
                     select="io.gitee.define.mapper.SecurityRoleMapper.selectByAccountId"
                     column="id">
         </collection>
+        <collection property="securityAuthorities" ofType="io.gitee.define.entity.SecurityAuthority"
+                    select="io.gitee.define.mapper.SecurityAuthorityMapper.selectByAccountId"
+                    column="id">
+        </collection>
     </resultMap>
 
     <select id="selectByUsername" resultMap="BaseResultMap">

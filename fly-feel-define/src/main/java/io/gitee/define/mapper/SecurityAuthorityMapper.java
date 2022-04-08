@@ -14,4 +14,8 @@ import java.util.Collection;
 public interface SecurityAuthorityMapper extends AuthorityMapper {
 
     Collection<SecurityAuthority> selectByRoleId(Long id);
+
+    Collection<SecurityAuthority> selectByAccountId(Long id);
+
+    Collection<SecurityAuthority> selectByClientId(Long id);
 }

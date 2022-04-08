@@ -14,7 +14,7 @@ public interface IRoleService {
     /**
      * 根据主键删除无用的角色
      *
-     * @param id
+     * @param id 主键
      * @return 结果
      */
     boolean deleteByPrimaryKey(Long id);

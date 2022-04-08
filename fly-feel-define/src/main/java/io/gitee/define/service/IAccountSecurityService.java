@@ -4,6 +4,8 @@ import io.gitee.define.entity.SecurityAccount;
 import org.springframework.lang.NonNull;
 
 /**
+ * Security 账户业务
+ *
  * @author Cikaros
  * @date 2022/3/18
  * @since v1.0

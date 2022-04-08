@@ -41,6 +41,9 @@
         <module>fly-feel-dependencies</module>
         <module>fly-feel-define</module>
         <module>fly-feel-define-impl</module>
+        <module>fly-feel-message</module>
+        <module>fly-feel-log</module>
+        <module>fly-feel-generate</module>
     </modules>
 
     <parent>
@@ -91,6 +94,7 @@
         <aspectjweaver.version>1.8.0</aspectjweaver.version>
         <!--Mybatis-->
         <mybatis.version>3.5.8</mybatis.version>
+        <mybatis.generator.version>1.4.1</mybatis.generator.version>
         <mybatis.plus.version>3.3.2</mybatis.plus.version>
         <mybatis.plus.dynamic.datasource.version>3.4.1</mybatis.plus.dynamic.datasource.version>
         <spring.boot.mybatis.version>2.2.0</spring.boot.mybatis.version>
@@ -115,12 +119,12 @@
         <commons.dbutils.version>1.7</commons.dbutils.version>
         <commons.logging.version>1.1</commons.logging.version>
         <commons.collection4.version>4.4</commons.collection4.version>
-        <!--hutool-->
+        <!--HuTool-->
         <hutool.version>5.7.7</hutool.version>
         <!--数据库-->
         <mysql.version>8.0.22</mysql.version>
         <sqlite.version>3.32.3.2</sqlite.version>
-        <mariadb.version>2.7.0</mariadb.version>
+        <mariadb.version>3.0.3</mariadb.version>
         <!--数据库连接池-->
         <HikariCP.version>3.4.5</HikariCP.version>
         <druid.version>1.1.22</druid.version>
@@ -142,7 +146,7 @@
         <!--JavaFx SDK-->
         <javafx.version>16</javafx.version>
         <!--Netty-->
-        <netty.all.version>4.1.63.Final</netty.all.version>
+        <netty.all.version>4.1.74.Final</netty.all.version>
         <!--谷歌Gson-->
         <google.gson.version>2.8.6</google.gson.version>
         <!--谷歌工具包-->
@@ -169,17 +173,18 @@
         <!--Maven Plugin-->
         <maven.plugin.clean.version>3.1.0</maven.plugin.clean.version>
         <maven.plugin.source.version>3.2.1</maven.plugin.source.version>
-        <maven.plugin.resources.version>3.0.2</maven.plugin.resources.version>
-        <maven.plugin.compiler.version>3.8.0</maven.plugin.compiler.version>
+        <maven.plugin.resources.version>3.2.0</maven.plugin.resources.version>
+        <maven.plugin.dependency.version>3.2.0</maven.plugin.dependency.version>
+        <maven.plugin.compiler.version>3.10.0</maven.plugin.compiler.version>
         <maven.plugin.exec.version>3.0.0</maven.plugin.exec.version>
-        <maven.plugin.surefire.version>2.22.1</maven.plugin.surefire.version>
-        <maven.plugin.war.version>3.2.2</maven.plugin.war.version>
+        <maven.plugin.surefire.version>2.22.2</maven.plugin.surefire.version>
+        <maven.plugin.war.version>3.3.2</maven.plugin.war.version>
         <maven.plugin.install.version>2.5.2</maven.plugin.install.version>
         <maven.plugin.deploy.version>2.8.2</maven.plugin.deploy.version>
         <maven.plugin.tomcat7.version>2.2</maven.plugin.tomcat7.version>
         <maven.plugin.javadoc.version>3.3.0</maven.plugin.javadoc.version>
         <maven.plugin.info.reports.version>3.1.2</maven.plugin.info.reports.version>
-        <maven.plugin.spring.boot.version>2.6.4</maven.plugin.spring.boot.version>
+        <maven.plugin.spring.boot.version>2.6.5</maven.plugin.spring.boot.version>
         <!--Maven Compiler Configuration-->
         <maven.plugin.compiler.config.executable/>
         <maven.plugin.compiler.config.skip>false</maven.plugin.compiler.config.skip>
@@ -580,6 +585,11 @@
                 <version>${mybatis.version}</version>
             </dependency>
             <dependency>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-core</artifactId>
+                <version>${mybatis.generator.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>com.zaxxer</groupId>
                 <artifactId>HikariCP</artifactId>
                 <version>${HikariCP.version}</version>
@@ -839,6 +849,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
+                    <version>${maven.plugin.dependency.version}</version>
                     <executions>
                         <execution>
                             <id>copy-dependencies</id>

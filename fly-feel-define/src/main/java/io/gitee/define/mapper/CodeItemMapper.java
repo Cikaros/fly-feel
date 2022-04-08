@@ -1,17 +1,16 @@
 package io.gitee.define.mapper;
 
 import io.gitee.define.entity.CodeItem;
-
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 /**
- * 代码项Mapper
+ * 代码项
  *
  * @author Cikaros
- * @date 2022/3/17
- * @since v1.0
+ * @date 2022/4/7
  */
-public interface CodeItemMapper extends BaseMapper {
+public interface CodeItemMapper extends BaseModelMapper {
     int deleteByPrimaryKey(Long id);
 
     int insert(CodeItem record);
@@ -32,6 +31,5 @@ public interface CodeItemMapper extends BaseMapper {
 
     int updateBatchSelective(List<CodeItem> list);
 
-    int batchInsert(List<CodeItem> list);
-
+    int batchInsert(@Param("list") List<CodeItem> list);
 }

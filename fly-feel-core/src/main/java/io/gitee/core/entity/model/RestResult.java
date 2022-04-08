@@ -33,8 +33,20 @@ public class RestResult extends ResponseEntity<Data> {
         super(new Data(status, data), status);
     }
 
+    protected RestResult(HttpStatus status, String message) {
+        super(new Data(status, message), status);
+    }
+
     protected RestResult(Object data, String message) {
         super(new Data(data, message), HttpStatus.OK);
+    }
+
+    protected RestResult(Object data) {
+        super(new Data(data), HttpStatus.OK);
+    }
+
+    protected RestResult(String message) {
+        super(new Data(message), HttpStatus.OK);
     }
 
     public String getMessage() {
@@ -65,6 +77,17 @@ public class RestResult extends ResponseEntity<Data> {
     /**
      * 构造统一返回结果集
      *
+     * @param status HTTP状态
+     * @param data   数据
+     * @return {@link RestResult}
+     */
+    public static RestResult newInstance(HttpStatus status, Object data) {
+        return new RestResult(status, data);
+    }
+
+    /**
+     * 构造统一返回结果集
+     *
      * @param status  HTTP状态
      * @param data    数据
      * @param message 显示信息
@@ -72,17 +95,6 @@ public class RestResult extends ResponseEntity<Data> {
      */
     public static RestResult newInstance(HttpStatus status, Object data, String message) {
         return new RestResult(status, data, message);
-    }
-
-    /**
-     * 构造统一返回结果集
-     *
-     * @param status HTTP状态
-     * @param data   数据
-     * @return {@link RestResult}
-     */
-    public static RestResult newInstance(HttpStatus status, Object data) {
-        return new RestResult(status, data);
     }
 
     /**
@@ -119,11 +131,32 @@ public class RestResult extends ResponseEntity<Data> {
     /**
      * 构造成功结果集
      *
+     * @param data 数据
+     * @return {@link RestResult}
+     */
+    public static RestResult success(Object data) {
+        return newInstance(HttpStatus.OK, data);
+    }
+
+    /**
+     * 构造成功结果集
+     *
      * @param list List数据
      * @return {@link RestResult}
      */
     public static RestResult success(List<BaseModel> list) {
         return newInstance(HttpStatus.OK, list.stream().map(data -> data.clone(BaseModel.Field.ID)).collect(Collectors.toList()));
+    }
+
+    /**
+     * 构造成功结果集
+     *
+     * @param list  List数据
+     * @param total 总数量
+     * @return {@link RestResult}
+     */
+    public static RestResult success(List<?> list, long total) {
+        return newInstance(HttpStatus.OK, new ListData(list, total));
     }
 
     /**
@@ -142,7 +175,7 @@ public class RestResult extends ResponseEntity<Data> {
      * @return {@link RestResult}
      */
     public static RestResult success(Data data) {
-        return newInstance(HttpStatus.NO_CONTENT, data);
+        return newInstance(HttpStatus.OK, data);
     }
 
     /**
@@ -210,7 +243,7 @@ public class RestResult extends ResponseEntity<Data> {
      * @return {@link RestResult}
      */
     public static RestResult emptyListResult() {
-        return new RestResult(HttpStatus.OK, ListData.empty());
+        return new RestResult(HttpStatus.GONE, ListData.empty());
     }
 
     /**

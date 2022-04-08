@@ -19,8 +19,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Scope("request")
 public class BaseController {
 
-    protected final Logger log = LoggerFactory.getLogger(BaseController.class);
-
     protected I18nService i18n;
 
     @GetMapping("/")

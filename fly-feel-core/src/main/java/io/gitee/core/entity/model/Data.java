@@ -3,6 +3,8 @@ package io.gitee.core.entity.model;
 import org.springframework.http.HttpStatus;
 
 /**
+ * 基础结果集
+ *
  * @author Cikaros
  * @date 2022/3/18
  * @since v1.0
@@ -62,6 +64,27 @@ class Data {
         this.code = this.status.value();
         this.data = data;
         this.message = message;
+    }
+
+    protected Data(HttpStatus status, String message) {
+        this.status = status;
+        this.code = this.status.value();
+        this.data = null;
+        this.message = message;
+    }
+
+    protected Data(String message) {
+        this.status = HttpStatus.OK;
+        this.code = this.status.value();
+        this.data = null;
+        this.message = message;
+    }
+
+    protected Data(Object data) {
+        this.status = HttpStatus.OK;
+        this.code = this.status.value();
+        this.data = data;
+        this.message = status.getReasonPhrase();
     }
 
     public Integer getCode() {

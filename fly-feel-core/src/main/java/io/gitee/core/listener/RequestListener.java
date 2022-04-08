@@ -19,6 +19,8 @@ import java.io.IOException;
 import java.util.*;
 
 /**
+ * Request监听日志
+ *
  * @author Cikaros
  * @date 2022/3/27
  * @since v1.0
@@ -45,13 +47,13 @@ public class RequestListener implements ServletRequestListener {
         if (sre.getServletRequest() instanceof HttpServletRequest) {
             try {
                 if (Objects.isNull(this.mapper)) {
-                    ApplicationContext applicationContext = ServletUtils.getExistingRootWebApplicationContext(sre.getServletContext());
+                    ApplicationContext applicationContext = ServletUtils.getWebApplicationContext();
                     Assert.notNull(applicationContext, "Cannot get ApplicationContext!");
                     this.mapper = applicationContext.getBean(ObjectMapper.class);
                     this.config = applicationContext.getBean(RequestLoggerProperties.class);
                 }
                 HttpServletRequest request = (HttpServletRequest) sre.getServletRequest();
-                if (!match(request)) {
+                if (isMatches(request)) {
                     printLog(request);
                 }
             } catch (IOException e) {
@@ -60,14 +62,14 @@ public class RequestListener implements ServletRequestListener {
         }
     }
 
-    private boolean match(HttpServletRequest request) {
+    private boolean isMatches(HttpServletRequest request) {
         String uri = request.getRequestURI();
         for (String excludePath : config.getExcludePaths()) {
             if (matcher.matchStart(excludePath, uri)) {
-                return true;
+                return false;
             }
         }
-        return false;
+        return true;
     }
 
 
@@ -96,12 +98,10 @@ public class RequestListener implements ServletRequestListener {
     public void requestDestroyed(ServletRequestEvent sre) {
         if (sre.getServletRequest() instanceof HttpServletRequest) {
             HttpServletRequest request = (HttpServletRequest) sre.getServletRequest();
-            if (!match(request)) {
+            if (isMatches(request)) {
                 long timeCost = System.currentTimeMillis() - startTime.pop();
-                if (timeCost <= config.getTimeout())
-                    log.debug("请求处理结束. 处理耗时: {}", timeCost);
-                else
-                    log.warn("请求处理结束. 处理耗时: {}", timeCost);
+                if (timeCost <= config.getTimeout()) log.debug("请求处理结束. 处理耗时: {}", timeCost);
+                else log.warn("请求处理结束. 处理耗时: {}", timeCost);
             }
         }
     }

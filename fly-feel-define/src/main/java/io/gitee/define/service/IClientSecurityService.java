@@ -1,9 +1,10 @@
 package io.gitee.define.service;
 
 import io.gitee.define.entity.SecurityClient;
-import io.gitee.define.service.IClientService;
 
 /**
+ * Security 客户端业务
+ *
  * @author Cikaros
  * @date 2022/3/20
  * @since v1.0

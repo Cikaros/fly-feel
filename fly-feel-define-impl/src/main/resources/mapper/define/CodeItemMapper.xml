@@ -11,44 +11,36 @@
         <result column="order" property="order"/>
     </resultMap>
     <sql id="Base_Column_List">
-        <!--@sql select-->
-        code_item.id,
-        code_item.title,
-        code_item.description,
-        code_item.`type`,
-        code_item.`value`,
-        code_item.`order`,
-        code_item.`system`,
-        code_item.`enable`,
-        code_item.del,
-        code_item.create_by,
-        code_item.create_time,
-        code_item.update_by,
-        code_item.update_time,
-        code_item.remark,
-        code_item._version
+        <!--@sql select -->
+        code_item.id, code_item.title, code_item.description, code_item.`type`, code_item.`value`, code_item.`order`,
+        code_item.`system`, code_item.`enable`, code_item.del, code_item.create_by,
+        code_item.create_time, code_item.update_by, code_item.update_time, code_item.remark, code_item._version
         <!--@sql from ff_code_item code_item-->
     </sql>
     <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        <!--@mbg.generated-->
         select
         <include refid="Base_Column_List"/>
         from ff_code_item code_item
         where id = #{id}
     </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        <!--@mbg.generated-->
         delete
         from ff_code_item
         where id = #{id}
     </delete>
     <insert id="insert" keyColumn="id" keyProperty="id" parameterType="io.gitee.define.entity.CodeItem"
             useGeneratedKeys="true">
+        <!--@mbg.generated-->
         insert into ff_code_item (title, description, `type`, `value`, `order`, `system`, `enable`,
                                   del, create_by, create_time, update_by, update_time, remark, _version)
         values (#{title}, #{description}, #{type}, #{value}, #{order}, #{system}, #{enable},
                 #{del}, #{createBy}, #{createTime}, #{updateBy}, #{updateTime}, #{remark}, #{_version})
     </insert>
-    <insert id="insertSelective" keyColumn="id" keyProperty="id"
-            parameterType="io.gitee.define.entity.CodeItem" useGeneratedKeys="true">
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="io.gitee.define.entity.CodeItem"
+            useGeneratedKeys="true">
+        <!--@mbg.generated-->
         insert into ff_code_item
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="title != null">
@@ -140,6 +132,7 @@
         </trim>
     </insert>
     <update id="updateByPrimaryKeySelective" parameterType="io.gitee.define.entity.CodeItem">
+        <!--@mbg.generated-->
         update ff_code_item
         <set>
             <if test="title != null">
@@ -188,6 +181,7 @@
         where id = #{id}
     </update>
     <update id="updateByPrimaryKey" parameterType="io.gitee.define.entity.CodeItem">
+        <!--@mbg.generated-->
         update ff_code_item
         set title       = #{title},
             description = #{description},
@@ -206,6 +200,7 @@
         where id = #{id}
     </update>
     <update id="updateBatch" parameterType="java.util.List">
+        <!--@mbg.generated-->
         update ff_code_item
         <trim prefix="set" suffixOverrides=",">
             <trim prefix="title = case" suffix="end,">
@@ -285,6 +280,7 @@
         </foreach>
     </update>
     <update id="updateBatchSelective" parameterType="java.util.List">
+        <!--@mbg.generated-->
         update ff_code_item
         <trim prefix="set" suffixOverrides=",">
             <trim prefix="title = case" suffix="end,">
@@ -392,6 +388,7 @@
         </foreach>
     </update>
     <insert id="batchInsert" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
+        <!--@mbg.generated-->
         insert into ff_code_item
                 (title, description, `type`, `value`, `order`, `system`, `enable`, del, create_by,
                  create_time, update_by, update_time, remark, _version)
@@ -404,6 +401,7 @@
     </insert>
     <insert id="insertOrUpdate" keyColumn="id" keyProperty="id" parameterType="io.gitee.define.entity.CodeItem"
             useGeneratedKeys="true">
+        <!--@mbg.generated-->
         insert into ff_code_item
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -465,8 +463,9 @@
             _version    = #{_version},
         </trim>
     </insert>
-    <insert id="insertOrUpdateSelective" keyColumn="id" keyProperty="id"
-            parameterType="io.gitee.define.entity.CodeItem" useGeneratedKeys="true">
+    <insert id="insertOrUpdateSelective" keyColumn="id" keyProperty="id" parameterType="io.gitee.define.entity.CodeItem"
+            useGeneratedKeys="true">
+        <!--@mbg.generated-->
         insert into ff_code_item
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">

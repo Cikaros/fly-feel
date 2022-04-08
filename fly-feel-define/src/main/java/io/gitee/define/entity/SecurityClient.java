@@ -6,6 +6,7 @@ import org.springframework.security.oauth2.provider.ClientDetails;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * 自定义ClientDetails
@@ -23,6 +24,16 @@ public class SecurityClient extends Client implements ClientDetails {
     private Collection<ClientGrantType> grantTypes;
 
     private Collection<SecurityRole> roles;
+
+    private Collection<SecurityAuthority> securityAuthorities;
+
+    public Collection<SecurityAuthority> getSecurityAuthorities() {
+        return securityAuthorities;
+    }
+
+    public void setSecurityAuthorities(Collection<SecurityAuthority> securityAuthorities) {
+        this.securityAuthorities = securityAuthorities;
+    }
 
     public Collection<SecurityRole> getRoles() {
         return roles;
@@ -50,7 +61,7 @@ public class SecurityClient extends Client implements ClientDetails {
 
     @Override
     public Set<String> getResourceIds() {
-        return servers.stream().map(Server::getResourceId).collect(Collectors.toSet());
+        return servers.stream().filter(Server::getEnable).map(Server::getResourceId).collect(Collectors.toSet());
     }
 
     @Override
@@ -70,11 +81,7 @@ public class SecurityClient extends Client implements ClientDetails {
 
     @Override
     public Set<String> getAuthorizedGrantTypes() {
-        return grantTypes.stream()
-                .map(ClientGrantType::getAuthorizedGrantType)
-                .map(GrantType::name)
-                .map(String::toLowerCase)
-                .collect(Collectors.toSet());
+        return grantTypes.stream().filter(ClientGrantType::getEnable).map(ClientGrantType::getAuthorizedGrantType).map(GrantType::name).map(String::toLowerCase).collect(Collectors.toSet());
     }
 
     @Override
@@ -84,7 +91,7 @@ public class SecurityClient extends Client implements ClientDetails {
 
     @Override
     public Collection<GrantedAuthority> getAuthorities() {
-        return roles.stream().flatMap(role -> role.getAuthorities().stream()).collect(Collectors.toSet());
+        return Stream.concat(roles.stream().flatMap(role -> role.getAuthorities().stream()), securityAuthorities.stream()).filter(SecurityAuthority::getEnable).collect(Collectors.toSet());
     }
 
     @Override

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC " -//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <commentGenerator type="org.mybatis.generator.internal.DefaultCommentGenerator">
+            <property name="suppressDate" value="false"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="org.mariadb.jdbc.Driver"
+                        connectionURL="jdbc:mariadb://192.168.99.110:3306/fly-feel" userId="root"
+                        password="root">
+        </jdbcConnection>
+
+        <javaTypeResolver type="io.gitee.generate.resolver.IntegerJavaTypeResolver">
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!-- 生成model实体类文件位置 -->
+        <javaModelGenerator targetPackage="io.gitee.define.entity"
+                            targetProject="E:/Project/fly-feel/fly-feel-generate/src/generate/java">
+            <property name="rootClass" value="io.gitee.core.entity.model.BaseModel"/>
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+            <property name="" value=""/>
+        </javaModelGenerator>
+
+        <!-- 生成mapper.xml配置文件位置 -->
+        <sqlMapGenerator targetPackage="io.gitee.define.mapper"
+                         targetProject="E:/Project/fly-feel/fly-feel-generate/src/generate/java">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <!-- 生成mapper接口文件位置 -->
+        <javaClientGenerator targetPackage="io.gitee.define.mapper"
+                             targetProject="E:/Project/fly-feel/fly-feel-generate/src/generate/java" type="XMLMAPPER">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!-- 需要生成的实体类对应的表名，多个实体类复制多份该配置即可 -->
+        <table tableName="ff_cache" domainObjectName="Cache"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <ignoreColumn column="_version"/>
+        </table>
+        <table tableName="ff_log" domainObjectName="Log"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <ignoreColumn column="_version"/>
+        </table>
+        <table tableName="ff_relate_account_authority" domainObjectName="RelateAccountAuthority"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <ignoreColumn column="_version"/>
+        </table>
+        <table tableName="ff_relate_client_authority" domainObjectName="RelateClientAuthority"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <ignoreColumn column="_version"/>
+        </table>
+
+    </context>
+
+
+</generatorConfiguration>

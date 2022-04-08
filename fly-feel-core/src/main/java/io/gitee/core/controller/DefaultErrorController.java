@@ -1,5 +1,6 @@
 package io.gitee.core.controller;
 
+import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.web.ErrorProperties;
 import org.springframework.boot.autoconfigure.web.ServerProperties;
@@ -33,6 +34,8 @@ import java.util.Objects;
 @Controller
 @RequestMapping({"${server.error.path:${error.path:/error}}"})
 public class DefaultErrorController extends AbstractErrorController implements ErrorController {
+
+    private final Logger log = Logger.getLogger(DefaultErrorController.class);
 
     @Value("${server.error.path:${error.path:/error}}")
     private String errorPath;
@@ -145,6 +148,7 @@ public class DefaultErrorController extends AbstractErrorController implements E
             cause = core.getCause();
         }
         while (Objects.nonNull(cause) && core != cause);
+        log.warn(core);
         return core;
     }
 }

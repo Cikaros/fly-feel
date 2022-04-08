@@ -2,12 +2,12 @@ package io.gitee.define.entity;
 
 import io.gitee.core.entity.model.BaseModel;
 
+
 /**
  * 代码项
  *
  * @author Cikaros
- * @date 2022/3/17
- * @since v1.0
+ * @date 2022/4/7
  */
 public class CodeItem extends BaseModel {
     /**
@@ -33,12 +33,7 @@ public class CodeItem extends BaseModel {
     /**
      * 排序
      */
-    private Byte order;
-
-    /**
-     * 版本号
-     */
-    private Long version;
+    private Integer order;
 
     public String getTitle() {
         return title;
@@ -72,11 +67,11 @@ public class CodeItem extends BaseModel {
         this.value = value;
     }
 
-    public Byte getOrder() {
+    public Integer getOrder() {
         return order;
     }
 
-    public void setOrder(Byte order) {
+    public void setOrder(Integer order) {
         this.order = order;
     }
 

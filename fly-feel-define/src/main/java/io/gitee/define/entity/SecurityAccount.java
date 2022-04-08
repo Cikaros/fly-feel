@@ -6,6 +6,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.Objects;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * 自定义UserDetails
@@ -17,6 +18,16 @@ import java.util.stream.Collectors;
 public class SecurityAccount extends Account implements UserDetails {
 
     private Collection<SecurityRole> roles;
+
+    private Collection<SecurityAuthority> securityAuthorities;
+
+    public Collection<SecurityAuthority> getSecurityAuthorities() {
+        return securityAuthorities;
+    }
+
+    public void setSecurityAuthorities(Collection<SecurityAuthority> securityAuthorities) {
+        this.securityAuthorities = securityAuthorities;
+    }
 
     public Collection<SecurityRole> getRoles() {
         return roles;
@@ -42,14 +53,12 @@ public class SecurityAccount extends Account implements UserDetails {
 
     @Override
     public String toString() {
-        return "SecurityAccount{" +
-                "roles=" + roles +
-                '}';
+        return "SecurityAccount{" + "roles=" + roles + '}';
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return roles.stream().flatMap(role->role.getAuthorities().stream()).collect(Collectors.toSet());
+        return Stream.concat(roles.stream().flatMap(role -> role.getAuthorities().stream()), securityAuthorities.stream()).filter(SecurityAuthority::getEnable).collect(Collectors.toSet());
     }
 
     @Override

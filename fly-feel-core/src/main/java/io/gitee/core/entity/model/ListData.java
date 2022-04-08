@@ -11,7 +11,7 @@ import java.util.List;
  * @author Cikaros
  * @date 2021/12/20
  */
-public class ListData extends Data {
+class ListData extends Data {
     /**
      * 当前记录数
      */

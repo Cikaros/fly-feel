@@ -15,4 +15,24 @@
           and relate.del = false
           and authority.del = false
     </select>
+
+    <select id="selectByAccountId" resultMap="BaseResultMap">
+        select
+        <include refid="io.gitee.define.mapper.AuthorityMapper.Base_Column_List"/>
+        from ff_authority authority
+                     left join ff_relate_account_authority relate on relate.authority_id = authority.id
+        where relate.account_id = #{id}
+          and relate.del = false
+          and authority.del = false
+    </select>
+
+    <select id="selectByClientId" resultMap="BaseResultMap">
+        select
+        <include refid="io.gitee.define.mapper.AuthorityMapper.Base_Column_List"/>
+        from ff_authority authority
+                     left join ff_relate_client_authority relate on relate.authority_id = authority.id
+        where relate.client_id = #{id}
+          and relate.del = false
+          and authority.del = false
+    </select>
 </mapper>

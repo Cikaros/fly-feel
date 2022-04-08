@@ -29,9 +29,9 @@ create table ff_component
     `icon`           varchar(256)        not null default '' comment '图标',
     `order`          tinyint             not null default 0 comment '同级优先级',
 
-    `system`         tinyint(4)          NOT NULL DEFAULT 0 COMMENT '是否为系统参数',
-    `enable`         tinyint(4)          NOT NULL DEFAULT 0 COMMENT '可用状态',
-    `del`            tinyint(4)          NOT NULL DEFAULT 0 COMMENT '删除标记',
+    `system`         bit(1)              NOT NULL DEFAULT false COMMENT '是否为系统参数',
+    `enable`         bit(1)              NOT NULL DEFAULT true COMMENT '可用状态',
+    `del`            bit(1)              NOT NULL DEFAULT false COMMENT '删除标记',
     `create_by`      bigint(20) unsigned NOT NULL DEFAULT 0 COMMENT '创建者ID',
     `create_time`    timestamp           NOT NULL DEFAULT NOW() COMMENT '创建时间',
     `update_by`      bigint(20) unsigned NOT NULL DEFAULT 0 COMMENT '更新者ID',

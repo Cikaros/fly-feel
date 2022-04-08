@@ -20,8 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 @Scope("request")
 public class BaseRestController {
 
-    protected final Logger log = LoggerFactory.getLogger(BaseRestController.class);
-
     protected I18nService i18n;
 
     @Autowired
