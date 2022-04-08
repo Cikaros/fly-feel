@@ -5,28 +5,29 @@
     <parent>
         <artifactId>fly-feel</artifactId>
         <groupId>io.gitee.cikaros</groupId>
-        <version>2.0.1</version>
+        <version>3.0.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>fly-feel-dependencies</artifactId>
-    <version>2.0.2</version>
     <packaging>pom</packaging>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <main.basedir>${project.parent.basedir}</main.basedir>
-        <fly-feel.core.version>2.0.2</fly-feel.core.version>
-        <fly-feel.define.version>2.0.2</fly-feel.define.version>
-        <fly-feel.define.impl.version>2.0.1</fly-feel.define.impl.version>
-        <fly-feel.activit.version>2.0.1</fly-feel.activit.version>
-        <fly-feel.security.version>2.0.1</fly-feel.security.version>
-        <fly-feel.security.core.version>2.0.1</fly-feel.security.core.version>
-        <fly-feel.security.license.version>2.0.1</fly-feel.security.license.version>
-        <fly-feel.security.resource.version>2.0.1</fly-feel.security.resource.version>
-        <fly-feel.verify.version>2.0.1</fly-feel.verify.version>
-        <fly-feel.test.version>2.0.1</fly-feel.test.version>
+        <fly-feel.core.version>3.0.0</fly-feel.core.version>
+        <fly-feel.define.version>3.0.0</fly-feel.define.version>
+        <fly-feel.define.impl.version>3.0.0</fly-feel.define.impl.version>
+        <fly-feel.activit.version>3.0.0</fly-feel.activit.version>
+        <fly-feel.security.version>3.0.0</fly-feel.security.version>
+        <fly-feel.security.core.version>3.0.0</fly-feel.security.core.version>
+        <fly-feel.security.license.version>3.0.0</fly-feel.security.license.version>
+        <fly-feel.security.resource.version>3.0.0</fly-feel.security.resource.version>
+        <fly-feel.verify.version>3.0.0</fly-feel.verify.version>
+        <fly-feel.message.version>3.0.0</fly-feel.message.version>
+        <fly-feel.log.version>3.0.0</fly-feel.log.version>
+        <fly-feel.test.version>3.0.0</fly-feel.test.version>
     </properties>
 
     <dependencyManagement>
@@ -70,6 +71,16 @@
                 <groupId>io.gitee.cikaros</groupId>
                 <artifactId>fly-feel-security-resource</artifactId>
                 <version>${fly-feel.security.resource.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.gitee.cikaros</groupId>
+                <artifactId>fly-feel-message</artifactId>
+                <version>${fly-feel.message.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.gitee.cikaros</groupId>
+                <artifactId>fly-feel-log</artifactId>
+                <version>${fly-feel.log.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.gitee.cikaros</groupId>

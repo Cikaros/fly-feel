@@ -5,14 +5,13 @@
     <parent>
         <artifactId>fly-feel</artifactId>
         <groupId>io.gitee.cikaros</groupId>
-        <version>2.0.1</version>
+        <version>3.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>fly-feel-define-impl</artifactId>
     <name>fly-feel-define-impl</name>
     <description>fly-feel基础定义API的默认实现。</description>
-    <version>2.0.1</version>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -23,7 +22,7 @@
         <dependency>
             <groupId>io.gitee.cikaros</groupId>
             <artifactId>fly-feel-define</artifactId>
-            <version>2.0.2</version>
+            <version>3.0.0</version>
         </dependency>
         <dependency>
             <groupId>org.mybatis</groupId>

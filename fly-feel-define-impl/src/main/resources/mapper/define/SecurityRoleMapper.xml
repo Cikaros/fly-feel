@@ -20,4 +20,18 @@
           and relate.enable = true
           and role.del = false
     </select>
+
+    <select id="findByCode" resultMap="io.gitee.define.mapper.RoleMapper.BaseResultMap">
+        select
+        <include refid="io.gitee.define.mapper.RoleMapper.Base_Column_List"/>
+        from ff_role role
+        where role.code = #{code}
+          and role.del = false
+    </select>
+
+    <select id="isExistByCode" resultType="boolean">
+        select count(*) > 0
+        from ff_role role
+        where role.code = #{code}
+    </select>
 </mapper>

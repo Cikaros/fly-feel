@@ -47,20 +47,12 @@ public interface IAccountService {
     boolean insert(Account record);
 
     /**
-     * 根据主键查找账户信息
-     *
-     * @param id 主键
-     * @return 结果
-     */
-    Account findByPrimaryKey(@NonNull Long id);
-
-    /**
      * 根据所提供的账户信息修改未删除的账户数据
      *
      * @param record 账户信息
      * @return 结果
      */
-    int update(Account record);
+    boolean update(Account record);
 
     /**
      * 根据所提供的账户信息批量修改未删除的账户数据
@@ -68,7 +60,7 @@ public interface IAccountService {
      * @param list 账户信息
      * @return 结果
      */
-    int update(Collection<Account> list);
+    boolean update(Collection<Account> list);
 
     /**
      * 根据所提供的账户信息批量插入账户数据
@@ -76,6 +68,30 @@ public interface IAccountService {
      * @param list 账户信息
      * @return 结果
      */
-    int batchInsert(Collection<Account> list);
+    boolean batchInsert(Collection<Account> list);
+
+    /**
+     * 根据主键获取数据
+     *
+     * @param id 主键
+     * @return 结果
+     */
+    Account selectByPrimaryKey(Long id);
+
+    /**
+     * 根据用户名获取数据
+     *
+     * @param username 用户名
+     * @return 结果
+     */
+    Account findByUsername(String username);
+
+    /**
+     * 根据用户名获取数据
+     *
+     * @param username 用户名
+     * @return 结果
+     */
+    Account selectByUsername(String username);
 
 }

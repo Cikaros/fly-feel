@@ -5,14 +5,13 @@
     <parent>
         <artifactId>fly-feel</artifactId>
         <groupId>io.gitee.cikaros</groupId>
-        <version>2.0.1</version>
+        <version>3.0.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>fly-feel-test</artifactId>
     <name>fly-feel-test</name>
-    <version>2.0.1</version>
     <description>fly-feel测试组件。一些常用的快速测试工具</description>
 
 

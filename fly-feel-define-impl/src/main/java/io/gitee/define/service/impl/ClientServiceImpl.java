@@ -4,6 +4,7 @@ import io.gitee.core.service.BaseService;
 import io.gitee.define.service.IClientService;
 import io.gitee.define.entity.Client;
 import io.gitee.define.mapper.ClientMapper;
+import io.gitee.define.service.ILogger;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
@@ -15,7 +16,7 @@ import java.util.Collection;
  * @since v1.0
  */
 @Service
-public class ClientServiceImpl extends BaseService implements IClientService {
+public class ClientServiceImpl extends BaseService implements IClientService, ILogger {
 
     protected final ClientMapper clientMapper;
 

@@ -1,12 +1,15 @@
 package io.gitee.message.config;
 
-import io.gitee.message.handler.WebSocketInitializer;
+import io.gitee.define.service.ILogger;
+import io.gitee.message.config.props.MessageProperties;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -17,7 +20,15 @@ import org.springframework.context.annotation.Configuration;
  * @since v1.0
  */
 @Configuration(proxyBeanMethods = false)
-public class MessageAutoConfiguration implements CommandLineRunner {
+@EnableConfigurationProperties(MessageProperties.class)
+public class MessageAutoConfiguration implements CommandLineRunner, ILogger {
+
+    private MessageProperties config;
+
+    @Autowired
+    public void setConfig(MessageProperties config) {
+        this.config = config;
+    }
 
     @Override
     public void run(String... args) throws Exception {
@@ -30,9 +41,9 @@ public class MessageAutoConfiguration implements CommandLineRunner {
                     //channel类型
                     .channel(NioServerSocketChannel.class)
                     //针对subGroup做的子处理器，childHandler针对WebSocket的初始化器
-                    .childHandler(new WebSocketInitializer());
+                    .childHandler(config.type.getInstance());
             //绑定端口并以同步方式进行使用
-            ChannelFuture channelFuture = server.bind(10086).sync();
+            ChannelFuture channelFuture = server.bind(config.port).sync();
             //针对channelFuture，进行相应的监听
             channelFuture.channel().closeFuture().sync();
         } finally {

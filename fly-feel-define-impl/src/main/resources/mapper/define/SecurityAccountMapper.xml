@@ -14,11 +14,65 @@
         </collection>
     </resultMap>
 
-    <select id="selectByUsername" resultMap="BaseResultMap">
+    <select id="findByUsername" resultMap="BaseResultMap">
         select
         <include refid="io.gitee.define.mapper.AccountMapper.Base_Column_List"/>
         from ff_account account
         where username = #{username}
           and account.del = false
+    </select>
+
+    <select id="selectByUsername" resultMap="io.gitee.define.mapper.AccountMapper.BaseResultMap">
+        select
+        <include refid="io.gitee.define.mapper.AccountMapper.Base_Column_List"/>
+        from ff_account account
+        where username = #{username}
+          and account.del = false
+    </select>
+
+    <update id="updateByUsername" parameterType="io.gitee.define.entity.Account">
+        update ff_account
+        <set>
+            <if test="password != null">
+                `password` = #{password},
+            </if>
+            <if test="nickname != null">
+                nickname = #{nickname},
+            </if>
+            <if test="system != null">
+                `system` = #{system},
+            </if>
+            <if test="enable != null">
+                `enable` = #{enable},
+            </if>
+            <if test="del != null">
+                del = #{del},
+            </if>
+            <if test="createBy != null">
+                create_by = #{createBy},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="updateBy != null">
+                update_by = #{updateBy},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+            <if test="remark != null">
+                remark = #{remark},
+            </if>
+            <if test="_version != null">
+                _version = #{_version},
+            </if>
+        </set>
+        where username = #{username}
+    </update>
+
+    <select id="isExistByUsername" resultType="boolean">
+        select count(*) > 0
+        from ff_account account
+        where username = #{username}
     </select>
 </mapper>

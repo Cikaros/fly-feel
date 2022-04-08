@@ -6,6 +6,7 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cache.annotation.Caching;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -39,11 +40,11 @@ public interface AccountMapper extends BaseMapper {
     int updateByPrimaryKey(Account record);
 
     @CacheEvict
-    int updateBatch(List<Account> list);
+    int updateBatch(Collection<Account> list);
 
     @CacheEvict
-    int updateBatchSelective(List<Account> list);
+    int updateBatchSelective(Collection<Account> list);
 
-    int batchInsert(List<Account> list);
+    int batchInsert(Collection<Account> list);
 
 }

@@ -1,0 +1,43 @@
+{
+  "groups": [
+    {
+      "sourceType": "io.gitee.message.config.props.MessageProperties",
+      "name": "fly-feel.message",
+      "type": "io.gitee.message.config.props.MessageProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "fly-feel.message.type",
+      "type": "io.gitee.message.enums.MessageServer",
+      "defaultValue": "WEB_SOCKET",
+      "sourceType": "io.gitee.message.enums.MessageServer",
+      "description": "指定服务器类型."
+    },
+    {
+      "name": "fly-feel.message.port",
+      "type": "java.lang.Integer",
+      "defaultValue": 10086,
+      "description": "指定服务器端口."
+    }
+  ],
+  "hints": [
+    {
+      "name": "fly-feel.message.type",
+      "values": [
+        {
+          "value": "WEB_SOCKET",
+          "description": "WebSocket服务器."
+        },
+        {
+          "value": "TCP",
+          "description": "TCP服务器."
+        },
+        {
+          "value": "UDP",
+          "description": "UDP服务器."
+        }
+      ]
+    }
+  ]
+}

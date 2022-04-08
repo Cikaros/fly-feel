@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.Objects;
 
 /**
- * 自定义角色
+ * Security角色
  *
  * @author Cikaros
  * @date 2022/3/17

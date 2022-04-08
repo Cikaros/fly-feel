@@ -14,16 +14,24 @@ public class BaseException extends RuntimeException {
 
     protected static ResourceBundle i18n = ResourceBundle.getBundle("i18n/Exception");
 
+    public BaseException(String key, Object... args) {
+        super(MessageFormat.format(i18n.getString(key), args));
+    }
+
+    public BaseException(String key, Throwable throwable, Object... args) {
+        super(MessageFormat.format(i18n.getString(key), args), throwable);
+    }
+
     public BaseException(String message) {
-        super(MessageFormat.format(i18n.getString("io.gitee.core.exception.BaseException"), message));
+        this("io.gitee.core.exception.BaseException", message);
     }
 
     public BaseException(Throwable throwable) {
         super(throwable);
     }
 
-    public BaseException(String message, Throwable throwable) {
-        super(MessageFormat.format(i18n.getString("io.gitee.core.exception.BaseException"), message), throwable);
+    public BaseException(Throwable throwable, Object... args) {
+        this("io.gitee.core.exception.BaseException", throwable, args);
     }
 
 }

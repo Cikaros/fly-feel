@@ -1,5 +1,6 @@
 package io.gitee.define.mapper;
 
+import io.gitee.define.entity.Role;
 import io.gitee.define.entity.SecurityRole;
 
 import java.util.Collection;
@@ -14,4 +15,8 @@ import java.util.Collection;
 public interface SecurityRoleMapper extends RoleMapper {
 
     Collection<SecurityRole> selectByAccountId(Long accountId);
+
+    Role findByCode(String code);
+
+    boolean isExistByCode(String code);
 }

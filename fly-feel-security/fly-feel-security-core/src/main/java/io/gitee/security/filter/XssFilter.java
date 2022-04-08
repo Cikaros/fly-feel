@@ -1,7 +1,7 @@
 package io.gitee.security.filter;
 
 import io.gitee.security.http.XssHttpServletRequestWrapper;
-import org.apache.commons.lang3.StringUtils;
+import org.springframework.util.StringUtils;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
@@ -34,18 +34,18 @@ public class XssFilter implements Filter {
     public void init(FilterConfig filterConfig) {
         String tempExcludes = filterConfig.getInitParameter("excludes");
         String tempEnabled = filterConfig.getInitParameter("enabled");
-        if (StringUtils.isNotBlank(tempExcludes)) {
+        if (!StringUtils.isEmpty(tempExcludes)) {
             String[] url = tempExcludes.split(",");
             Collections.addAll(excludes, url);
         }
-        if (StringUtils.isNotBlank(tempEnabled)) {
+        if (!StringUtils.isEmpty(tempEnabled)) {
             enabled = Boolean.parseBoolean(tempEnabled);
         }
     }
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
-        throws IOException, ServletException {
+            throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse resp = (HttpServletResponse) response;
         if (handleExcludeURL(req, resp)) {

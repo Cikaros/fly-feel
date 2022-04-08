@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * 自定义UserDetails
+ * Security 账户
  *
  * @author Cikaros
  * @date 2022/3/17

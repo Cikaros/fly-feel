@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * 默认的ClientDetailsService实现
+ *
  * @author Cikaros
  * @date 2022/3/18
  * @since v1.0

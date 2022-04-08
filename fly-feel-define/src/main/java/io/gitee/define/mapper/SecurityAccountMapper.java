@@ -1,5 +1,6 @@
 package io.gitee.define.mapper;
 
+import io.gitee.define.entity.Account;
 import io.gitee.define.entity.SecurityAccount;
 
 /**
@@ -11,5 +12,12 @@ import io.gitee.define.entity.SecurityAccount;
  */
 public interface SecurityAccountMapper extends AccountMapper {
 
-    SecurityAccount selectByUsername(String username);
+    Account selectByUsername(String username);
+
+    SecurityAccount findByUsername(String username);
+
+    int updateByUsername(Account record);
+
+    boolean isExistByUsername(String username);
+
 }

@@ -5,7 +5,7 @@
     <parent>
         <artifactId>fly-feel</artifactId>
         <groupId>io.gitee.cikaros</groupId>
-        <version>2.0.1</version>
+        <version>3.0.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -13,7 +13,6 @@
     <artifactId>fly-feel-define</artifactId>
     <name>fly-feel-define</name>
     <description>fly-feel基础定义API。后续基础的顶级接口设计。</description>
-    <version>2.0.2</version>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -26,7 +25,7 @@
         <dependency>
             <groupId>io.gitee.cikaros</groupId>
             <artifactId>fly-feel-core</artifactId>
-            <version>2.0.2</version>
+            <version>3.0.0</version>
         </dependency>
         <dependency>
             <groupId>org.mybatis</groupId>
