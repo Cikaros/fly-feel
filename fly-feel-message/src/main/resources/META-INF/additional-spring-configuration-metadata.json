@@ -4,6 +4,11 @@
       "sourceType": "io.gitee.message.config.props.MessageProperties",
       "name": "fly-feel.message",
       "type": "io.gitee.message.config.props.MessageProperties"
+    },
+    {
+      "sourceType": "io.gitee.message.config.props.MessageProperties.WebSocketProperties",
+      "name": "fly-feel.message.web-socket",
+      "type": "io.gitee.message.config.props.MessageProperties.WebSocketProperties"
     }
   ],
   "properties": [
@@ -16,8 +21,39 @@
     },
     {
       "name": "fly-feel.message.port",
-      "type": "java.lang.Integer",
+      "type": "io.gitee.message.enums.MessageServer",
       "defaultValue": 10086,
+      "sourceType": "io.gitee.message.enums.MessageServer",
+      "description": "指定服务器端口."
+    },
+    {
+      "name": "fly-feel.message.web-socket.max-content-length",
+      "type": "java.lang.Integer",
+      "defaultValue": 131072,
+      "description": "指定WebSocket服务器最大内容长度."
+    },
+    {
+      "name": "fly-feel.message.web-socket.path",
+      "type": "java.lang.String",
+      "defaultValue": "/ws",
+      "description": "指定WebSocket服务器路由."
+    },
+    {
+      "name": "fly-feel.message.web-socket.reader-idle-time-seconds",
+      "type": "java.lang.Integer",
+      "defaultValue": 2,
+      "description": "指定WebSocket服务器读空闲时长."
+    },
+    {
+      "name": "fly-feel.message.web-socket.writer-idle-time-seconds",
+      "type": "java.lang.Integer",
+      "defaultValue": 4,
+      "description": "指定服务器端口."
+    },
+    {
+      "name": "fly-feel.message.web-socket.all-idle-time-seconds",
+      "type": "java.lang.Integer",
+      "defaultValue": 60,
       "description": "指定服务器端口."
     }
   ],

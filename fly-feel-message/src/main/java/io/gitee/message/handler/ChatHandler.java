@@ -7,17 +7,22 @@ import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.channel.group.ChannelGroup;
 import io.netty.channel.group.DefaultChannelGroup;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
+import io.netty.util.AttributeKey;
 import io.netty.util.concurrent.GlobalEventExecutor;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 
 /**
- * 处理消息的handler，在Netty中用于处理文本的对象，frames是消息的载体
+ * 处理消息的handler
  *
  * @author Cikaros
  * @date 2022/4/6
  * @since v1.0
  */
+@Component
+@ConditionalOnProperty(name = "fly-feel.message.type", havingValue = "WEB_SOCKET", matchIfMissing = true)
 public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame> implements ILogger {
 
     //用于记录和管理所有客户端的channel，可以把相应的channel保存到一整个组中
@@ -34,16 +39,16 @@ public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame>
         /*
          * 方式一
          */
-        for (Channel channel : channelClient) {
-            //循环对每一个channel对应输出即可（往缓冲区中写，写完之后再刷到客户端）
-            //注：writeAndFlush不可以使用String，因为传输的载体是一个TextWebSocketFrame，需要把消息通过载体再刷到客户端
-            channel.writeAndFlush(new TextWebSocketFrame("【服务器于 " + LocalDate.now() + "接收到消息：】 ，消息内容为：" + content));
-
-        }
+//        for (Channel channel : channelClient) {
+//            //循环对每一个channel对应输出即可（往缓冲区中写，写完之后再刷到客户端）
+//            //注：writeAndFlush不可以使用String，因为传输的载体是一个TextWebSocketFrame，需要把消息通过载体再刷到客户端
+//            channel.writeAndFlush(new TextWebSocketFrame("【服务器于 " + LocalDate.now() + "接收到消息：】 ，消息内容为：" + content));
+//
+//        }
         /*
          * 方式二
          */
-        //channelClient.writeAndFlush(new TextWebSocketFrame("【服务器于 " + LocalDate.now() + "接收到消息：】 ，消息内容为：" +content));
+        channelClient.writeAndFlush(new TextWebSocketFrame("【服务器于 " + LocalDate.now() + "接收到消息：】 ，消息内容为：" + content));
 
     }
 
@@ -51,6 +56,9 @@ public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame>
     @Override
     public void handlerAdded(ChannelHandlerContext ctx) {
         //获取客户端所对应的channel，添加到一个管理的容器中即可
+        log.debug("用户连接服务器！");
+        log.debug("channel的长ID：{}", ctx.channel().id().asLongText());
+        log.debug("channel的短ID：{}", ctx.channel().id().asShortText());
         channelClient.add(ctx.channel());
     }
 
@@ -61,6 +69,7 @@ public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame>
         channelClient.remove(ctx.channel());
         //每一而channel都会有一个长ID与短ID
         //一开始channel就有了，系统会自动分配一串很长的字符串作为唯一的ID，如果使用asLongText()获取的ID是唯一的，asShortText()会把当前ID进行精简，精简过后可能会有重复
+        log.debug("用户断开服务器！");
         log.debug("channel的长ID：{}", ctx.channel().id().asLongText());
         log.debug("channel的短ID：{}", ctx.channel().id().asShortText());
     }

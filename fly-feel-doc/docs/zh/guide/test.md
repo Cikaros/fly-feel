@@ -376,3 +376,39 @@ public class EmailStrategy implements AttributeStrategy<String> {
 
 ## Mock
 
+无法直接获取的对象，例如`Request`等可通过Mock模拟创建。
+
+```java
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class DemoControllerTest implements ILogger {
+
+    // 模拟一个假的 RestTemplate 实例
+    @Mock
+    private RestTemplate restTemplate;
+
+    @Autowired
+    @InjectMocks
+    private DemoController controller;
+
+    @Before
+    public void init() {
+        MockitoAnnotations.initMocks(this);
+    }
+
+    @Test
+    public void demo1() {
+        String base = "http://localhost:8080";
+        HttpServletRequest request = Mockito.mock(HttpServletRequest.class);
+        Mockito.when(request.getContextPath())
+                .thenReturn(base);
+        //内部实现 return request.getContextPath();
+        String s = controller.demo1(request);
+        Assert.assertEquals(s, base);
+        log.info(s);
+    }
+
+}
+```
+

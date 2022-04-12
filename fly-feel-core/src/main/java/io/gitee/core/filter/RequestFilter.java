@@ -1,4 +1,4 @@
-package io.gitee.core.listener;
+package io.gitee.core.filter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.gitee.core.config.props.RequestLoggerProperties;
@@ -11,22 +11,18 @@ import org.springframework.http.MediaType;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.util.Assert;
 
-import javax.servlet.ServletRequestEvent;
-import javax.servlet.ServletRequestListener;
-import javax.servlet.annotation.WebListener;
+import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.*;
 
 /**
- * Request监听日志
+ * 请求日志
  *
  * @author Cikaros
- * @date 2022/3/27
- * @since v1.0
+ * @date 2022/4/12
  */
-@WebListener
-public class RequestListener implements ServletRequestListener {
+public class RequestFilter implements Filter {
 
     private final Logger log = LoggerFactory.getLogger(getClass());
 
@@ -38,28 +34,44 @@ public class RequestListener implements ServletRequestListener {
 
     private final AntPathMatcher matcher;
 
-    public RequestListener() {
+    public RequestFilter() {
         matcher = new AntPathMatcher("");
     }
 
     @Override
-    public void requestInitialized(ServletRequestEvent sre) {
-        if (sre.getServletRequest() instanceof HttpServletRequest) {
+    public void init(FilterConfig filterConfig) throws ServletException {
+        Filter.super.init(filterConfig);
+    }
+
+    @Override
+    public void doFilter(ServletRequest req, ServletResponse response, FilterChain chain) throws ServletException, IOException {
+        if (req instanceof HttpServletRequest) {
+            HttpServletRequest request = (HttpServletRequest) req;
             try {
                 if (Objects.isNull(this.mapper)) {
-                    ApplicationContext applicationContext = ServletUtils.getWebApplicationContext();
+                    ApplicationContext applicationContext = ServletUtils.getWebApplicationContext(request);
                     Assert.notNull(applicationContext, "Cannot get ApplicationContext!");
                     this.mapper = applicationContext.getBean(ObjectMapper.class);
                     this.config = applicationContext.getBean(RequestLoggerProperties.class);
                 }
-                HttpServletRequest request = (HttpServletRequest) sre.getServletRequest();
                 if (isMatches(request)) {
                     printLog(request);
                 }
             } catch (IOException e) {
                 log.warn("The request log output exception!", e);
             }
+            chain.doFilter(request, response);
+            if (isMatches(request)) {
+                long timeCost = System.currentTimeMillis() - startTime.pop();
+                if (timeCost <= config.getTimeout()) log.debug("请求处理结束. 处理耗时: {}", timeCost);
+                else log.warn("请求处理结束. 处理耗时: {}", timeCost);
+            }
         }
+    }
+
+    @Override
+    public void destroy() {
+        Filter.super.destroy();
     }
 
     private boolean isMatches(HttpServletRequest request) {
@@ -71,7 +83,6 @@ public class RequestListener implements ServletRequestListener {
         }
         return true;
     }
-
 
     private void printLog(HttpServletRequest request) throws IOException {
         startTime.push(System.currentTimeMillis());
@@ -94,15 +105,4 @@ public class RequestListener implements ServletRequestListener {
     }
 
 
-    @Override
-    public void requestDestroyed(ServletRequestEvent sre) {
-        if (sre.getServletRequest() instanceof HttpServletRequest) {
-            HttpServletRequest request = (HttpServletRequest) sre.getServletRequest();
-            if (isMatches(request)) {
-                long timeCost = System.currentTimeMillis() - startTime.pop();
-                if (timeCost <= config.getTimeout()) log.debug("请求处理结束. 处理耗时: {}", timeCost);
-                else log.warn("请求处理结束. 处理耗时: {}", timeCost);
-            }
-        }
-    }
 }

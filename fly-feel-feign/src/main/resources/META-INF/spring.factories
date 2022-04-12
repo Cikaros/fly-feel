@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+io.gitee.openfeign.httpclient.HttpClientConfiguration,\
+io.gitee.openfeign.FeignAutoConfiguration,\
+io.gitee.openfeign.encoding.FeignAcceptGzipEncodingAutoConfiguration,\
+io.gitee.openfeign.encoding.FeignContentGzipEncodingAutoConfiguration

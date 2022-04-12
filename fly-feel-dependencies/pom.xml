@@ -28,6 +28,7 @@
         <fly-feel.message.version>3.0.0</fly-feel.message.version>
         <fly-feel.log.version>3.0.0</fly-feel.log.version>
         <fly-feel.test.version>3.0.0</fly-feel.test.version>
+        <fly-feel.feign.version>3.0.0</fly-feel.feign.version>
     </properties>
 
     <dependencyManagement>
@@ -92,6 +93,11 @@
                 <groupId>io.gitee.cikaros</groupId>
                 <artifactId>fly-feel-verify</artifactId>
                 <version>${fly-feel.verify.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.gitee.cikaros</groupId>
+                <artifactId>fly-feel-feign</artifactId>
+                <version>${fly-feel.feign.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

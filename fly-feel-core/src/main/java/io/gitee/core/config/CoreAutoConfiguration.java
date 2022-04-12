@@ -2,6 +2,7 @@ package io.gitee.core.config;
 
 import io.gitee.core.config.props.RequestLoggerProperties;
 import io.gitee.core.filter.RepeatableFilter;
+import io.gitee.core.filter.RequestFilter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.web.ServerProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -37,8 +38,21 @@ public class CoreAutoConfiguration {
         FilterRegistrationBean<Filter> registrationBean = new FilterRegistrationBean<>();
         registrationBean.setFilter(new RepeatableFilter(errorPath));
         registrationBean.addUrlPatterns("/*");
-        registrationBean.setOrder(Ordered.LOWEST_PRECEDENCE);
+        registrationBean.setOrder(Ordered.HIGHEST_PRECEDENCE);
         return registrationBean;
     }
+
+    /**
+     * Request日志
+     */
+    @Bean
+    public FilterRegistrationBean<Filter> RequestFilter() {
+        FilterRegistrationBean<Filter> registrationBean = new FilterRegistrationBean<>();
+        registrationBean.setFilter(new RequestFilter());
+        registrationBean.addUrlPatterns("/*");
+        registrationBean.setOrder(Ordered.HIGHEST_PRECEDENCE + 1);
+        return registrationBean;
+    }
+
 
 }

@@ -7,4 +7,4 @@
 ░██       ███  ██     ░██      ░░██████░░██████ ███
 ░░       ░░░  ░░      ░░        ░░░░░░  ░░░░░░ ░░░
 Spring Boot Version: ${spring-boot.version}
-Spring Boot properties : ${spring.profiles.active: unknown}
+Spring Boot properties : ${spring.profiles.active: default}

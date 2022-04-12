@@ -34,11 +34,6 @@ module.exports = {
                         activeMatch: '^/zh/guide/standard'
                     },
                     {
-                        text: "权限使用文档",
-                        link: "/zh/guide/permissions",
-                        activeMatch: '^/zh/guide/permissions'
-                    },
-                    {
                         text: "测试说明文档",
                         link: "/zh/guide/test",
                         activeMatch: '^/zh/guide/test'
@@ -60,6 +55,21 @@ module.exports = {
                     }
                 ]
             }, {
+                text: '进阶',
+                children: [
+                    {
+                        text: "介绍",
+                        link: "/zh/advance/",
+                        activeMatch: '^/zh/advance/$'
+                    },
+                    {
+                        text: "接口实现",
+                        link: "/zh/advance/interface",
+                        activeMatch: '^/zh/advance/interface'
+                    }
+                ]
+            },
+            {
                 text: '模块',
                 children: [
                     {
