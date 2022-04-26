@@ -2,7 +2,6 @@ package io.gitee.define.service;
 
 import io.gitee.define.entity.Account;
 import io.gitee.define.entity.SecurityAccount;
-import org.springframework.lang.NonNull;
 
 /**
  * Security 账户业务
@@ -19,7 +18,7 @@ public interface IAccountSecurityService extends IAccountService {
      * @param username 用户名
      * @return 结果
      */
-    SecurityAccount findByUsername(@NonNull String username);
+    SecurityAccount findByUsername(String username);
 
     /**
      * 根据用户名禁用用户
@@ -27,7 +26,7 @@ public interface IAccountSecurityService extends IAccountService {
      * @param username 用户名
      * @return 结果
      */
-    boolean disableByUsername(@NonNull String username);
+    boolean disableByUsername(String username);
 
     /**
      * 根据用户名解除禁用
@@ -35,7 +34,7 @@ public interface IAccountSecurityService extends IAccountService {
      * @param username 用户名
      * @return 结果
      */
-    boolean enableByUsername(@NonNull String username);
+    boolean enableByUsername(String username);
 
     /**
      * 注册新用户
@@ -43,7 +42,7 @@ public interface IAccountSecurityService extends IAccountService {
      * @param account 用户信息
      * @return 成功的用户信息
      */
-    Account registered(@NonNull Account account);
+    Account registered(Account account);
 
     /**
      * 用户名是否存在
@@ -51,8 +50,7 @@ public interface IAccountSecurityService extends IAccountService {
      * @param username 用户名
      * @return 结果
      */
-    boolean isExistByUsername(@NonNull String username);
-
+    boolean isExistByUsername(String username);
 
 
 }

@@ -4,7 +4,7 @@ import io.gitee.core.service.BaseService;
 import io.gitee.define.entity.Verify;
 import io.gitee.define.service.ICacheService;
 import io.gitee.define.service.IVerifyService;
-import io.gitee.verify.base.Captcha;
+import io.gitee.verify.core.Captcha;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.stereotype.Service;
 
