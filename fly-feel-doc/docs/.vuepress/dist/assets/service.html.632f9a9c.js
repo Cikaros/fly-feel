@@ -1,0 +1,26 @@
+import{c as n}from"./app.1e79a3e2.js";import{_ as s}from"./plugin-vue_export-helper.21dcd24c.js";const a={},e=n(`<h1 id="service\u63A5\u53E3\u5B9A\u4E49\u4E0E\u5B9E\u73B0" tabindex="-1"><a class="header-anchor" href="#service\u63A5\u53E3\u5B9A\u4E49\u4E0E\u5B9E\u73B0" aria-hidden="true">#</a> Service\u63A5\u53E3\u5B9A\u4E49\u4E0E\u5B9E\u73B0</h1><h2 id="\u57FA\u7840" tabindex="-1"><a class="header-anchor" href="#\u57FA\u7840" aria-hidden="true">#</a> \u57FA\u7840</h2><p>Service\u7684\u5199\u6CD5\u4E5F\u4E0E\u4E4B\u524D\u7684\u5199\u6CD5\u5927\u5DEE\u4E0D\u5DEE\u3002</p><div class="language-java ext-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">IDemoService</span><span class="token punctuation">{</span>
+    
+    <span class="token class-name">String</span> <span class="token function">demo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token annotation punctuation">@Service</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DemoServiceImpl</span> <span class="token keyword">extends</span> <span class="token class-name">BaseService</span> <span class="token keyword">implements</span> <span class="token class-name">IDemoService</span><span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">demo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">&quot;demo&quot;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h2 id="\u8FDB\u9636" tabindex="-1"><a class="header-anchor" href="#\u8FDB\u9636" aria-hidden="true">#</a> \u8FDB\u9636</h2><h3 id="\u65E5\u5FD7\u6253\u5370" tabindex="-1"><a class="header-anchor" href="#\u65E5\u5FD7\u6253\u5370" aria-hidden="true">#</a> \u65E5\u5FD7\u6253\u5370</h3><p>\u5199\u5165\u5FC5\u8981\u7684\u65E5\u5FD7\uFF0C\u5B9E\u73B0<code>io.gitee.define.service.ILogger</code>\u63A5\u53E3\u5373\u53EF</p><div class="language-java ext-java line-numbers-mode"><pre class="language-java"><code>
+<span class="token annotation punctuation">@Service</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DemoServiceImpl</span> <span class="token keyword">extends</span> <span class="token class-name">BaseService</span> <span class="token keyword">implements</span> <span class="token class-name">IDemoService</span><span class="token punctuation">,</span><span class="token class-name">ILogger</span><span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">demo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">&quot;demo&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token string">&quot;demo&quot;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h2 id="\u5E38\u7528\u7CFB\u7EDF\u4E1A\u52A1\u7C7B" tabindex="-1"><a class="header-anchor" href="#\u5E38\u7528\u7CFB\u7EDF\u4E1A\u52A1\u7C7B" aria-hidden="true">#</a> \u5E38\u7528\u7CFB\u7EDF\u4E1A\u52A1\u7C7B</h2>`,9);function p(c,t){return e}var r=s(a,[["render",p]]);export{r as default};

@@ -1,7 +1,8 @@
 package io.gitee.verify.config;
 
-import io.gitee.verify.GifCaptcha;
-import io.gitee.verify.base.Captcha;
+import io.gitee.verify.core.Captcha;
+import io.gitee.verify.core.JpgCaptcha;
+import io.gitee.verify.core.SvgCaptcha;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,7 +19,8 @@ public class VerifyAutoConfiguration {
 
     @Bean
     @ConditionalOnMissingBean(Captcha.class)
-    public Captcha captcha() {
-        return new GifCaptcha(300, 150);
+    public Captcha captcha() throws Exception {
+        return Captcha.Builder.create(SvgCaptcha.class).build();
     }
+
 }

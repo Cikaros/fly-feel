@@ -35,6 +35,16 @@
             <groupId>com.googlecode.aviator</groupId>
             <artifactId>aviator</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.apache.xmlgraphics</groupId>
+            <artifactId>batik-all</artifactId>
+            <version>1.14</version>
+        </dependency>
+        <dependency>
+            <groupId>io.gitee.cikaros</groupId>
+            <artifactId>fly-feel-test</artifactId>
+            <version>3.0.0</version>
+        </dependency>
     </dependencies>
 
     <build>

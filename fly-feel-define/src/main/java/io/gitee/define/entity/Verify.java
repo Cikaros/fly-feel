@@ -14,6 +14,10 @@ import java.util.UUID;
  */
 public class Verify {
 
+    private final int width;
+
+    private final int height;
+
     private final String uuid;
 
     private final String code;
@@ -22,7 +26,9 @@ public class Verify {
 
     private final byte[] data;
 
-    public Verify(String code, String contentType, byte[] data) {
+    public Verify(int width, int height, String code, String contentType, byte[] data) {
+        this.width = width;
+        this.height = height;
         this.uuid = UUID.randomUUID().toString();
         this.code = code;
         this.contentType = contentType;
@@ -50,7 +56,17 @@ public class Verify {
     }
 
     public String base64() {
-        return this.getContentType() + Base64.getEncoder().encodeToString(data);
+        return String.format("data:image/%s;base64,%s", contentType, Base64.getEncoder().encodeToString(data));
     }
 
+    @Override
+    public String toString() {
+        return "Verify{" +
+                "width=" + width +
+                ", height=" + height +
+                ", uuid='" + uuid + '\'' +
+                ", code='" + code + '\'' +
+                ", contentType='" + contentType + '\'' +
+                '}';
+    }
 }
