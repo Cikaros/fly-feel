@@ -63,9 +63,14 @@ module.exports = {
                         activeMatch: '^/zh/advance/$'
                     },
                     {
-                        text: "接口实现",
-                        link: "/zh/advance/interface",
-                        activeMatch: '^/zh/advance/interface'
+                        text: "Controller接口实现",
+                        link: "/zh/advance/controller",
+                        activeMatch: '^/zh/advance/controller'
+                    },
+                    {
+                        text: "权限实现",
+                        link: "/zh/advance/security",
+                        activeMatch: '^/zh/advance/security'
                     }
                 ]
             },
