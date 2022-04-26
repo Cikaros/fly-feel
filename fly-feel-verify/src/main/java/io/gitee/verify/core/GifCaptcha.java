@@ -44,6 +44,7 @@ public class GifCaptcha extends Captcha {
     @Override
     public void graphics(Graphics g, String code) {
         Graphics2D graphics = (Graphics2D) g;
+        super.graphics0(graphics);
         // 随机生成每个文字的颜色
         Color[] colors = new Color[super.getLength()];
         for (int i = 0; i < super.getLength(); i++) {
@@ -62,11 +63,6 @@ public class GifCaptcha extends Captcha {
         int ctrlx1 = Randoms.num(super.getWidth() / 4, super.getWidth() / 4 * 3);
         int ctrly1 = Randoms.num(5, super.getHeight() - 5);
         int[][] bessel = new int[][]{{x1, y1}, {ctrlx, ctrly}, {ctrlx1, ctrly1}, {x2, y2}};
-        // 填充背景颜色
-        graphics.setColor(Color.WHITE);
-        graphics.fillRect(0, 0, super.getWidth(), super.getHeight());
-        // 抗锯齿
-        graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         // 画干扰圆圈
         graphics.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.1f * Randoms.num(10))); // 设置透明度
         drawOval(2, graphics);
@@ -80,16 +76,16 @@ public class GifCaptcha extends Captcha {
         // 画验证码
         graphics.setFont(getFont());
         FontMetrics fontMetrics = graphics.getFontMetrics();
-        int fW = super.getWidth() / code.length(); // 每一个字符所占的宽度
-        int fSp = (fW - (int) fontMetrics.getStringBounds("W", graphics).getWidth()) / 2; // 字符的左右边距
+        int fontWidth = super.getWidth() / code.length(); // 每一个字符所占的宽度
+        int fontMarginLeft = (fontWidth - (int) fontMetrics.getStringBounds("W", graphics).getWidth()) / 2; // 字符的左右边距
         for (int i = 0; i < code.length(); i++) {
             // 设置透明度
-            AlphaComposite ac3 = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, getAlpha(i * 2));
+            AlphaComposite ac3 = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, getAlpha(Randoms.num(10)));
             graphics.setComposite(ac3);
             graphics.setColor(colors[i]);
-            int fY = super.getHeight()
+            int fontMarginTop = super.getHeight()
                     - ((super.getHeight() - (int) fontMetrics.getStringBounds(String.valueOf(code.charAt(i)), graphics).getHeight()) >> 1); // 文字的纵坐标
-            graphics.drawString(String.valueOf(code.charAt(i)), i * fW + fSp + 3, fY - 3);
+            graphics.drawString(String.valueOf(code.charAt(i)), i * fontWidth + fontMarginLeft + 3, fontMarginTop - 3);
         }
     }
 

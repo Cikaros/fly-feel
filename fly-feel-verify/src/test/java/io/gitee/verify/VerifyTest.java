@@ -3,9 +3,8 @@ package io.gitee.verify;
 import io.gitee.define.entity.Verify;
 import io.gitee.test.SpringBootTestParent;
 import io.gitee.verify.config.VerifyAutoConfiguration;
-import io.gitee.verify.core.Captcha;
-import io.gitee.verify.core.JpgCaptcha;
-import io.gitee.verify.enums.VerifyType;
+import io.gitee.verify.core.*;
+import io.gitee.verify.utils.Randoms;
 import org.junit.Test;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.context.annotation.Import;
@@ -26,7 +25,7 @@ public class VerifyTest extends SpringBootTestParent {
 
     @Test
     public void run() throws Exception {
-        Captcha captcha = Captcha.Builder.create(JpgCaptcha.class)
+        Captcha captcha = Captcha.Builder.create(GifCaptcha.class)
                 .build();
         Verify verify = captcha.build();
         File tempFile = File.createTempFile("verify_", "." + captcha.contentType());

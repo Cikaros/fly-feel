@@ -66,19 +66,28 @@ public abstract class Captcha {
         }
     }
 
-    /**
-     * 绘制
-     */
-    public void graphics(Graphics g, String code) {
-        Graphics2D graphics = (Graphics2D) g;
+    protected final void graphics0(Graphics2D graphics) {
+        graphics.setStroke(new BasicStroke(font.getSize() >> 5));
         // 填充背景
         graphics.setColor(Color.WHITE);
         graphics.fillRect(0, 0, width, height);
         // 抗锯齿
         graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+    }
+
+    /**
+     * 绘制
+     */
+    public void graphics(Graphics g, String code) {
+        Graphics2D graphics = (Graphics2D) g;
+        this.graphics0(graphics);
+        // 画干扰线
+        this.drawBesselLine(Randoms.num(5), graphics);
+        this.drawLine(Randoms.num(5), graphics);
         // 画干扰圆
-        drawOval(Randoms.num(1, 10), graphics);
-        drawChars(graphics, code);
+        this.drawOval(Randoms.num(5, 10), graphics);
+        // 绘制验证码
+        this.drawChars(graphics, code);
     }
 
     /**
@@ -210,7 +219,7 @@ public abstract class Captcha {
         int fontWidth = width / code.length(); // 每一个字符所占的宽度
         int fontMarginLeft = (fontWidth - (int) fontMetrics.getStringBounds("8", graphics).getWidth()) / 2; // 字符的左右边距
         for (int i = 0; i < code.length(); i++) {
-            graphics.setColor(color());
+            graphics.setColor(this.color());
             int fontMarginTop = height - ((height - (int) fontMetrics.getStringBounds(String.valueOf(code.charAt(i)), graphics).getHeight()) >> 1); // 文字的纵坐标
             graphics.drawString(String.valueOf(code.charAt(i)), i * fontWidth + fontMarginLeft, fontMarginTop - 3);
         }
@@ -251,8 +260,8 @@ public abstract class Captcha {
     }
 
     protected Captcha() {
-        this.width = 130;
-        this.height = 48;
+        this.width = 180;
+        this.height = 64;
         this.length = 5;
         this.type = VerifyType.DEFAULT;
         this.font = Randoms.font(Font.PLAIN, 32F);
@@ -317,8 +326,8 @@ public abstract class Captcha {
 
         private Builder(Class<? extends Captcha> clazz) {
             this.clazz = clazz;
-            this.width = 130;
-            this.height = 48;
+            this.width = 180;
+            this.height = 64;
             this.length = 5;
             this.type = VerifyType.DEFAULT;
             this.font = Randoms.font(Font.PLAIN, 32F);
