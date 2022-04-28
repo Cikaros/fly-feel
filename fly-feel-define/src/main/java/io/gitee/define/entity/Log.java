@@ -3,7 +3,7 @@ package io.gitee.define.entity;
 import io.gitee.core.entity.model.BaseModel;
 import io.gitee.core.enums.EventType;
 
-import java.util.Date;
+import java.util.Map;
 
 /**
  * 日志表
@@ -31,7 +31,6 @@ public class Log extends BaseModel {
      * 触发地址
      */
     private String location;
-
 
     public EventType getType() {
         return type;

@@ -16,7 +16,7 @@ create table ff_log
 
     `type`        tinyint             not null comment '日志类型',
     msg           BLOB                not null comment '日志信息',
-    triggers      bigint(20) unsigned NOT NULL default 0 COMMENT '日志触发者,默认为系统触发',
+    `triggers`      bigint(20) unsigned NOT NULL default 0 COMMENT '日志触发者,默认为系统触发',
     location      varchar(512)        NOT NULL COMMENT '触发地址',
 
     `system`      bit(1)              NOT NULL DEFAULT false COMMENT '是否为系统参数',

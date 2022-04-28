@@ -3,13 +3,12 @@ package io.gitee.verify;
 import io.gitee.define.entity.Verify;
 import io.gitee.test.SpringBootTestParent;
 import io.gitee.verify.config.VerifyAutoConfiguration;
-import io.gitee.verify.core.*;
-import io.gitee.verify.utils.Randoms;
+import io.gitee.verify.core.Captcha;
+import io.gitee.verify.core.SvgCaptcha;
 import org.junit.Test;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.context.annotation.Import;
 
-import java.awt.*;
 import java.io.File;
 import java.io.FileOutputStream;
 
@@ -22,10 +21,9 @@ import java.io.FileOutputStream;
 @Import(VerifyAutoConfiguration.class)
 public class VerifyTest extends SpringBootTestParent {
 
-
     @Test
     public void run() throws Exception {
-        Captcha captcha = Captcha.Builder.create(GifCaptcha.class)
+        Captcha captcha = Captcha.Builder.create(SvgCaptcha.class)
                 .build();
         Verify verify = captcha.build();
         File tempFile = File.createTempFile("verify_", "." + captcha.contentType());
@@ -33,6 +31,7 @@ public class VerifyTest extends SpringBootTestParent {
             verify.write(out);
         }
         System.out.println(verify);
+        System.out.println(tempFile.getAbsoluteFile());
         String[] cmd = new String[]{
                 "cmd",
                 "/C",

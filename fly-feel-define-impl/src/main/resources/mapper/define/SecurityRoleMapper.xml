@@ -21,6 +21,17 @@
           and role.del = false
     </select>
 
+    <select id="selectByClientId" resultMap="BaseResultMap">
+        select
+        <include refid="io.gitee.define.mapper.RoleMapper.Base_Column_List"/>
+        from ff_role role
+                     left join ff_relate_client_role relate on role.id = relate.role_id
+        where relate.client_id = #{clientId}
+          and relate.del = false
+          and relate.enable = true
+          and role.del = false
+    </select>
+
     <select id="findByCode" resultMap="io.gitee.define.mapper.RoleMapper.BaseResultMap">
         select
         <include refid="io.gitee.define.mapper.RoleMapper.Base_Column_List"/>

@@ -1,11 +1,12 @@
 <script setup>
+import {defineCustomElement, ref} from 'vue'
 import {ElButton} from 'element-plus'
-import {defineCustomElement,ref} from 'vue'
 
 defineCustomElement({
   props: {
     msg: String
-  }
+  },
+  components: {ElButton}
 })
 
 const count = ref(0)
@@ -13,7 +14,7 @@ const count = ref(0)
 
 <template>
   <h1>{{ msg }}</h1>
-  <el-button type="primary" @click="count++">count is: {{ count }}</el-button>
+  <ElButton type="primary" @click="count++">count is: {{ count }}</ElButton>
 </template>
 
 <style scoped>

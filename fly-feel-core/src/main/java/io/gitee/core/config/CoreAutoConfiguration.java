@@ -43,7 +43,7 @@ public class CoreAutoConfiguration {
     }
 
     /**
-     * Request日志
+     * Request日志过滤器
      */
     @Bean
     public FilterRegistrationBean<Filter> RequestFilter() {

@@ -16,6 +16,8 @@ public interface SecurityRoleMapper extends RoleMapper {
 
     Collection<SecurityRole> selectByAccountId(Long accountId);
 
+    Collection<SecurityRole> selectByClientId(Long clientId);
+
     Role findByCode(String code);
 
     boolean isExistByCode(String code);

@@ -1,0 +1,69 @@
+import {get, post, postObj, auth} from "./http";
+
+const apis = {
+    verify: p => get('/verify', p),//获取验证码
+    login: p => auth('/oauth/token?grant_type=password', p, import.meta.env.VITE_BASIC), // 登录
+    logout: p => post('/logout', p), // 退出
+    getEnumTable: p => postObj('/enums/' + p), // 获取枚举列表
+    getMenus: p => postObj('/resource/component/tree', p), // 获取菜单列表
+    getComponentList: p => postObj('/admin/resource/component/list', p), // 获取组件列表
+    getSingleComponent: p => postObj('/admin/resource/component/' + p), // 获取单个组件
+    getComponentTree: p => postObj('/admin/resource/component/tree', p), // 获取组件树形列表
+    addMenu: p => postObj('/admin/resource/component/add', p), // 新增组件
+    getEnableComponent: p => postObj('/admin/resource/component/name/list', p), // 获取所有可用组件名列表
+    updateMenu: p => postObj('/admin/resource/component/update', p), // 更新菜单
+    getServerResource: p => postObj('/admin/resource/server/list', p), // 获取服务资源
+    getSingleServerResource: p => postObj('/admin/resource/server/' + p), // 获取单个服务资源
+    addServerResource: p => postObj('/admin/resource/server/add', p), // 新增服务资源
+    editServerResource: p => postObj('/admin/resource/server/update', p), // 更新服务资源
+    getAuthorityList: p => postObj('/admin/authority/list', p), // 获取权限
+    addAuthority: p => postObj('/admin/authority/add', p), // 新增权限
+    updateAuthority: p => postObj('/admin/authority/update', p), // 更新权限
+    getAuthorityResource: p => postObj('/admin/authority/resource/' + p), // 查看权限所拥有的资源
+    getEnableServerResource: p => postObj('/admin/resource/server/name/list', p), // 获取所有可用的服务资源
+    addAuthorityResource: p => postObj('/admin/authority/resource/add', p), // 增加权限所属资源
+    updateAuthorityResource: p => postObj('/admin/authority/resource/update', p), // 更新权限所属资源
+    getServerLog: p => postObj('/admin/log/server/list', p), // 获取服务日志列表
+    getSqlLog: p => postObj('/admin/log/sql/list', p), // 获取 sql 日志列表
+    exportServerResource: p => postObj('/admin/resource/server/unrecorded', p), // 获取未加入的服务
+    batchIncrease: p => postObj('/admin/resource/server/adds', p), // 批量增加
+    getRoleList: p => postObj('/admin/role/list', p), // 获取角色列表
+    addRole: p => postObj('/admin/role/add', p), // 添加角色
+    getRoleAuthorities: p => postObj('/admin/role/authority/' + p), // 获取角色拥有的权限
+    getAuthorityNameList: p => postObj('/admin/authority/name/list', p), // 获取权限名称列表
+    addRoleAuthorities: p => postObj('/admin/role/authority/add', p), // 给角色新增权限
+    updateRole: p => postObj('/admin/role/update', p), // 更新角色
+    updateRoleAuthority: p => postObj('/admin/role/authority/update', p), // 更新角色权限
+    getAccountList: p => postObj('/admin/account/list', p), // 获取用户列表
+    addAccount: p => postObj('/admin/account/add', p), // 新增用户
+    updateAccount: p => postObj('/admin/account/update', p), // 更新用户
+    getAccountRoleList: p => postObj('/admin/account/role/' + p), // 获取用户角色列表
+    getRoleNameList: p => postObj('/admin/role/name/list', p), // 获取角色名称列表
+    addAccountRole: p => postObj('/admin/account/role/add', p), // 给角色新增权限
+    getClientList: p => postObj('/admin/client/list', p), // 获取客户端列表
+    addClient: p => postObj('/admin/client/add', p), // 新增客户端
+    updateClient: p => postObj('/admin/client/update', p), // 更新客户端
+    getClientRoleList: p => postObj('/admin/client/role/' + p), // 获取客户端角色列表
+    updateClientRole: p => postObj('/admin/client/role/update', p), // 更新客户端角色
+    addClientRole: p => postObj('/admin/client/role/add', p), // 新增客户端角色
+    getClientMode: p => postObj('/admin/client/grant/' + p), // 获取客户端模式
+    addClientMode: p => postObj('/admin/client/grant/add', p), // 新增客户端已支持的模式
+    getTokenList: () => postObj('/admin/token/list'), // 获取 token 列表
+    delToken: p => postObj('/admin/token/delete/' + p), // 删除token
+    getDepartmentList: p => postObj('/admin/department/list', p), // 获取部门列表
+    getDepartmentTree: p => postObj('/admin/department/tree', p), // 获取部门树形结构
+    addDepartment: p => postObj('/admin/department/add', p), // 新增部门或者子部门
+    updateDepartment: p => postObj('/admin/department/update', p), // 更新部门
+    getDepartmentRoleList: p => postObj('/admin/department/role/' + p), // 获取客户端角色列表
+    addDepartmentRole: p => postObj('/admin/department/role/add', p), // 新增部门角色
+    updateDepartmentRole: p => postObj('/admin/department/role/update', p), // 更新客户端角色
+    getResourceService: p => postObj('/admin/resource/service/list', p), // 获取资源服务器列表
+    addResourceService: p => postObj('/admin/resource/service/add', p), // 新增资源服务器
+    updateResourceService: p => postObj('/admin/resource/service/update', p), // 更新资源服务器
+    getClientResourceServiceList: p => postObj('/admin/client/service/' + p), // 获取客户端可用资源服务器列表
+    updateClientResourceService: p => postObj('/admin/client/service/update', p), // 更新客户端可用资源服务器列表
+    getResourceServiceNameList: p => postObj('/admin/resource/service/name/list', p), // 获取资源服务器名称列表
+    addClientResourceService: p => postObj('/admin/client/service/add', p), // 新增客户端可用资源服务器列表
+}
+
+export default apis;

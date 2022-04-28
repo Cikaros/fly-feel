@@ -50,7 +50,7 @@ public class RestResult extends ResponseEntity<Data> {
     }
 
     public String getMessage() {
-        return super.getBody().getMessage();
+        return Objects.requireNonNull(super.getBody()).getMessage();
     }
 
     /**

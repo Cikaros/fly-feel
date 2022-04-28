@@ -13,11 +13,11 @@
                     column="id">
         </collection>
         <collection property="roles" ofType="io.gitee.define.entity.SecurityRole"
-                    select="io.gitee.define.mapper.SecurityRoleMapper.selectByAccountId"
+                    select="io.gitee.define.mapper.SecurityRoleMapper.selectByClientId"
                     column="id">
         </collection>
-        <collection property="" ofType="io.gitee.define.entity.SecurityRole"
-                    select="io.gitee.define.mapper.SecurityRoleMapper.selectByAccountId"
+        <collection property="securityAuthorities" ofType="io.gitee.define.entity.SecurityAuthority"
+                    select="io.gitee.define.mapper.SecurityAuthorityMapper.selectByClientId"
                     column="id">
         </collection>
     </resultMap>

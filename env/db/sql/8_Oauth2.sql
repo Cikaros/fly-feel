@@ -23,7 +23,7 @@ create table ff_client
     redirect_uri             varchar(256)        not null default '' comment '重定向url',
     access_validity_seconds  integer             not null default 7200 comment 'token有效时长',
     refresh_validity_seconds integer             not null default 259200 comment '刷新token有效时长',
-    scopes                   varchar(256)        not null default '' comment '数据范围',
+    scopes                   varchar(256)        not null default '["empty"]' comment '数据范围',
 
     `system`                 bit(1)              NOT NULL DEFAULT false COMMENT '是否为系统参数',
     `enable`                 bit(1)              NOT NULL DEFAULT true COMMENT '可用状态',
