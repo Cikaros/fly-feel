@@ -1,11 +1,11 @@
 <script setup>
-import {defineCustomElement} from "vue";
+import {defineComponent} from "vue";
 
-defineCustomElement({
-  name: 'App'
+defineComponent({
+  name: 'App',
 });
-</script>
 
+</script>
 <template>
   <router-view></router-view>
 </template>

@@ -18,11 +18,27 @@ import {resolveComponent} from "vue";
 // const ClientList = () => import('views/user/ClientList')
 // const DepartmentList = () => import('views/department/DepartmentList');
 const Index = () => import('../views/Index.vue');
+const Home = () => import('../views/Home.vue');
+const Login = () => import('../views/Login.vue');
 
 const routes = [
     {
-        path: '/',
-        components: Index
+        path: '',
+        redirect: {name: 'index'}
+    },
+    {
+        path: '/index',
+        name: 'index',
+        component: Index
+    },{
+        path: '/home',
+        name: 'home',
+        component: Home
+    },
+    {
+        path: '/login',
+        name: 'login',
+        component: Login
     }
 ];
 // const routes = [
@@ -132,24 +148,25 @@ const routes = [
 // ]
 
 const router = createRouter({
-    history: createWebHistory(import.meta.env.VITE_BASE_URL),
+    // history: createWebHistory(import.meta.env.VITE_BASE_URL),
+    history: createWebHistory(),
     routes: routes
 });
 
-router.beforeEach(async (to, from, next) => {
-    console.log({to,from})
-    // if (to.name !== 'login') {
-    //     if (!accessToken()) {
-    //         next({name: 'login'});
-    //         return;
-    //     }
-    // } else {
-    //     if (accessToken()) {
-    //         await apis.logout();
-    //         removeToken();
-    //     }
-    // }
-    next();
-});
+// router.beforeEach(async (to, from, next) => {
+//     console.log({to, from})
+//     // if (to.name !== 'login') {
+//     //     if (!accessToken()) {
+//     //         next({name: 'login'});
+//     //         return;
+//     //     }
+//     // } else {
+//     //     if (accessToken()) {
+//     //         await apis.logout();
+//     //         removeToken();
+//     //     }
+//     // }
+//     next();
+// });
 
 export default router;
