@@ -12,8 +12,8 @@ module.exports = {
         logo: '/images/favicon.svg',
         home: '/',
         darkMode: false,
-        repo: 'https://gitee.com/cikaros/fly-feel',
-        repoLabel: 'Gitee',
+        repo: 'https://github.com/cikaros/fly-feel',
+        repoLabel: 'Github',
         sidebarDepth: 2,
         navbar: [
             {
@@ -91,7 +91,7 @@ module.exports = {
             },
             {
                 text: '关于作者',
-                link: 'https://cikaros.gitee.io/about/'
+                link: '/about/'
             }
         ],
     },
