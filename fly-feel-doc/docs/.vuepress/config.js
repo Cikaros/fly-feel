@@ -91,7 +91,7 @@ module.exports = {
             },
             {
                 text: '关于作者',
-                link: '../about/'
+                link: '/../about/'
             }
         ],
     },
